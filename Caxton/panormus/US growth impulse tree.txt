@@ -1,0 +1,51 @@
+Goldman Sachs current activity index
+
+├── personal consumption expenditure
+
+│   ├── total return index of 10 year T-bonds
+
+│   ├── hourly wages manufacturing x hours worked weekly x employment level
+
+│   ├── S&P CoreLogic Case-Shiller home price index
+
+│   ├── S&P 500 stock price index
+
+│   └── WTI intermediate, cushing
+
+├── private fixed investment (residential)
+
+│   ├── 30-year fixed mortgage rate
+
+│   ├── mortgage originations
+
+│   ├── months supply at current sales rate for new 1-family houses for sale
+
+│   ├── housing units authorized by builidng permit
+
+│   └── house builders bloomberg forward eps
+
+├── private fixed investment (non residential) ex mining exploration, shafts, wells
+
+│   ├── S&P global fixed income research: industrials BBB bond yields avg weekly ending Wed
+
+│   ├── S&P 500 stock price index
+
+│   ├── trade weighted average of partners CAI
+
+│   ├── conference board consumer confidence
+
+│   ├── retail sales & food services ex autos and gas
+
+│   └── manufacturing PPI
+
+├── export
+
+│   ├── nominal effective exchange rates
+
+│   └── trade weighted average of partners CAI
+
+└── private fixed investment in mining exploration, shafts, wells
+
+    ├── WTI intermediate, cushing
+
+    └── FRB : capacity utilisation : mining

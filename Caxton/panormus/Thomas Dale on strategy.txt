@@ -1,0 +1,64 @@
+FX market macro models.
+
+ 
+
+Some first thoughts below on the types of models that may work in FX markets. These are all derived from a simple first principles approach of how FX markets work on a medium term basis. I think we could extend this to rate markets also
+
+ 
+
+I would appreciate any comments including any other approaches I have missed. Following that, I will organise a meeting where we can discuss the merits of each approach and which ones we should look at first
+
+ 
+
+ 
+
+ 
+
+First principles
+
+ 
+
+It is worth thinking through how and whys of the FX market works
+
+ 
+
+So my base assumption is that a currency price X = f(a,b,c…), where a, b etc are orthogonal factors that we cannot explicitly identify but can guess broadly what they are,.
+
+ 
+
+We are interested only in the change in X relative to the forward, so as a first approximation X(t+1)-X(t), which is the change in function f() between t+1 and t of a new function g(a(t+1), a(t),….). The mechanics are that changes in the factors lead to chance in ex-ante flow and price adjusts to match clear the market.    What we are trying to do ex ante is to get information from somewhere that means we can have a forecast at time t, that at t+1 the probability of an up or some move is greater than the 50% assumption one gets from a random walk. And that over time we can repeat this to generate a positive equity line.  
+
+ 
+
+Aside from that theoretical understanding, one factor we can observe is that over time, price movements are not true random walks. There is often autocorrelation in price moves and flow moves that result in steady price drift.
+
+ 
+
+Different types of model
+
+ 
+
+Given all that, how can we construct “macro” models that work.  There are 3 different types of model I think we can use, each with different variants.   Starting from the last point above.
+
+ 
+
+ 
+
+1         Trend models Auto correlation  of price and flow means we should be able to run trend following models on both price and flow. Being able to anticipate the flow is the holy grail but is much more tricky than observing price. But having both type of models might make sense.  Both are macro models.
+
+ 
+
+2         Carry/ insurance selling models
+
+This relies on the second order effect that the spot and forward price are different and assuming all factors a,b,c stay constant spot will be unchanged and the forward will beat the spot.  Insurance selling policy.  It tends to work for long periods until it doesn’t.  But is certainly worth having as a model
+
+ 
+
+3         Economic driven models
+
+·         Leading indicator models  Rather than use flow or carry strategies, we can try and identify observable data points  that can give a skew for forecasts in the orthogonal factors a,b,c.  The holy grail would be to find an observable variable x where our directional forecast  is improved significantly by knowing x(t).Or P{directional forecast is correct for t+1/we know x(t)}>P{initial directional forecast is correct}.  We could look for sets of leading data in each economy that would give us a lead on policy and fx and short rate movements in times ahead. I have always found this is the best way of identifying big moves, although it also will generate a lot of flat signals
+
+·         Reversion to fair value model.  A favourite of the street strategist is to develop a fully specified model for a currency paid, so M = f(x,y,z) where x,y,z are specified economic or financial variables. Then compare the actual rate X with this model rate M and run mean reversion trading rules on them. The idea is that random non-economic flows lead to deviation from true valuation and this is a way to capture them.  I have significant theoretical doubts about this approach. Firstly, variable x,y,z are not orthogonal so any regression exercise is flawed. Secondly, these models are often highly specified and optimised, making the in-sample data look very good.  Thirdly, other financial variables such as interest rates often appear in these models. At face value this means that the rate market and FX market have a different view of the world despite having the same information. I find that hard to believe. However I may be wrong and it may be worth looking at this approach
+
+·         Economic environment models.  The idea here is that certain currencies with similar drivers so well at the same time. Within the framework above, this means they share an orthogonal factor.  There may a change in demand for assets with that factor , so the weight on that factor will change and this will push flow into these currencies, resulting in price changes.  There may well be regime periods where groups of currencies do well and these regimes may be persistent .  I don’t know how to model this but its worth looking into.
+

@@ -1,0 +1,48 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Credit measures, Bank of Canada",10100118,176-0032,"https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1010011801",,"CURRENT - a cube available to the public and that is current",Monthly,1969-01-01,2019-04-01,3
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+1,Geography,,
+2,"Type of credit",,
+3,"Seasonal adjustment",,
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+1,Canada,[11124],1,,,,
+2,"Total business and household credit",,1,,,,
+2,"Household credit",,2,1,,,
+2,"Residential mortgage credit",,3,2,,,
+2,"Consumer credit",,4,2,,,
+2,"Business credit",,5,1,,1,
+2,"Other business credit",,6,5,,1,
+2,"Short-term business credit",,7,5,,1,
+3,Unadjusted,,1,,,,
+3,"Seasonally adjusted",,2,,,,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period",..
+"less than the limit of detection",<LOD
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded",0s
+"data quality: excellent",A
+"data quality: very good",B
+"data quality: good",C
+"data quality: acceptable",D
+"use with caution",E
+"too unreliable to be published.",F
+"not applicable",...
+preliminary,p
+revised,r
+"suppressed to meet the confidentiality requirements of the Statistics Act",x
+terminated,t
+
+"Survey Code","Survey Name"
+7502,"Bank of Canada"
+
+"Subject Code","Subject Name"
+10,Government
+
+"Note ID",Note
+1,"As of November 2015, business credit has been restructured to reflect business loans, debt securities and equity. Please refer to table 176-0023 for business credit."
+
+"Correction ID","Correction Date","Correction Note"
+

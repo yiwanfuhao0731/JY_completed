@@ -1,0 +1,59 @@
+Hi Dale,
+
+The theoretical underpinnings are that macro factors impacts relative attractiveness of currencies via
+
+i)                    changes in domestic and external demand for goods and financial assets, and
+
+ii)                   changes in inflation which impact either the value of a currency (EM) or monetary policy expectations (DM).
+
+A key assumption is that investors’ forecasts of the above factors are serially correlated with known information.
+
+Versions of this thinking are laid out in the attached research papers by AQR and Dahlqvist/Hasseltoft.
+
+Those papers suggest that macro momentum predict prices in other asset classes too and work well in conjunction with other factors. Designed properly this suggests that a portfolio of models with macro momentum content has the potential to provide attractive risk adjusted returns. That’s the main goal with this project.
+
+As an initial step we focus on developing long/short models for EM fx and later on DM fx. The former appears to be working while the latter has not shown the same (although it has behaved within the parameters of the back test).  One possible explanation is that EM FX is more driven by economic fundamentals than DM FX.
+
+The EM model contains around ¾ macro momentum factors and ¼ market factors (carry, momentum). The economic factors are selected with the explicit purpose to orthogonally reflect key economic forces including capital flows, external demand, domestic demand and inflation.
+
+The factors are based on reported economic data, forecasts, surprises and prices and flows in other assets (as a way to reflect capital flows).
+
+That others have come to similar conclusions (e.g. the aforementioned papers) is both encouraging and a concern. It is encouraging as a check of the general hypothesis. It is a concern because of the competition of what we try to capture. Fortunately this is not a widely covered subject, at least not compared the usual factor research in equity markets.
+
+Our factor selection is different from the papers which may help. Also, it may be that EM is more fertile for this approach than DM (my conjecture).
+
+The nirvana (and I fully intend to get there) will, as you allude to, to be able to do regime analysis of factors. That’s how we can really add value I think. There are number of ways this can be done (happy to discuss that separately). I think that step is best taken when a number of these models are developed.
+
+The erosion in performance in 2017-2018 is due a few factors. Rates are one part of the story. Others include domestic demand and production and the factor we use for inflation. I don’t know why at this point. Neither factor is behaving like their predictability has permanently changed with the possible exception of longer dated yields and inflation. I wonder if the sign for inflation is changing for EM, i.e. that higher inflation is in the process of becoming a positive for the currency. As it stands now it has been neutral for the past two years.
+
+When will you get here so we can discuss this more thoroughly?!
+
+Best regards,
+
+Tomas
+
+Obviously I am not up-to-date with the models themselves, but still have  a few comments
+
+ 
+
+How do these results compare with simple un-optimised trend following or carry strategies ?.  In DM FX is always worth comparing any trading strategy with simple moving average models. These are the true benchmark That way, you can see if you are extracting anything other than the persistence of trend from the broader information set you are looking at.  Simple trending models on the DXY (buy if spot >moving average, otherwise sell)  show a similar return profile to your DM model.  I analysed monthly data from Jan 1994 and applied 2 simple rules, one using a 6mma and the other a 10mma.  The charts below show the return profile. This does not include carry. I am pretty sure carry would be positive however. For EMFX, I suspect –although haven’t done the work on this for a long time -that one can construct simple carry models with a price driven on/off switch that also generates positive returns.
+ 
+
+  
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+How concerning is the lack of persistence of returns, and the recent deterioration in returns ?   Just eyeballing the results, the DM model have strong outperformance until 2003, then a long period of sideways returns until 20010, a decent stretch until 2016 and then a negative period in the last few years.  EM has a better record but shows something similar in shape.  What is at work here, is it the deterioration in “trending of the USD”?  Or is it something else
+ 
+
+Much woollier, but perhaps the most important, Why should this approach work out of sample ? Relating to both 1 and 2 above.  What is the theoretical underpinning for an FX trading strategy that uses panels of current economic data to generate signals for future price movement ? I think we need to be able to answer this convincingly, both to ourselves and to our clients.  I still struggle a little with the answer to this question.  The risk is that you assume that this is the case, do some data mining on “obvious factors” and come up with trading models that are either insurance selling (carry) or trend following models, or both in disguise. Both insurance selling have theoretical and empirical support .  One attempt is to assume that there are a few orthogonal factors out there that explain currency returns and that trends in these factors drive and lead trends in FX markets. We cannot directly observe them but we can come out with some candidates, relative total economy wide returns drive capital account flows that drive FX valuations. For smaller countries, the global environment is likely to be a factor as well.  If we can identify the best proxies for these factors through our research we should be able to identify turning points in currency moves ahead of naïve trending/carry models and generate higher sharp returns than simply looking at price driven models.  There are likely to be other approaches such as assuming a non-linear world and working on identifying regime shifts etc

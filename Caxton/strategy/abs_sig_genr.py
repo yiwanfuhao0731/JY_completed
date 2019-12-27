@@ -72,6 +72,7 @@ class abstract_sig_genr:
     def __init__(self, *args, **kwargs):
 
         self.local_db = self.read_pickle(*args, **kwargs)
+        self.cache_db = self.read_pickle(*args, **kwargs)
 
         self.SU = s_util.date_utils_collection()
 

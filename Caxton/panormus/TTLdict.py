@@ -2,6 +2,8 @@ from datetime import datetime,timedelta
 from collections import OrderedDict
 import pandas as pd
 import re
+import os
+
 
 EDB_timezone = [
     'UTC',
@@ -146,4 +148,135 @@ class datakey_class:
 
     def extractParamsFromDF(self):
         if isinstance(self.DF,pd.DataFrame):
-            
+            self.dicParams['Shape']=self.DF.shape
+            self.dicParams['First']=self.DF.index.min()
+            self.dicParamsp['Last']=self.DF.index.max()
+        else:
+            raise KeyError('Can not update parameters; Dataframe object missing')
+
+    def getShapeString(self):
+        if (self.dicParams == None) or ('Shape' not in self.dicParams):
+            self.loadParams()
+        (self.rows,self.cols) = self.dicParams['Shape']
+        return str(self.rows) + '/' +str(self.cols)
+
+    ###################### Meta ####################
+    def setMeta(self,metaDictionary):
+        self.dicMeta = metaDictionary
+
+    def deleteMeta(self):
+        self.dicMeta = {}
+
+    def getMeta(self):
+        if self.dicMeta == None:
+            self.loadMeta()
+        return self.dicMeta
+
+    def setExportsUpToDate(self,flag=False):
+        if self.dicMeta == None:
+            self.loadMeta()
+        self.dicMeta['ExportsUpToDate'] = flag
+
+    def loadMeta(self):
+        self._loadMeta()
+
+    ################ Exports ####################
+    def loadExports(self):
+        self._loadExports()
+
+    def setAllExports(self,exportsDictionary):
+        self.dicExports = exportsDictionary
+
+    def deleteAllExports(self):
+        self.dicExports={}
+
+    ################ DataFrame ##############
+    def getDF(self):
+        if not isinstance(self.DF,pd.DataFrame):
+            self._loadDF()
+        return self.DF
+
+    def setDF(self,DF):
+        self.DF = DF
+        self.updateParams()
+
+    def deleteDF(self):
+        self.DF = None
+
+    ############## DB access ################
+    def setDBStore(self,DB):
+        self.DBLockedHandle=DB
+
+    def delDBStore(self):
+        self.DBLockedHandle = None
+
+    def _DB_set_locked(self,DBName):
+        myBase,_=os.path.splitext(DBName)
+        self.lockFileName = myBase+".lck"
+
+        self.lockFile = open(self.lockFileName,'w')
+        self.lockFile.write(os.environ.get("USERNAME"))
+        self.lockFile.close()
+        self.lockFile = open(self.lockFileName,'a')
+
+    def _DB_set_unlocked(self):
+        self.lockFile.close()
+        os.remove(self.lockFileName)
+
+    def _loadMeta(self):
+        self.dicMeta={}
+
+    def _loadParams(self):
+        self._loadDF()
+        self.updateParams()
+
+    def _loadExports(self):
+        self.dicExports={}
+
+    def _loadDF(self):
+        if self.DBLockedHandle == None:
+            with pd.HDFStore(self.DB_name,mode='r') as DB:
+                self.DF = DB.get(self.fullkey)
+        else:
+            self.DF = self.DBLockedHandle.get(self.fullkey)
+
+    def updateDataset(self):
+        self.getDF()
+        self.getMeta()
+        self.getParams()
+        self.getAllExports()
+
+        self._DB_set_locked(self.DB_name)
+        self.deleteDataset_NL()
+        self.storeDatasetAs_NL(self.fullkey,False)
+
+        #unlock
+        self._DB_set_unlocked()
+
+    def updateDataset_NL(self):
+        # update with no lock
+        self.getDF()
+        self.getMeta()
+        self.getParams()
+        self.getAllExports()
+
+        self.deleteDataset_NL()
+        self.storeDatasetAs_NL(self.fullkey,False)
+
+    def renameDataset(self,newKey):
+        self.getDF()
+        self.getMeta()
+        self.getParams()
+        self.getAllExports()
+        self.storeDatasetAs(newKey)
+        self.deleteDataset()
+
+    def _delDataset(self,DB):
+        del DB[self.fullkey]
+
+    def deleteDataset_NL(self):
+        pass
+
+
+
+

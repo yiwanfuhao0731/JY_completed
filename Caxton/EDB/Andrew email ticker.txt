@@ -1,0 +1,1071 @@
+list of data alert,,,,,,,,,
+
+item,bloomberg/haver ticker,,,,,,,,
+
+slovakia unemployment rate,SLUER Index,,,,,,,,
+
+swiss gold export to china,CHNIGCNE@ALPMED,,,,,,,,
+
+DB siren,DBSRMEA Index,,,,,,,,
+
+China agg financing,CNLNNEW Index,,,,,,,,
+
+new yuan loan,CNMS1YOY Index,,,,,,,,
+
+M1,CNLNASF Index,,,,,,,,
+
+Poland industrial production,POISCMOM Index,,,,,,,,
+
+Taiwan export orders,TWEOTTLY Index,,,,,,,,
+
+German consumer confidence,ECO1GFKC Index,,,,,,,,
+
+Turkey consumer confidence,TUCDCONS Index,,,,,,,,
+
+Australia employment change,AULFEMPC Index,,,,,,,,
+
+unemployment rate,AULFUNEM Index,,,,,,,,
+
+participate rate,AULFPART Index,,,,,,,,
+
+Citi global surprise index,CESIGL Index,,,,,,,,
+
+Citi data change index,CECIDGL Index,,,,,,,,
+
+Citi em surprise index,CESIEM Index,,,,,,,,
+
+Bric data surprise index,CESIBRIC Index,,,,,,,,
+
+EM export surprise index,CESIEMXP Index,,,,,,,,
+
+Asia pacific surprise index,CESIAPAC Index,,,,,,,,
+
+CEEMEA data surprise index,CESICMEA Index,,,,,,,,
+
+Latin am surprise index,CESILTAM Index,,,,,,,,
+
+China data surprise index,CESICNY Index,,,,,,,,
+
+Taiwan data surprise index,CESITWD Index,,,,,,,,
+
+DM data surprise index,CESIG10 Index,,,,,,,,
+
+US data surprise index,CESIUSD Index,,,,,,,,
+
+US hard data surprise index,CESIUSH Index,,,,,,,,
+
+US soft data surprise index,CESIUSS Index,,,,,,,,
+
+US atlanta GDP now,GDGCAFJP Index,,,,,,,,
+
+USA single family housing starts,nhsps1 Index,,,,,,,,
+
+Housing permits,nhspa1 Index,,,,,,,,
+
+Canada CPI,CACPIYOY Index,,,,,,,,
+
+Common core,CACPCYOY Index,,,,,,,,
+
+EA construction output,EUCPTWDY Index,,,,,,,,
+
+UK CPI,UKRPCJYR Index,,,,,,,,
+
+UK retail sales,UKRVAMOM Index,,,,,,,,
+
+UK retail sales ex Auto fuel,UKRVAYOY Index,,,,,,,,
+
+EA current account,EUSATOTN Index,,,,,,,,
+
+Poland wage,POWGYOY Index,,,,,,,,
+
+employment growth,POEYYOY Index,,,,,,,,
+
+Sweden CPI,SWCPUIFY Index,,,,,,,,
+
+Sweden CPI ex energy,SWCPIFY Index,,,,,,,,
+
+South africa CPI,SACPIYOY Index,,,,,,,,
+
+South africa CPI core,SCP8EPNY Index,,,,,,,,
+
+Japan export increase,JNTBEXPY Index,,,,,,,,
+
+Japan import,JNTBIMPY Index,,,,,,,,
+
+Trade balance,JNTBALA Index,,,,,,,,
+
+Japan machine order,JNMOCHNG Index,,,,,,,,
+
+Japan core machine order,JNMOYOY Index,,,,,,,,
+
+USA NAHB housing market index,USHBMIDX Index,,,,,,,,
+
+USA empire,EMPRGBCI Index,,,,,,,,
+
+new orders,EMPRNEWO Index,,,,,,,,
+
+turkey housing price,TUHPTOTY Index,,,,,,,,
+
+German ZEW current situation,GRZECURR Index,,,,,,,,
+
+expection,GRZEWI Index,,,,,,,,
+
+UK average weekly earning,UKAWXTOM Index,,,,,,,,
+
+AWE total,UKAWMWHO Index,,,,,,,,
+
+ILO unemployment rate,UKUEILOR Index,,,,,,,,
+
+claimant count rate,UKUER Index,,,,,,,,
+
+Jobless claims change,UKUEMOM Index,,,,,,,,
+
+Employment change,UKLFEMCH Index,,,,,,,,
+
+Sweden unemployment rate,SWUESART Index,,,,,,,,
+
+EU new car registration,WCAR25 Y Index,,,,,,,,
+
+new car registration MAV,WCAREU25 Index,,,,,,,,
+
+Citi earning revision indices ERI global,CGERGLOB Index,,,,,,,,
+
+ERI DM,CGERGLDM Index,,,,,,,,
+
+ERI DM,CGERGLEM Index,,,,,,,,
+
+ERI US,CGERUSA1 Index,,,,,,,,
+
+ERI EU ex UK,CGEREUXU Index,,,,,,,,
+
+ERI UK,CGERUKUK Index,,,,,,,,
+
+ERI Japan,CGERJAPN Index,,,,,,,,
+
+ERI pacific ex Japan,CGERAPXJ Index,,,,,,,,
+
+ERI global financials,CGERGLFN Index,,,,,,,,
+
+ERI EM financial,CGEREMFN Index,,,,,,,,
+
+ERI US financials,CGERUSFN Index,,,,,,,,
+
+ERI EU ex UK financials,CGEREXFN Index,,,,,,,,
+
+ERI UK financial,CGERUKFN Index,,,,,,,,
+
+ERI Japan Financials,CGERJPFN Index,,,,,,,,
+
+Russia industrail production,RUIPRNYY Index,,,,,,,,
+
+Indonesia export,IDEXPY Index,,,,,,,,
+
+Import,IDIMPTLY Index,,,,,,,,
+
+Trade balance,IDBALTOL Index,,,,,,,,
+
+Thailand GDP,THG PQQ Index,,,,,,,,
+
+yoy,THG PQY Index,,,,,,,,
+
+Singapore exports non oil domestic,SIEXNON% Index,,,,,,,,
+
+Electronic expotrs,SIEXEYOY Index,,,,,,,,
+
+UK right move,UKRMNAPM Index,,,,,,,,
+
+Baker huges crude oil and natural gas,BAKETOT Index,,,,,,,,
+
+crude oil,BAKEOIL Index,,,,,,,,
+
+natural gas,BAKEGAS Index,,,,,,,,
+
+Canada BOC outlook,BCBSPC1 Index,,,,,,,,
+
+future sales,BCBSFUTR Index,,,,,,,,
+
+senior loan officer,BOCLOVER Index,,,,,,,,
+
+USA survey of professional forecaster LT inflation,,,,,,,,,
+
+Philadelphia Survey of Professional Forecasters 10y CPI Projection,PHFFCPI1 Index,,,,,,,,
+
+USA uni michigan confidence,CONSSENT Index,,,,,,,,
+
+current conditions,CONSCURR Index,,,,,,,,
+
+USA industrial production,IP YOY Index,,,,,,,,
+
+USA retail sales,RSTAABG% Index,,,,,,,,
+
+headline,RSTAMOM Index,,,,,,,,
+
+Czech CPI,CZCPYOY Index,,,,,,,,
+
+Monetary policy relevant inflation,CZCIMPY Index,,,,,,,,
+
+Turkey inflation expectation,TUES01EU Index,,,,,,,,
+
+EA employment,EMEMULQQ Index,,,,,,,,
+
+EA trade balance,XTSBEZ Index,,,,,,,,
+
+Poland CPI,POCPIYOY Index,,,,,,,,
+
+Poland GDP,POGDQOQ Index,,,,,,,,
+
+Slovakia GDP,SKGDLYOY Index,,,,,,,,
+
+Slovakia industrial orders,SLIOINYY Index,,,,,,,,
+
+Slovakia CPI,SLCPLYOY Index,,,,,,,,
+
+Hungary GDP,HUGSTQ Index,,,,,,,,
+
+Czech GDP,CZGDPSAQ Index,,,,,,,,
+
+Turkey current account,TUCALNEW Index,,,,,,,,
+
+Turkey home sales,TRHSYY Index,,,,,,,,
+
+Finland monthly gdp,FIGPNIY Index,,,,,,,,
+
+USA bloomberg consumer confidence,COMFCOMF Index,,,,,,,,
+
+USA CPI ex food energy,CPUPXCHG Index,,,,,,,,
+
+yoy,CPI XYOY Index,,,,,,,,
+
+CPI SA mom,CPI CHNG Index,,,,,,,,
+
+super core ex food energy and shelter,CPUPNFES Index,,,,,,,,
+
+food,CPRFFOOD Index,,,,,,,,
+
+energy,CPRPENER Index,,,,,,,,
+
+gasoline,CPRTGAS Index,,,,,,,,
+
+core commodities,CPRPCXFE Index,,,,,,,,
+
+USA initial claims,INJCJC Index,,,,,,,,
+
+4 weeks moving average,INJCJC4 Index,,,,,,,,
+
+Ireland property prices,IHPIRPPY Index,,,,,,,,
+
+hungary CPI,HUCPIYY Index,,,,,,,,
+
+Turkey IP,TUIOWDYY Index,,,,,,,,
+
+Australia consumer inflation,MECCTRIM Index,,,,,,,,
+
+UK RICS,UKRXPBAL Index,,,,,,,,
+
+India IP,INPIINDY Index,,,,,,,,
+
+India CPI,INFUTOTY Index,,,,,,,,
+
+Brazil retail sales,BZRTRYOY Index,,,,,,,,
+
+South africa retail sales,SARSCONY Index,,,,,,,,
+
+EA IP,EUIPEMUY Index,,,,,,,,
+
+Brazil consumer confidence,BZFGCCSA Index,,,,,,,,
+
+Ireland HICP,IECPEUIY Index,,,,,,,,
+
+,,,,,,,,,
+
+Australia,,,,,,,,,
+
+Australia job advertise,AULFANTC Index,,,,,,,,
+
+Australia building approval,AUBAY Index,,,,,,,,
+
+Australia consumer confidence,WMCCCONS Index,,,,,,,,
+
+Australia corelogic house prices,RPAUMED Index,,,,,,,,
+
+Australia GDP,AUNAGDPY Index,,,,,,,,
+
+Australia house price,AURHQOQ Index,,,,,,,,
+
+Australia job vacancy,AUEMCHGE Index,,,,,,,,
+
+NAB business confidence,NABSCONF Index,,,,,,,,
+
+trade balance,AUITGSB Index,,,,,,,,
+
+manu pmi,MPMIATMA Index,,,,,,,,
+
+,,,,,,,,,
+
+Bank de france business confidence,FRBSI Index,,,,,,,,
+
+,,,,,,,,,
+
+Brazil,,,,,,,,,
+
+Brazil budget balance increase,BZBGPRIM Index,,,,,,,,
+
+composite pmi,MPMIBRCA Index ,,,,,,,,
+
+consumer confidence,BZFGCCSA Index,,,,,,,,
+
+CPI FGV,IBREGPMY Index,,,,,,,,
+
+CPI IPCA,BZPIIPCY Index,,,,,,,,
+
+GDP,BZGDQOQ% Index,,,,,,,,
+
+IP,BZIPYOY% Index,,,,,,,,
+
+manu PMI,MPMIBRMA Index ,,,,,,,,
+
+Net debt %gdp,BZDPNDT% Index,,,,,,,,
+
+retail sales,BZRTRYOY Index,,,,,,,,
+
+service pmi,MPMIBRSA Index ,,,,,,,,
+
+,,,,,,,,,
+
+Canada,,,,,,,,,
+
+CPI,CACPIYOY Index,,,,,,,,
+
+employment,CANLNETJ Index,,,,,,,,
+
+full time employment,CANLFLNC Index,,,,,,,,
+
+part time employment,CANLPTNC Index,,,,,,,,
+
+unemployment rate,CANLXEMR Index,,,,,,,,
+
+hourly wages permanent employees,CAHEPERM Index,,,,,,,,
+
+participation rate,CANLPRTR Index,,,,,,,,
+
+GDP monthly,CAGDPMOM Index,,,,,,,,
+
+GDP monthly yoy,CAGDPYOY Index,,,,,,,,
+
+GDP quarterly,CGE9ANN Index,,,,,,,,
+
+housing starts,CAHSTOTL Index,,,,,,,,
+
+labour productivity,CALPPROD Index,,,,,,,,
+
+manu pmi,MPMICAMA Index ,,,,,,,,
+
+new house increase,CAHUYOY Index,,,,,,,,
+
+retail sales,CARSCHNG Index,,,,,,,,
+
+retail sales yoy,CARSYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+Chile,,,,,,,,,
+
+IMCE Business confidence,CHBCIMCE Index,,,,,,,,
+
+CPI,CLINNSYO Index,,,,,,,,
+
+Export,CHTBEXPM Index,,,,,,,,
+
+imports,CHTBIMPM Index,,,,,,,,
+
+trade balance,CHTBBALM Index,,,,,,,,
+
+GDP,CLGDPNA% Index,,,,,,,,
+
+IP,CHIPTOTY Index,,,,,,,,
+
+Manu,CHIPMFGY Index,,,,,,,,
+
+Manu pmi,N228VFM@EMERGELA,,,,,,,,
+
+Monthly activity indicator,CLIMYOYN Index,,,,,,,,
+
+Monthly activity indicator mom,CLIMMOMS Index,,,,,,,,
+
+retail sales,CLRTRYOY Index,,,,,,,,
+
+Unemployment rate,CHUETOTL Index,,,,,,,,
+
+Wage growth,CHHNYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+China,,,,US,,,,Global trade volumes,MWT VWT Index
+
+Aggregate financing,CNLNASF Index,,,Conf coard consumer confidence,CONCCONF Index,,,Advanced economies real export,MWT VEAD Index
+
+new yuan loan,CNLNNEW Index,,,present situation,CONCPSIT Index,,,EM real export,MWT VEEM Index
+
+M1,CNMS1YOY Index,,,expectation,CONCEXP Index,,,Advanced economies real import,MWT VIAD Index
+
+CAI,GSCNCAI Index,,,Dallas fed serv outlook,DSERRVCC Index,,,Emerging real import,MWT VIEM Index
+
+Caixin composite pmi,MPMICNCA Index ,,,Employment,DSEREMCC Index,,,Numura asia export leading,NMEIXLI Index
+
+service PMI,MPMICNSA Index ,,,Hours worked,DSERHRCC Index,,,OECD leading indicator,OEOTKLAC Index
+
+Credit impulse,CHBGREVO Index,,,Wages and benefits,DSERWGCC Index,,,,
+
+yoy change of rate,CHBGREVA Index,,,Input prices,DSERIPCC Index,,,,
+
+Export,CNFREXPY Index,,,Texas manu outlook,DFEDGBA Index,,,,
+
+Import,CNFRIMPY Index,,,Production,DFEDPROD Index,,,,
+
+Trade balance,CNFRBAL$ Index,,,Capacity utilisation,DFEDCAPU Index,,,,
+
+Fixed assets investment,CNFAYOY Index,,,New orders,DFEDVNO Index,,,,
+
+Property investment,CHRXCINY Index,,,JOLT job opening,JOLTOPEN Index,,,,
+
+FLP manu pmi,CPMINDX Index ,,,Job quits rate,JOLTQUIS Index,,,,
+
+FLP nonmanu pmi,CPMINMAN Index ,,,Kansas manu fed survy,KCLSSACI Index,,,,
+
+food inflation,CHBGFCPI Index,,,production,KCLSPROD Index,,,,
+
+GDP,CNGDPYOY Index,,,new orders,KCLSVORD Index,,,,
+
+GDP qoq,CNGDPQOQ Index,,,MNI Chicago,CHPMINDX Index ,,,,
+
+IP,CHVAIOY Index,,,NFIB capex plan,SBOICAPS Index,,,,
+
+Infrastruc index,CNFQINIV Index,,,actual,SBOICAPX Index,,,,
+
+Li Ke qiang index,CLKQINDX Index,,,sales expectation,SBOISALS Index,,,,
+
+Official gold reserve,CNGFGOLD Index,,,uncertainty,SBOIUNCR Index,,,,
+
+China PPI,CHEFTYOY Index,,,NFIB headline,SBOITOTL Index,,,,
+
+CPI,CNCPIYOY Index,,,expect better,SBOIBUSC Index,,,,
+
+Retail sales,CNRSCYOY Index,,,NFIB job report,SBOICOMP Index,,,,
+
+SME confidence SC,SCCNSMEI Index,,,Plan to hire,SBOIHIRE Index,,,,
+
+business expectations,SCCNOUTL Index,,,job openings hard to fill,SBOIEMPL Index,,,,
+
+Copper end use tracker,CIGMCCET Index,,,few or no qualified app,SBOIQAJB Index,,,,
+
+,,,,NY Fed inflation,NYCNM3IR Index,,,,
+
+Czech,,,,1 year ahead,NYCNM1IR Index,,,,
+
+Business confidence,CZCCBUS Index,,,Phili fed,OUTFGAF Index,,,,
+
+consmer confidence,CZCCCON Index,,,New orders,OUTFNOF Index,,,,
+
+CPI,CZCPYOY Index,,,shipment,OUTFSHF Index,,,,
+
+Monetary policy relevant,CZCIMPY Index,,,Richmond service sector survey,RCSSSREV Index,,,,
+
+GDP,CZGDPSAQ Index,,,demand,RCSSCSDE Index,,,,
+
+IP,CZIPITYY Index,,,SP corelogic CS,SPCSUSAY Index,,,,
+
+construction output,CZCSYOY Index,,,20 largest,SPCS20Y% Index,,,,
+
+Manu pmi,MPMICZMA Index ,,,,,,,,
+
+Retail sales ex auto,CZRSXYOY Index,,,,,,,,
+
+Wage growth,CZRWYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+EU,,,,,,,,,
+
+Siren,DBSRMEA Index,,,,,,,,
+
+composite pmi,MPMIEUCA Index ,,,,,,,,
+
+manu pmi,MPMIEUMA Index ,,,,,,,,
+
+New car registration,WCAR25 Y Index,,,,,,,,
+
+service pmi,MPMIEUSA Index ,,,,,,,,
+
+CAI,GSEACAI Index,,,,,,,,
+
+Construction output,EUCPTWDY Index,,,,,,,,
+
+consumer conf,EUCCEMU Index,,,,,,,,
+
+current account,EUSATOTN Index,,,,,,,,
+
+eu commission survey,EUESEMU Index,,,,,,,,
+
+business climate,EUBCI Index,,,,,,,,
+
+HICP,ECCPEST Index,,,,,,,,
+
+core,CPEXEMUY Index,,,,,,,,
+
+GDP,EUGNEMUQ Index,,,,,,,,
+
+IP,EUITEMUM Index,,,,,,,,
+
+Loans to non financial corporates,MFIKNFGS Index,,,,,,,,
+
+retail sales,RSSAEMUM Index,,,,,,,,
+
+trade balance,XTSBEZ Index,,,,,,,,
+
+Unemployment rate,UMRTEMU Index,,,,,,,,
+
+composite pmi,MPMIEZCA Index,,,,,,,,
+
+Sentix,SNTEEUGX Index,,,,,,,,
+
+,,,,,,,,,
+
+Finland,,,,,,,,,
+
+Monthly GDP,FIGPNIY Index,,,,,,,,
+
+,,,,,,,,,
+
+France,,,,,,,,,
+
+Composite PMI,MPMIFRCA Index,,,,,,,,
+
+manu pmi,MPMIFRMA Index,,,,,,,,
+
+service pmi,MPMIFRSA Index,,,,,,,,
+
+consumer conf,FRCCO Index,,,,,,,,
+
+HICP,FRCPEECY Index,,,,,,,,
+
+IP,FPIPYOY Index,,,,,,,,
+
+Manu IP,FRMPYOY Index,,,,,,,,
+
+INSEE bus conf,INSECOMP Index,,,,,,,,
+
+Manu,INSESYNT Index,,,,,,,,
+
+Servives,INSESERV Index,,,,,,,,
+
+general production exp,INSESURV Index,,,,,,,,
+
+,,,,,,,,,
+
+,,,,,,,,,
+
+,,,,,,,,,
+
+German,,,,,,,,,
+
+Consumer conf,ECO1GFKC Index,,,,,,,,
+
+ZEW,GRZECURR Index,,,,,,,,
+
+expectation,GRZEWI Index,,,,,,,,
+
+composite pmi,MPMIDECA Index,,,,,,,,
+
+manu pmi,MPMIDEMA Index,,,,,,,,
+
+service pmi,MPMIDESA Index,,,,,,,,
+
+Export,GRTBEXE Index,,,,,,,,
+
+import,GRTBIME Index,,,,,,,,
+
+factory orders,GRIORTYY Index,,,,,,,,
+
+domestic factory orders,GRIORDYY Index,,,,,,,,
+
+IFO,GRIFPBUS Index,,,,,,,,
+
+expectations,GRIFPEX Index,,,,,,,,
+
+current assessment,GRIFPCA Index,,,,,,,,
+
+IFO services,GRIFPDRE Index,,,,,,,,
+
+IFO construction,GRIFPCON Index,,,,,,,,
+
+wholesale,GRIFPWHL Index,,,,,,,,
+
+IP,GEINYY Index,,,,,,,,
+
+saxony cpi,GRCP2SAY Index,,,,,,,,
+
+unemployment change,GRUECHNG Index,,,,,,,,
+
+unemployment rate,GRUEPR Index,,,,,,,,
+
+Sentix,SNTEDEGX Index,,,,,,,,
+
+,,,,,,,,,
+
+Greece,,,,,,,,,
+
+Manu pmi,MPMIGRMA Index ,,,,,,,,
+
+,,,,,,,,,
+
+Hongkong,,,,,,,,,
+
+retail sales,HKRSVONY Index,,,,,,,,
+
+Whole econ pmi,MPMIHKWA Index ,,,,,,,,
+
+,,,,,,,,,
+
+Hungary,,,,,,,,,
+
+consumer conf,HUCCINDX Index,,,,,,,,
+
+bus conf,HUBCINDX Index,,,,,,,,
+
+CPI,HUCPIYY Index,,,,,,,,
+
+GDP,HUGSTQ Index,,,,,,,,
+
+IP,HUIPIYOY Index,,,,,,,,
+
+Retail sales,HURTAYOY Index,,,,,,,,
+
+Unemployment,HUEMUNR Index,,,,,,,,
+
+Wage growth,HUGWLYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+India,,,,,,,,,
+
+Composite pmi,MPMIINCA Index ,,,,,,,,
+
+CPI,INFUTOTY Index,,,,,,,,
+
+GDP,IGQREGDY Index,,,,,,,,
+
+IP,INPIINDY Index,,,,,,,,
+
+Manu pmi,MPMIINMA Index ,,,,,,,,
+
+service pmi,MPMIINSA Index ,,,,,,,,
+
+,,,,,,,,,
+
+Indonesia,,,,,,,,,
+
+CPI,IDCPIY Index,,,,,,,,
+
+Core,IDIFCRIY Index,,,,,,,,
+
+Export,IDEXPY Index,,,,,,,,
+
+Import,IDIMPTLY Index,,,,,,,,
+
+Trade balance,IDBALTOL Index,,,,,,,,
+
+GDP,IDGDPY Index,,,,,,,,
+
+Manu pmi,MPMIIDMA Index ,,,,,,,,
+
+,,,,,,,,,
+
+Ireland,,,,,,,,,
+
+Composite pmi,MPMIIECA Index ,,,,,,,,
+
+Construction pmi,MPMIIEXA Index ,,,,,,,,
+
+consumer conf,IECSINDX Index,,,,,,,,
+
+econ pulse,IRPUECO Index,,,,,,,,
+
+GDP,IEGRPYOY Index,,,,,,,,
+
+HICP,IECPEUIY Index,,,,,,,,
+
+IP,IEIPIYOY Index,,,,,,,,
+
+Manu pmi,MPMIIEMA Index ,,,,,,,,
+
+Property prices,IHPIRPPY Index,,,,,,,,
+
+retail sales,IERSVYOY Index,,,,,,,,
+
+service pmi,MPMIIESA Index,,,,,,,,
+
+Unemployment rate,IEUERT Index,,,,,,,,
+
+,,,,,,,,,
+
+Italy,,,,,,,,,
+
+composite pmi,MPMIITCA Index ,,,,,,,,
+
+construction pmi,MPMIITXA Index ,,,,,,,,
+
+econ sentiment,ITESECSE Index,,,,,,,,
+
+cons conf,ITPSSA Index,,,,,,,,
+
+manu conf,ITBCI Index,,,,,,,,
+
+gdp,ITPIRLYS Index,,,,,,,,
+
+HICP,ITCPEY Index,,,,,,,,
+
+Industrial orders,ITORTOTY Index,,,,,,,,
+
+sales,ITISTOTY Index,,,,,,,,
+
+IP,ITPRWAY Index,,,,,,,,
+
+manu pmi,MPMIITMA Index,,,,,,,,
+
+new car registration,ITVHYOY Index,,,,,,,,
+
+retail sales,ITNSTY Index,,,,,,,,
+
+service pmi,MPMIITSA Index ,,,,,,,,
+
+unemployment rate,ITMUURS Index,,,,,,,,
+
+wage growth,ITNHYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+Japan,,,,,,,,,
+
+laborcash earning,JNLSUCTL Index,,,,,,,,
+
+real,JNLSUCRE Index,,,,,,,,
+
+composite pmi,MPMIJPCA Index,,,,,,,,
+
+cons conf,JCOMSHCF Index,,,,,,,,
+
+Core machine orders,JNMOYOY Index,,,,,,,,
+
+CPI,JNCPIYOY Index,,,,,,,,
+
+Core CPI,JCPNEFFE Index,,,,,,,,
+
+Eco watcher ( current conditions),JWCOOVSA Index,,,,,,,,
+
+outlook,JWEXOVSA Index,,,,,,,,
+
+Export,JNTBEXPY Index,,,,,,,,
+
+import,JNTBIMPY Index,,,,,,,,
+
+trade balance,JNTBALA Index,,,,,,,,
+
+housing start,JNHSYOY Index,,,,,,,,
+
+IP,JNIPMOM Index,,,,,,,,
+
+Machine tool orders,JNMTOY Index,,,,,,,,
+
+manu pmi,MPMIJPMA Index,,,,,,,,
+
+retail sales,JNNETYOY Index,,,,,,,,
+
+service pmi,MPMIJPSA Index,,,,,,,,
+
+Tankan,JNTSMFG Index,,,,,,,,
+
+Tankan service companies,JNTSNMFG Index,,,,,,,,
+
+Tokyo CPI,JNCPT Index,,,,,,,,
+
+CPI ex food energy,JCPTEFFE Index,,,,,,,,
+
+Unemployment rate,JNUE Index,,,,,,,,
+
+Job - to-applicat ratio,JBTARATE Index,,,,,,,,
+
+,,,,,,,,,
+
+Chile,,,,,,,,,
+
+Manu pmi,N228VFM@EMERGELA,,,,,,,,
+
+,,,,,,,,,
+
+Mexico,,,,,,,,,
+
+CPI,MXBWYOY Index,,,,,,,,
+
+Core,MXBWCORY Index,,,,,,,,
+
+IP,MXIPTYOY Index,,,,,,,,
+
+Manu Prod,MXIPFYOY Index,,,,,,,,
+
+GDP,IGAEYOY Index,,,,,,,,
+
+GDP quarterly,MXGCTOT Index,,,,,,,,
+
+Retail sales,MXWRTRYO Index,,,,,,,,
+
+Unemployment rate,MXUEUNSA Index,,,,,,,,
+
+wage growth,MXNSNOML Index,,,,,,,,
+
+,,,,,,,,,
+
+New zealand,,,,,,,,,
+
+Cons conf,NZANCCT Index,,,,,,,,
+
+CPI,NZCPIYOY Index,,,,,,,,
+
+Employment change,NZLFYOY Index,,,,,,,,
+
+Unemployment rate,NZLFUNER Index,,,,,,,,
+
+participation rate,NZLFPART Index,,,,,,,,
+
+wage growth,NZLCPQ Index,,,,,,,,
+
+GDP,NZNTGDPY Index,,,,,,,,
+
+house price,QVNZTOTY Index,,,,,,,,
+
+Inflation expectation,NZIFRBY2 Index,,,,,,,,
+
+1y,NZIFRBY1 Index,,,,,,,,
+
+retail sales,NZRREXIN Index,,,,,,,,
+
+,,,,,,,,,
+
+Norway,,,,,,,,,
+
+cons conf,NOCONF Index,,,,,,,,
+
+CPI underlying,NOCPULYY Index,,,,,,,,
+
+CPI headline,NOCPIYOY Index,,,,,,,,
+
+DNB PMI,NOPMISA Index,,,,,,,,
+
+New orders,NOPMOR Index,,,,,,,,
+
+GDP,NOGDCOSQ Index,,,,,,,,
+
+GDP mainland,NOGDMQQ Index,,,,,,,,
+
+house prices,NOHITOSM Index,,,,,,,,
+
+IP,NOIPOYOY Index,,,,,,,,
+
+retail sales,NORSXVNY Index,,,,,,,,
+
+unemployment rate,NOLBRATE Index,,,,,,,,
+
+,,,,,,,,,
+
+Poland,,,,,,,,,
+
+construction output,POOSCYOY Index,,,,,,,,
+
+CPI,POCPIYOY Index,,,,,,,,
+
+GDP,POGDYOY Index,,,,,,,,
+
+IP,POISCYOY Index,,,,,,,,
+
+manu pmi,MPMIPLMA Index,,,,,,,,
+
+retail sales,PORSYOY Index,,,,,,,,
+
+Unemployment rate,POUER Index,,,,,,,,
+
+wage growth,POWGYOY Index,,,,,,,,
+
+employment growth,POEYYOY Index,,,,,,,,
+
+,,,,,,,,,
+
+Russia,,,,,,,,,
+
+Composite pmi,MPMIRUCA Index,,,,,,,,
+
+Construction output,RUCCBRYY Index,,,,,,,,
+
+Cons conf,RUCNCNCF Index,,,,,,,,
+
+CPI,RUCPIYOY Index,,,,,,,,
+
+core,RUCPBIYY Index,,,,,,,,
+
+IP,RUIPRNYY Index,,,,,,,,
+
+International reserves,RUFGGFML Index,,,,,,,,
+
+manu pmi,MPMIRUMA Index,,,,,,,,
+
+Unemployment rate,RUUER Index,,,,,,,,
+
+Vihicle sales,RUAUTTYY Index,,,,,,,,
+
+,,,,,,,,,
+
+Singapore,,,,,,,,,
+
+non-oil export,SIEXNON% Index,,,,,,,,
+
+electronic export,SIEXEYOY Index,,,,,,,,
+
+gdp,SGDPYOY Index,,,,,,,,
+
+IP,SIIPYOY% Index,,,,,,,,
+
+,,,,,,,,,
+
+,,,,,,,,,
+
+Slovakia,,,,,,,,,
+
+real wage,SLWIIYOY Index,,,,,,,,
+
+cons conf,SKCCCONC Index,,,,,,,,
+
+CPI,SLCPLYOY Index,,,,,,,,
+
+current account balance,SLCAEUR Index,,,,,,,,
+
+gdp,SKGDLYOY Index,,,,,,,,
+
+industrial conf,SKCCINDC Index,,,,,,,,
+
+industrial orders,SLIOINYY Index,,,,,,,,
+
+IP,SLPRYOYA Index,,,,,,,,
+
+construction output,SLPCIYOY Index,,,,,,,,
+
+retail sales,SLRTTXAY Index,,,,,,,,
+
+unemployment rate,SLUER Index,,,,,,,,
+
+,,,,,,,,,
+
+South africa,,,,,,,,,
+
+cons conf,SACWC Index,,,,,,,,
+
+CPI,SACPIYOY Index,,,,,,,,
+
+Core CPI,SCP8EPNY Index,,,,,,,,
+
+Current Account balance,SACTGDP Index,,,,,,,,
+
+GDP,SAGDPYOY Index,,,,,,,,
+
+manu prod,SFPMNSAY Index,,,,,,,,
+
+private credit,SACEIYY Index,,,,,,,,
+
+retail sales,SARSCONY Index,,,,,,,,
+
+unemployment rate,SAUERATQ Index,,,,,,,,
+
+Whole economy pmi,MPMIZAWA Index,,,,,,,,
+
+,,,,,,,,,
+
+South korea,,,,,,,,,
+
+Cons conf,KOCCCSI Index,,,,,,,,
+
+CPI,KOCPIYOY Index,,,,,,,,
+
+Export,KOTBEXPY Index,,,,,,,,
+
+GDP,KOGDPYOY Index,,,,,,,,
+
+Industrial,KOIPIY Index,,,,,,,,
+
+IP,KOIPIY Index,,,,,,,,
+
+manu pmi,MPMIKRMA Index,,,,,,,,
+
+Unemployment rate,KOEAUERS Index,,,,,,,,
+
+,,,,,,,,,
+
+Spain,,,,,,,,,
+
+Composite pmi,MPMIESCA Index,,,,,,,,
+
+HICP,SPCPEUYY Index,,,,,,,,
+
+manu pmi,MPMIESMA Index,,,,,,,,
+
+service pmi,MPMIESSA Index,,,,,,,,
+
+unemployment change,SPUECHNG Index,,,,,,,,
+
+,,,,,,,,,
+
+Sweden,,,,,,,,,
+
+House price,SWRLPRIC Index,,,,,,,,
+
+CPI,SWCPUIFY Index,,,,,,,,
+
+CPI ex energy,SWCPIFY Index,,,,,,,,
+
+household consumption,SWHOWDAY Index,,,,,,,,
+
+Household lending,SWLEMFIY Index,,,,,,,,
+
+IP,SEIBPVMY Index,,,,,,,,
+
+private sector production,SEIBPVPY Index,,,,,,,,
+
+service sector ex finance,SEIBPVSY Index,,,,,,,,
+
+KI servy,SWETSURV Index,,,,,,,,
+
+cons conf,SWETCI Index,,,,,,,,
+
+manu conf,SWETCIM Index,,,,,,,,
+
+manu pmi,PMISSURV Index,,,,,,,,
+
+ppi,SWPPIYOY Index,,,,,,,,
+
+private non manu wages,SWWGNMIY Index,,,,,,,,
+
+retail sales,SWRSIYOY Index,,,,,,,,
+
+service pmi,PMSSSURS Index,,,,,,,,
+
+unemployment rate,SWUESART Index,,,,,,,,
+
+,,,,,,,,,
+
+Switzerland,,,,,,,,,
+
+CPI,SZCPIYOY Index,,,,,,,,
+
+Core PCI,SZEXIYOY Index,,,,,,,,
+
+GDP,SZGRGDPY Index,,,,,,,,
+
+,,,,,,,,,
+
+ 

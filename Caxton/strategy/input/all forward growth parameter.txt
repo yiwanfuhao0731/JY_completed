@@ -1,0 +1,995 @@
+Australia,,,,,,,,
+
+Gauge tree,,,,,,,,
+
+"GS current activity index, ",,,,,,,,
+
+"??? Personal consumption expenditure, weight = 0.54",,,,,,,,
+
+"?   ??? AUS : stock price index, weight = 2.0",,,,,,,,
+
+"?   ??? Housing prices, existing homes, weight = 4.0",,,,,,,,
+
+"?   ??? Salary, weight = 3.0",,,,,,,,
+
+"?   ?   ??? Average weekly hours worked, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Average hourly earnings, regular pay, weight = 2.0",,,,,,,,
+
+"?   ?   ??? Employment, weight = 1.0",,,,,,,,
+
+"?   ??? Mortgage loans approved, ex remortgaging, as %GDP, weight = 2.0",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 2.0",,,,,,,,
+
+"?   ??? Total debt servicing multiply mortgage rate, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment (residential), weight = 0.05",,,,,,,,
+
+"?   ??? Mortgages rates , weight = 1.0",,,,,,,,
+
+"?   ??? Mortgage loans approved, ex remortgaging, as %GDP, weight = 1.0",,,,,,,,
+
+"?   ??? New home sales : detached houses, weight = 1.0",,,,,,,,
+
+"?   ??? Work started for dwellings, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment (non residential),ex. energy capex, weight = 0.09",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 5.0",,,,,,,,
+
+"?   ??? Composite business confidence, weight = 1.0",,,,,,,,
+
+"??? Capex in mining industry, weight = 0.02",,,,,,,,
+
+"?   ??? CRB Spot commodity price index: raw industrials, weight = 1.0",,,,,,,,
+
+"?   ??? Mineral exploration expenditure, weight = 1.0",,,,,,,,
+
+"?   ??? Mineral exploration : meters drilled, weight = 1.0",,,,,,,,
+
+"??? Export, weight = 0.22",,,,,,,,
+
+"    ??? Nominal effective exchange rates, weight = 1.0",,,,,,,,
+
+"    ??? Trade weighted average of partners CAI, weight = 2.0",,,,,,,,
+
+"    ??? CRB Spot commodity price index: raw industrials, weight = 1.0",,,,,,,,
+
+,,,,,,,,
+
+tickers,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1
+
+AUS,OECDNAQ:E193GDPC,haver,,AUS_RGDP_LOC_SAAR,EconDB,,geo,RGDP
+
+AUS,ANZ:AUSNHC,haver,,AUS_RGDP_FINALCONS_PRIV_LOC_SAAR,EconDB,,geo,PCE
+
+AUS,ANZ:AUSNXC,haver,,AUS_RGDP_EXP_,EconDB,,geo,Export
+
+AUS,ANZ:AUSNMC,haver,,AUS_RGDP_IMP_,EconDB,,geo,Import
+
+AUS,ANZ:AUSNFRC,haver,,AUS_RGDP_GROSSCAPFORM_FIXED_RESIDENTIAL_LOC_SA,EconDB,,geo,Investment_Residential
+
+AUS,ANZ:AUSNFPBC,haver,,AUS_RGDP_GROSSCAPFORM_FIXED_BUSINESS_LOC_SA,EconDB,,geo,Investment_nonResidential
+
+AUS,ANZ:AUSNBC,haver,,,,,,Investment_Chg_in_Inventory
+
+AUS,ANZ:AUSCARQ,haver,,AUS_NGDP_GROSSCAPFORM_CAPEX_MINING_LOC_SA,EconDB,,geo,Energy_Capex
+
+AUS,INTDAILY:S193AOR,haver,,AUS_EQUITY_ALL_ORDINARIES_PRICE_INDEX_1_NSA,EconDB,,geo,Equity
+
+AUS,AUS_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/AUS_10y_TRI,,,,,10Y_Gov_Bond
+
+AUS,ANZ:AURMORMS,haver,,AUS_MORT_MORTGAGEMANAGER_STANDARD_VARIABLE_RATE_EOP_NSA,EconDB,,geo,Mortgage_Rate_Standard_Average
+
+AUS,ANZ:AUNWH,haver,,,,,,Hours_Worked_Weekly
+
+AUS,AUS_WAGES_INDEX_SA,EconDB,,,,,,Hourly_Earnings
+
+AUS,ANZ:AUNWPI,haver,,,,,,Hours_Worked_Weekly_haver
+
+AUS,ANZ:AUSELE,haver,,AUS_EMPLOYMENT_TOTAL_SA,EconDB,,geo,Empl_Level
+
+AUS,ANZ:AUSFHMX,haver,,AUS_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_TOTAL_SA,EconDB,,geo,Mortgage_Approval_ex_Refinancing
+
+AUS,ANZ:AUSFCHSP,haver,,,,,,Mortgage_Loan
+
+AUS,ANZ:AUSFCS,haver,,,,,,credit_tot
+
+AUS,ANZ:AUSFCCO,haver,,AUS_BUS_CREDIT_LOC_SA,EconDB,,geo,credit_business
+
+AUS,ANZ:AUSNGDP,haver,,AUS_BOP_NGDP_SA,EconDB,,geo,NGDP
+
+AUS,INTDAILY:X111AUJ,haver,,AUS_FXUSD,EconDB,,geo,FX_USD
+
+AUS,AUS_HOUS_CORELOGIC_MEDIAN_CITY_VALUES_MOM_SA,EconDB,,,,,,Housing_Prices
+
+AUS,ANZ:AUSHNH,haver,,,,,,Housing_sales
+
+AUS,G10:S193HP,haver,,AUS_HOUS_HPI_REAL_INDEX_SA,EconDB,,geo,Housing_Permit
+
+AUS,AUS_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/AUS_trade_weighted_gdp,,,,,Trading_Partner_Growth
+
+AUS,AUS_IRS_5Y,EconDB,,,,,,IRS_5Y
+
+AUS,ANZ:AUNSSB5,haver,,,,,,Corporate_BBB_Spread_5Y
+
+AUS,INTDAILY:X111BAU,haver,,AUS_NEER,EconDB,,geo,FX_NEER
+
+AUS,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,Oil_Price_Brent
+
+AUS,AUS_CAI_GS,EconDB,,,,,,GS_CAI
+
+AUS,ANZ:AUNPPM,haver,,AUS_PPI_MANU_NSA,EconDB,,geo,PPI_Manufacturing
+
+AUS,G10:S193VCE,haver,,AUS_CONS_EXP_INDEX_SA,EconDB,,aris,Consumer_Confidence_Exp
+
+AUS,G10:S193VCC,haver,,AUS_CONS_CONF_INDEX_SA,EconDB,,aris,Consumer_Confidence
+
+AUS,G10:S193TRS,haver,,AUS_RSALES_NOM_VAL_SA,EconDB,,geo,Retail_Sales_ex_Auto_Fuel
+
+AUS,G10:N193DUM,haver,,,,,,Capacity_Utilisation_Manu
+
+AUS,ANZ:AUSVBCE,haver,,AUS_BUS_CONF_CAPEX_SA,EconDB,,aris,Survey_Capex
+
+AUS,ANZ:AUSVBF,haver,,AUS_BUS_CONF_FORWARD_ORDERS_NET_BALANCE_SA,EconDB,,aris,Survey_New_Order
+
+AUS,DAILY:PZRAW,haver,,USA_COM_CRB_SPOT_RAW_INDUSTRIALS_EOP_NSA,EconDB,,geo,Commodity_Price
+
+AUS,ANZ:AUNPMTA,haver,,AUS_COM_RBA_PRICES_ALLITEMS_LOC_NSA,EconDB,,geo,RBA_Commodity_Prices
+
+AUS,ANZ:AUSONE,haver,,AUS_NGDP_GROSSCAPFORM_CAPEX_MINERALEXPLORATION_LOC_SA,EconDB,,geo,Mineral_Exploration
+
+AUS,ANZ:AUSOND,haver,,AUS_NGDP_GROSSCAPFORM_CAPEX_MINERALEXPLORATION_METERDRILLED_LOC_SA,EconDB,,geo,Mineral_Exploration_Drilled
+
+,,,,,,,,
+
+transformations,,,,,,,,
+
+Param Table,trans1,trans2,smooth_front,,,,,
+
+Equity,252,252,1,,,,,
+
+10Y_Gov_Bond,252,600,1,,,,,
+
+Brent_LC_flip,252,252,1,,,,,
+
+Commodity_LC,252,252,1,,,,,
+
+RBA_Commodity_Prices,12,12,1,,,,,
+
+Mortgage_Rate_Standard_Average,12,12,1,,,,,
+
+FX_NEER,252,252,1,,,,,
+
+salary,12,12,1,,,,,
+
+Hours_Worked_Weekly,4,4,1,,,,,
+
+Hourly_Earnings,4,4,1,,,,,
+
+Empl_Level,12,12,1,,,,,
+
+Mortgage_Approval_pct_GDP,3,24,1,,,,,
+
+Mortgage_Loan,24,18,1,,,,,
+
+debt_servicing,6,6,1,,,,,
+
+Corporate_BBB_Spread_5Y,12,12,1,,,,,
+
+Housing_Prices,24,6,1,,,,,
+
+Housing_Permit,12,12,1,,,,,
+
+Housing_sales,1,12,1,,,,,
+
+Trading_Partner_Growth,3,24,1,,,,,
+
+PPI_Manufacturing,4,4,1,,,,,
+
+GS_CAI,1,6,1,,,,,
+
+Consumer_Confidence_Composite,1,12,1,,,,,
+
+Retail_Sales_ex_Auto_Fuel,12,12,1,,,,,
+
+Equity^Invest^,252,252,1,,,,,
+
+Capacity_Utilisation_Manu,1,4,1,,,,,
+
+Business_Confidence_Composite,1,12,1,,,,,
+
+IRS_5Y,252,252,1,,,,,
+
+Mineral_Exploration,4,4,1,,,,,
+
+Mineral_Exploration_Drilled,4,4,1,,,,,
+
+,,,,,,,,
+
+Canada,,,,,,,,
+
+Gauge tree,,,,,,,,
+
+"GS current activity index, ",,,,,,,,
+
+"??? Personal consumption expenditure, weight = 0.53",,,,,,,,
+
+"?   ??? CAN : stock price index, weight = 2.5",,,,,,,,
+
+"?   ??? Total return index of 10 year govt bond, weight = 0.5",,,,,,,,
+
+"?   ??? Housing prices, new houses, weight = 4.0",,,,,,,,
+
+"?   ??? Consumer confidence, nano, weight = 2.0",,,,,,,,
+
+"?   ??? Crude oil prices: west Canadian select, weight = 0.5",,,,,,,,
+
+"?   ??? Total wages: labor force survey, weight = 1.0",,,,,,,,
+
+"?   ??? Residential mortgage credit as percentage of GDP, weight = 1.0",,,,,,,,
+
+"?   ??? Trading partner gdp weighted CAI, weight = 0.0",,,,,,,,
+
+"??? Private fixed investment (residential), weight = 0.06",,,,,,,,
+
+"?   ??? Residential mortgage credit as percentage of GDP, weight = 1.0",,,,,,,,
+
+"?   ??? Residential building permits, units created, weight = 1.0",,,,,,,,
+
+"?   ??? Conventional mortgage lending rate: 5y, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment (non residential),ex. energy capex, weight = 0.08",,,,,,,,
+
+"?   ??? CAN : stock price index, weight = 1.0",,,,,,,,
+
+"?   ??? Trading partner gdp weighted CAI, weight = 1.0",,,,,,,,
+
+"?   ??? Retail sales value ex mortor vehicles & parts dealers, weight = 0.5",,,,,,,,
+
+"?   ??? Jpm capex tracker, weight = 1.0",,,,,,,,
+
+"?   ??? 5y IRS, weight = 1.0",,,,,,,,
+
+"?   ??? New orders: all manufacturing induxtries, weight = 1.0",,,,,,,,
+
+"?   ??? Consumer confidence, nano, weight = 0.5",,,,,,,,
+
+"?   ??? CFIB business barometer, weight = 1.0",,,,,,,,
+
+"?   ??? Capacity utilisation, industry, weight = 1.0",,,,,,,,
+
+"??? Capex in oil&gas extraction industry, weight = 0.01",,,,,,,,
+
+"?   ??? Crude oil: west canada select, weight = 1.0",,,,,,,,
+
+"?   ??? Rig count:hughes baker, weight = 1.0",,,,,,,,
+
+"??? Export, weight = 0.15",,,,,,,,
+
+"    ??? Trading partner gdp weighted CAI, weight = 2.0",,,,,,,,
+
+"    ??? Nominal effective exchange rates, weight = 1.0",,,,,,,,
+
+"    ??? Crude oil prices: west Canadian select, weight = 2.0",,,,,,,,
+
+,,,,,,,,
+
+ticker,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1
+
+CAN,OECDNAQ:E156GDPC,haver,,CAN_RGDP_LOC_SAAR,EconDB,,geo,RGDP
+
+CAN,CANADA:V6E05724,haver,,CAN_RGDP_FINALCONS_PRIV_LOC_SAAR2,EconDB,,geo,PCE
+
+CAN,CANADA:V6E05745,haver,,CAN_RGDP_EXP_LOC_SAAR,EconDB,,geo,Export
+
+CAN,CANADA:V6E05748,haver,,CAN_RGDP_IMP_LOC_SAAR,EconDB,,geo,Import
+
+CAN,CANADA:V6E05734,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_RESISTRUC_LOC_SAAR,EconDB,,geo,Investment_Residential
+
+CAN,CANADA:V6E05735,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_BUSNONIP_LOC_SAAR,EconDB,,geo,Investment_nonResidential_nonIP
+
+CAN,CANADA:V6E05738,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_BUSIP_LOC_SAAR,EconDB,,geo,Investment_nonResidential_IP
+
+CAN,CANADA:V1H61438,haver,,CAN_NGDP_GROSSCAPFORM_CAPEX_OILGAS_LOC_MIL_SA,EconDB,,geo,Energy_Capex_Nominal
+
+CAN,CANADA:V754048,haver,,CAN_NGDP_GROSSCAPFORM_CAPEX_OILGAS_LOC_MIL_SA2,EconDB,,geo,Energy_Capex_historic_Nominal
+
+CAN,CANADA:V6E07272,haver,,CAN_RGDP_IMPLICITPRICEDEF_MACHINERY_EQUIP_SA,EconDB,,geo,GDP_Deflater_Machinery_Equip
+
+CAN,INTDAILY:S156TOI,haver,,CAN_EQ,EconDB,,geo,Equity
+
+CAN,CAN_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/CAN_10y_TRI,,,,,10Y_Gov_Bond
+
+CAN,CANADA:DP00001,haver,,,,,,Mortgage_Rate_5Y
+
+CAN,G10:S156FCHM,haver,,,,,,Mortgage_Credit_Avg
+
+CAN,CANADA:V36415,haver,,CAN_HH_CREDIT_TOTAL_LOC_SA,EconDB,,geo,HH_Credit_Total
+
+CAN,OECDMEI:C156HWMN,haver,,,,,,Hours_Worked_Weekly
+
+CAN,CANADA:V3075014,haver,,,,,,Hourly_Earnings_haver
+
+CAN,CAN_WAGES_HOURLY_SA,EconDB,,,,,,Hourly_Earnings
+
+CAN,CANADA:V2062811,haver,,CAN_EMPL_LEVEL_SA,EconDB,,geo,Empl_Level
+
+CAN,CANADA:V1996471,haver,,CAN_WAGES_LOC_SA,EconDB,,geo,salary2
+
+CAN,CANADA:V6E05783,haver,,CAN_NGDP_LOC_SAAR,EconDB,,geo,NGDP
+
+CAN,G10:H156HG,haver,,CAN_HOUS_HPI_NOM_INDEX_SA,EconDB,,geo,Housing_Prices
+
+CAN,CANADA:V1L94117,haver,,CAN_BP_RESIDENTIAL_TOTAL_UNITS_SA,EconDB,,geo,Housing_Permit_Units
+
+CAN,CAN_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/CAN_trade_weighted_gdp,,,,,Trading_Partner_Growth
+
+CAN,CAN_IRS_5Y,EconDB,,,,,,IRS_5Y
+
+CAN,INTDAILY:X111BCA,haver,,CAN_NEER,EconDB,,geo,FX_NEER
+
+CAN,DAILY:PETEXA,haver,,,,,,Oil_Price_WTI
+
+CAN,USA_COM_WCS_CRUDE_OIL_SPOT_USD_NSA,EconDB,,,,,,Oil_Price_WCS
+
+CAN,INTDAILY:X156USB,haver,,CAN_FXUSD,EconDB,,geo,FX_USD
+
+CAN,CAN_CAI_GS,EconDB,,,,,,GS_CAI
+
+CAN,G10:S156TRSX,haver,,CAN_RSALES_NOM_EX_AUTO_SA,EconDB,,geo,Retail_Sales_ex_Auto_Fuel
+
+CAN,CANADA:V4331081,haver,,CAN_CU_TOTAL_SA,EconDB,,aris,Capacity_Utilisation_Manu
+
+CAN,OECDMEI:C156IZ,haver,,CAN_IP_EXP_CONS_SA,EconDB,,geo,Industrial_Production
+
+CAN,CAN_COM_RIG_COUNT_BAKER_HUGHES,EconDB,,,,,,Total_Rig_Count
+
+CAN,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM
+
+CAN,CAN_CONS_CONF_NANOS_INDEX_NSA,EconDB,,,,,,Consumer_Confidence_Nano
+
+CAN,CANADA:CFAA,haver,,CAN_BUS_CONF_BAROMETER_OBAL_NSA,EconDB,,aris,Business_Barometer
+
+CAN,CANADA:V800913,haver,,CAN_NO_MANU_LOC_SA,EconDB,,geo,Manufacturing_New_Orders
+
+,,,,,,,,
+
+Parameter,,,,,,,,
+
+Param Table,trans1,trans2,smooth_front,,,,,
+
+Equity,252,200,1,,,,,
+
+10Y_Gov_Bond,300,200,1,,,,,
+
+Equity^Invest^,252,200,1,,,,,
+
+Mortgage_Rate_5Y,12,10,1,,,,,
+
+FX_NEER,252,200,1,,,,,
+
+IRS_5Y,252,200,1,,,,,
+
+salary,12,10,1,,,,,
+
+Mortgage_Credit_Avg,12,5,1,,,,,
+
+Oil_LC,252,200,15,,,,,
+
+Housing_Prices,12,10,1,,,,,
+
+Retail_Sales_ex_Auto_Fuel,12,10,1,,,,,
+
+Capex_tracker_JPM,12,10,1,,,,,
+
+FX_NEER,252,200,1,,,,,
+
+IRS_5Y,600,200,1,,,,,
+
+GS_CAI,1,5,1,,,,,
+
+Trading_Partner_Growth,1,5,1,,,,,
+
+Housing_Permit_Units,1,10,1,,,,,
+
+Business_Barometer,1,10,1,,,,,
+
+Manufacturing_New_Orders,12,10,2,,,,,
+
+Capacity_Utilization,1,10,1,,,,,
+
+Consumer_Confidence_Nano,6,12,1,,,,,
+
+Total_Rig_Count,52,40,1,,,,,
+
+,,,,,,,,
+
+uk,,,,,,,,
+
+Gauge tree,,,,,,,,
+
+"GS current activity index, ",,,,,,,,
+
+"??? Personal consumption expenditure, weight = 0.58",,,,,,,,
+
+"?   ??? FTSE 100 index, weight = 2.0",,,,,,,,
+
+"?   ??? Total return index of 10 year govt bond, weight = 0.0",,,,,,,,
+
+"?   ??? National housing price index, weight = 2.5",,,,,,,,
+
+"?   ??? Salary, weight = 3.0",,,,,,,,
+
+"?   ?   ??? Employment, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Average weekly earnings, regular pay (=total salary/employment), weight = 1.0",,,,,,,,
+
+"?   ??? Brent oil, weight = 1.0",,,,,,,,
+
+"?   ??? Composite consumer confidence, weight = 3.0",,,,,,,,
+
+"?   ??? Nominal effective exchange rates, weight = 0.0",,,,,,,,
+
+"?   ??? Total debt servicing multiply mortgage rate, weight = 1.0",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 2.0",,,,,,,,
+
+"??? Private fixed investment (residential), weight = 0.03",,,,,,,,
+
+"?   ??? Mortgages: fixed rates: MFIs ex central bank, 5-year 75% ltv ratio, weight = 0.0",,,,,,,,
+
+"?   ??? Mortgages: variable rates: MFIs ex central bank, 2-year 75% ltv ratio, weight = 1.0",,,,,,,,
+
+"?   ??? Mortgage loans approved, ex remortgaging, as %GDP, weight = 1.0",,,,,,,,
+
+"?   ??? RICS survey: sales to stocks ratio, weight = 1.0",,,,,,,,
+
+"?   ??? Work started for dwellings, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment (non residential),ex. energy capex, weight = 0.09",,,,,,,,
+
+"?   ??? PMI : construction, weight = 1.0",,,,,,,,
+
+"?   ??? FTSE 100 index, weight = 1.0",,,,,,,,
+
+"?   ??? 5 year interest rate, weight = 1.0",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 2.5",,,,,,,,
+
+"?   ??? Retail sales, ex fuel, autos, weight = 0.0",,,,,,,,
+
+"?   ??? Composite consumer confidence, weight = 1.0",,,,,,,,
+
+"?   ??? Composite business confidence, weight = 2.0",,,,,,,,
+
+"?   ?   ??? European commission economic sentiment indicator, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Retail sector expected busines situation, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Services sector expected demand over next 3 months, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Lloyds business barometer: overall busines confidence, weight = 1.0",,,,,,,,
+
+"?   ??? JPM Capex tracker, weight = 1.0",,,,,,,,
+
+"??? Export in good, weight = 0.06",,,,,,,,
+
+"?   ??? Nominal effective exchange rates, weight = 1.0",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 3.0",,,,,,,,
+
+"??? Export in service, weight = 0.08",,,,,,,,
+
+"    ??? Nominal effective exchange rates, weight = 1.0",,,,,,,,
+
+"    ??? Trade weighted average of partners CAI, weight = 1.0",,,,,,,,
+
+,,,,,,,,
+
+ticker,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1
+
+GBR,OECDNAQ:E112GDPC,haver,,GBR_RGDP_LOC_SAAR,EconDB,,,RGDP
+
+GBR,UK:ABJRQ,haver,,GBR_RGDP_FINALCONS_PRIV_HOUSEHOLD_LOC_SA,EconDB,,,PCE
+
+GBR,UK:IKBKQ,haver,,GBR_RGDP_EXP_LOC_SA,EconDB,,,Export
+
+GBR,UK:BQKQQ,haver,,GBR_RGDP_EXP_GOOD_LOC_SA,EconDB,,,Export_Good
+
+GBR,UK:IKBEQ,haver,,GBR_RGDP_EXP_SERV_LOC_SA,EconDB,,,Export_Service
+
+GBR,UK:IKBLQ,haver,,GBR_RGDP_IMP_LOC_SA,EconDB,,,Import
+
+GBR,UK:DFEGQ,haver,,GBR_RGDP_GROSSCAPFORM_FIXED_DWELLINGS_LOC_SA,EconDB,,,Investment_Residential
+
+GBR,UK:NPELQ,haver,,GBR_RGDP_GROSSCAPFORM_FIXED_BUS_LOC_SA,EconDB,,,Business_Capex
+
+GBR,UK:CAFUQ,haver,,,,,,Investment_Chg_in_Inventory
+
+GBR,UK:DS3JQ,haver,,,,,,Investment_nonResidential_Energy
+
+GBR,INTDAILY:S112FT1,haver,,GBR_EQ,EconDB,,,Equity
+
+GBR,GBR_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/GBR_10y_TRI,,,,,10Y_Gov_Bond
+
+GBR,UK:UNBV42,haver,,GBR_MORT_RATE_AVERAGE_5Y_75LTV_NSA,EconDB,,aris,Mortgage_Rate_5Y
+
+GBR,UK:UNBV34,haver,,GBR_MORT_RATE_AVERAGE_2Y_75LTV_NSA,EconDB,,aris,Mortgage_Rate_2Y
+
+GBR,UK:MGRZ,haver,,GBR_EMPLOYMENT_TOTAL_3MMA_CENTRED_SA,EconDB,,,Total_Employment
+
+GBR,GBR_WAGES_LOC_SA,EconDB,,,,,,Average_Weekly_Earnings
+
+GBR,UK:KAI7,haver,,GBR_WAGES_LOC_SA,EconDB,,,Average_Weekly_Earnings_haver
+
+GBR,UK:USB4B5,haver,,GBR_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_LOC_SA,EconDB,,,Mortgage_Approval_ex_Refinancing
+
+GBR,GBR_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_HIGHST_LOC_SA,EconDB,,,,,,Mortgage_Approval_HighSt_ex_Refinancing
+
+GBR,UK:USVTVQ,haver,,GBR_HH_CREDIT_MORT_APPROVALS_TOTAL_LOC_SA,EconDB,,,Mortgage_Approval
+
+GBR,UK:USVTXK,haver,,GBR_HH_CREDIT_MORT_LOC_SA,EconDB,,,mortgage_lending
+
+GBR,UK:YBHAQ,haver,,GBR_BOP_NGDP_SA,EconDB,,,NGDP
+
+GBR,UK:UNRMIN,haver,,GBR_HOUS_HPI_RIGHT_MOVE_NSA,EconDB,,,Housing_Prices_Right_Move
+
+GBR,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,,,,,Housing_Prices_HPI
+
+GBR,G10:S112HG,haver,,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,,Housing_Prices_HPI_haver
+
+GBR,UK:URSHSSR,haver,,GBR_RICS_SALES_STOCK_RATIO_SA,EconDB,,aris,Housing_sales_to_stock_ratio
+
+GBR,OECDMEI:C112TSQ,haver,,GBR_BS_RES_UNITS_SA,EconDB,,,Housing_Permit
+
+GBR,INTSRVYS:S112VPMC,haver,,GBR_PMI_CONSTRUCTION_IHS_SA,EconDB,,aris,Construction_PMI
+
+GBR,GBR_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/GBR_trade_weighted_gdp,,,,,Trading_Partner_Growth
+
+GBR,GBR_IRS_5Y,EconDB,,,,,,GBR_IRS_5Y
+
+GBR,JPM corporate spread,EconDB,,,,,,Corporate_BBB_Yield_5Y
+
+GBR,INTDAILY:X111BUK,haver,,GBR_NEER,EconDB,,,FX_NEER
+
+GBR,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,,Oil_Price_Brent
+
+GBR,INTDAILY:X111UKJ,haver,,GBR_FXUSD,EconDB,,,FX_USD
+
+GBR,GBR_CAI_GS,EconDB,,,,,,GS_CAI
+
+GBR,UK:K3BI,haver,,GBR_PPI_MANU_EX_FOOD_BEVERAGE_TOBACCO_PETROLEUM_NSA,EconDB,,,PPI_Manufacturing
+
+GBR,G10:N112VCE,haver,,GBR_CONS_EXP_OBAL_NSA,EconDB,,aris,Consumer_Confidence_12m_Exp
+
+GBR,G10:N112VCC,haver,,GBR_CONS_CONF_OBAL_NSA,EconDB,,aris,Consumer_Confidence
+
+GBR,GBR_RSALES_NOM_VAL_SA,EconDB,,,,,,Retail_Sales_ex_Auto_Fuel
+
+GBR,G10:S112TRS,haver,,GBR_RSALES_NOM_VAL_SA,EconDB,,,Retail_Sales_ex_Auto_Fuel_haver
+
+GBR,G10:S112DUH,haver,,GBR_CU_MANU_SA,EconDB,,aris,Capacity_Utilisation_Manu
+
+GBR,G10:S112VES,haver,,GBR_EC_ECON_SENT_INDEX_SA,EconDB,,aris,Economic_Sentiment
+
+GBR,EUSRVYS:E112RBE,haver,,GBR_BUS_CONF_EXP_SITUATION_RETAILTRADE_SA,EconDB,,aris,Retail_Exp_Business_Situation
+
+GBR,EUSRVYS:E112SNO,haver,,GBR_BUS_CONF_CONDITIONS_SA,EconDB,,aris,Exp_Business_Condition_Surv
+
+GBR,UK:UNOL3T,haver,,GBR_BUS_BAROMETER_TOTAL_OVERALL_NET_NSA,EconDB,,aris,Bus_Conf_Lloyds
+
+GBR,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM
+
+,,,,,,,,
+
+parameter,,,,,,,,
+
+Param Table,trans1,trans2,smooth_front,,,,,
+
+Equity,252,200,1,,,,,
+
+10Y_Gov_Bond,252,600,1,,,,,
+
+Brent_LC,252,200,1,,,,,
+
+Brent_LC_flip,600,200,1,,,,,
+
+Mortgage_Rate_5Y,12,10,1,,,,,
+
+Mortgage_Rate_2Y,12,10,1,,,,,
+
+debt_servicing,12,10,1,,,,,
+
+FX_NEER,126,100,126,,,,,
+
+FX_NEER^PCE^,252,100,1,,,,,
+
+salary,12,6,1,,,,,
+
+Total_Employment,18,12,1,,,,,
+
+Average_Weekly_Earnings,18,12,1,,,,,
+
+Mortgage_Approval_pct_GDP,1,10,1,,,,,
+
+Housing_sales_to_stock_ratio,12,10,1,,,,,
+
+Housing_Prices,30,16,1,,,,,
+
+Housing_Permit,12,10,1,,,,,
+
+Construction_PMI,1,10,1,,,,,
+
+Trading_Partner_Growth,1,10,1,,,,,
+
+PPI_Manufacturing,12,10,1,,,,,
+
+GS_CAI,1,5,1,,,,,
+
+Consumer_Confidence_Composite,1,10,1,,,,,
+
+Retail_Sales_ex_Auto_Fuel,12,10,1,,,,,
+
+Equity^Invest^,500,280,1,,,,,
+
+Capex_tracker_JPM,6,10,1,,,,,
+
+Capacity_Utilisation_Manu,1,3,1,,,,,
+
+Business_Confidence_Composite,1,10,1,,,,,
+
+Economic_Sentiment,1,10,1,,,,,
+
+Retail_Exp_Business_Situation,1,10,1,,,,,
+
+Exp_Business_Condition_Surv,1,10,1,,,,,
+
+Bus_Conf_Lloyds,1,10,1,,,,,
+
+GBR_IRS_5Y,600,200,1,,,,,
+
+,,,,,,,,
+
+,,,,,,,,
+
+US,,,,,,,,
+
+Gauge tree,,,,,,,,
+
+"GDP nowcast, ",,,,,,,,
+
+"??? Personal consumption expenditure, weight = 0.66",,,,,,,,
+
+"?   ??? S&P 500 stock price index, weight = 8.0",,,,,,,,
+
+"?   ??? Total return index of 10 year T-bonds, weight = 2.0",,,,,,,,
+
+"?   ??? S&P CoreLogic Case-Shiller home price index, weight = 2.0",,,,,,,,
+
+"?   ??? MBA : volume index : mortgage loan app for purchase, weight = 1.0",,,,,,,,
+
+"?   ??? Salary, weight = 2.0",,,,,,,,
+
+"?   ??? WTI intermediate, Cushing, weight = 1.0",,,,,,,,
+
+"?   ??? Personal saving rate, weight = 0.5",,,,,,,,
+
+"?   ??? Conference board consumer confidence, weight = 1.0",,,,,,,,
+
+"?       ??? CRB consumer confidence, weight = 1.0",,,,,,,,
+
+"?       ??? UMich consumer confidence, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment (residential), weight = 0.03",,,,,,,,
+
+"?   ??? Housing units authorized by builidng permit, weight = 1.0",,,,,,,,
+
+"?   ??? Months supply at current sales rate for new 1-family houses for sale, weight = 1.0",,,,,,,,
+
+"?   ??? MBA : volume index : mortgage loan app for purchase, weight = 1.0",,,,,,,,
+
+"?   ??? 30-year fixed mortgage rate, weight = 1.0",,,,,,,,
+
+"?   ??? House builders bloomberg forward EPS, weight = 0.0",,,,,,,,
+
+"??? Private fixed investment (non residential),ex. energy capex, weight = 0.13",,,,,,,,
+
+"?   ??? S&P global fixed income research: industrials BBB bond yields, weight = 1.0",,,,,,,,
+
+"?   ??? S&P 500 stock price index, weight = 1.0",,,,,,,,
+
+"?   ??? Manufacturing PPI, weight = 1.0",,,,,,,,
+
+"?   ??? Trade weighted average of partners CAI, weight = 1.0",,,,,,,,
+
+"?   ??? The composite capex planning survey, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Fed Kansas outlook survey : capex, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed New York outlook survey : capex, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Philly outlook survey : capex, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Richmond outlook survey : capex, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Texas outlook survey : capex, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ??? The composite expected new order survey, weight = 1.0",,,,,,,,
+
+"?   ?   ??? Fed Texas Mfg outlook survey : new order, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Kansas Mfg outlook survey : new order, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Richmond Mfg outlook survey : new_order, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Fed Philly Mfg outlook survey : new order, 6m ahead, weight = 0.5",,,,,,,,
+
+"?   ?   ??? Empire Mfg outlook survey : new order,  6m ahead, weight = 0.5",,,,,,,,
+
+"?   ??? Composite consumer confidence (Umich &CRB), weight = 0.5",,,,,,,,
+
+"?   ?   ??? CRB consumer confidence, weight = 1.0",,,,,,,,
+
+"?   ?   ??? UMich consumer confidence, weight = 1.0",,,,,,,,
+
+"?   ??? Retail sales & food services ex autos and gas, weight = 0.5",,,,,,,,
+
+"?   ??? JPM Capex tracker, weight = 1.0",,,,,,,,
+
+"??? Private fixed investment in energy capex, weight = 0.00",,,,,,,,
+
+"?   ??? Crude oil price : WTI intermediate, Cushing, weight = 2.0",,,,,,,,
+
+"?   ??? FRB : capacity utilisation : mining, weight = 1.0",,,,,,,,
+
+"?   ??? Total rig count, weight = 1.0",,,,,,,,
+
+"??? Export, weight = 0.06",,,,,,,,
+
+"    ??? Nominal effective exchange rates, weight = 1.0",,,,,,,,
+
+"    ??? Trade weighted average of partners CAI, weight = 1.0",,,,,,,,
+
+,,,,,,,,
+
+Ticker,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1
+
+USA,OECDNAQ:E111GDPC,haver,,USA_RGDP_LOC_SAAR,EconDB,,geo,RGDP
+
+USA,G10:S111NCPC,haver,,USA_RGDP_FINALCONS_PRIV_LOC_SAAR,EconDB,,geo,PCE
+
+USA,G10:S111NXC,haver,,USA_RGDP_EXP_LOC_SA,EconDB,,geo,Export
+
+USA,G10:S111NMC,haver,,USA_RGDP_IMP_LOC_SA,EconDB,,geo,Import
+
+USA,USECON:FRH,haver,,USA_RGDP_GROSSCAPFORM_FIXED_RESIDENTIAL_LOC_SAAR,EconDB,,geo,Investment_Residential
+
+USA,USECON:FNH,haver,,USA_RGDP_GROSSCAPFORM_FIXED_NONRESI_LOC_SAAR,EconDB,,geo,Investment_nonResidential
+
+USA,G10:S111NCPT,haver,,USA_RGDP_PRIVATE_CONS_CONTRIB_SA,EconDB,,geo,PCE_Contrib
+
+USA,USECON:PTGH,haver,,,,,,Government_Contrib
+
+USA,USECON:PTIH,haver,,,,,,Investment_Contrib
+
+USA,USECON:PTFRH,haver,,,,,,Investment_Residential_Contrib
+
+USA,USECON:PTFNH,haver,,,,,,Investment_nonResidential_Contrib
+
+USA,USNA:FNSPCH,haver,,,,,,Investment_Non_Resi_Power_Comm
+
+USA,USNA:FNSMNH,haver,,,,,,Investment_Non_Resi_Mining_Shafts_Well
+
+USA,USECON:PTFNEIH,haver,,,,,,Investment_Non_Resi_Industrial_Equi
+
+USA,G10:S111NXT,haver,,,,,,Export_Contrib
+
+USA,G10:S111NMT,haver,,,,,,Import_Contrib
+
+USA,INTDAILY:S111SP5,haver,,USA_EQ,EconDB,,geo,Equity
+
+USA,DAILY:MTGF30,haver,,,,,,Mortgage_Rate_30Y
+
+USA,OECDMEI:C111HWM,haver,,USA_HOURS_WORKED_MANU_WEEKLY_HOURS_SA,EconDB,,geo,Hours_Worked_Weekly
+
+USA,USECON:LANAGRA,haver,,USA_EMPL_LEVEL_SA,EconDB,,geo,Empl_Level
+
+USA,OECDMEI:C111YHNS,haver,,USA_WAGES_HOURLY_MANU_INDEX_SA,EconDB,,geo,Hourly_Earnings
+
+USA,USECON:YPSVRM,haver,,,,,,saving_rate
+
+USA,USECON:HMTOP,haver,,USA_HH_CREDIT_MORT_PURCHASE_ORIG_NSA,EconDB,,geo,mortgage_orig
+
+USA,USECON:HCT,haver,,USA_HOUSING_COMPLETION_PRIV_NEW_THOU_SAAR,EconDB,,geo,Housing_completion
+
+USA,USECON:HCCT,haver,,,,,,Housing_underconst
+
+USA,USECON:HN1MT,haver,,USA_HOUSING_SUPPLY_RATIO_NEWONEFAMILY_MONTHS_SA,EconDB,,aris,Housing_supply_to_sales_ratio
+
+USA,USECON:HN1US,haver,,,,,,Housing_sales_new
+
+USA,USECON:CASUSXAM,haver,,USA_HOUS_HPI_NOM_NATIONAL_CS_SA,EconDB,,geo,Housing_Prices
+
+USA,G10:S111HP,haver,,USA_HOUS_HPI_REAL_INDEX_SA,EconDB,,geo,Housing_Permit
+
+USA,USA_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/USA_trade_weighted_gdp,,,,,Trading_Partner_Growth
+
+USA,USECON:FSBBB5,haver,,,,,,Corporate_BBB_Yield_5Y
+
+USA,USA_IRS_5Y,EconDB,,,,,,USA_IRS_5Y
+
+USA,INTDAILY:X111BUS,haver,,USA_NEER,EconDB,,geo,FX_NEER
+
+USA,DAILY:PZTEXA,haver,,,,,,Oil_Price_WTI
+
+USA,2 year brent future,EconDB,,,,,,Oil_Price_FUT_2Y_Brent
+
+USA,2 year wti future,EconDB,,,,,,Oil_Price_FUT_2Y_WTI
+
+USA,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,Oil_Price_Brent
+
+USA,USA_CAI_GS,EconDB,,,,,,GS_CAI_unused
+
+USA,USA_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/USA_0,,,,,GS_CAI
+
+USA,HB_BB_px,csv,macro_data\equity\house_energy_eps.csv,,,,,HB_BB_px
+
+USA,HB_BB_eps,csv,macro_data\equity\house_energy_eps.csv,,,,,House_Builder_Bloomberg_EPS_Estimate
+
+USA,EN_BB_px,csv,macro_data\equity\house_energy_eps.csv,,,,,EN_BB_px
+
+USA,EN_BB_eps,csv,macro_data\equity\house_energy_eps.csv,,,,,EN_BB_eps
+
+USA,SURVEYW:MBAMP,haver,,,,,,Mortgage_Application_Total_Volume_exRefinancing
+
+USA,Gasoline price,EconDB,,,,,,gas
+
+USA,OECDMEI:C111PMN,haver,,,,,,PPI_Manufacturing
+
+USA,USA_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/USA_10y_TRI,,,,,10Y_Gov_Bond
+
+USA,CBDB:CCIEN,haver,,USA_CONS_EXP_CB_SA,EconDB,,aris,Consumer_Confidence_CRB
+
+USA,USECON:CSENT,haver,,,,,,Consumer_Confidence_UMICH
+
+USA,USECON:NRSXM7,haver,,USA_RSALES_NOM_EX_AUTO_FUELS_MIL_SA,EconDB,,,Retail_Sales_ex_Auto_Fuel
+
+USA,USECON:CUB0,haver,,USA_CU_MINING_SA,EconDB,,aris,Capacity_Utilisation_Mining
+
+USA,SURVEYS:DFCEXPS,haver,,USA_PMI_DFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDTexas
+
+USA,SURVEYS:DSFCXPS,haver,,USA_PMI_DFED_SERV_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDTexas
+
+USA,SURVEYS:KC6CXNA,haver,,USA_PMI_KFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDKansas
+
+USA,SURVEYS:KCS6SX,haver,,,,,,Capex_Plan_Survey_SERV_FEDKansas
+
+USA,SURVEYS:RI6CX,haver,,USA_PMI_RFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDRichmond
+
+USA,SURVEYS:RIS6CX,haver,,USA_PMI_RFED_NONMAN_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDRichmond
+
+USA,SURVEYS:BOFCEX,haver,,USA_PMI_PFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_FEDPhilly
+
+USA,SURVEYS:EM6CI,haver,,USA_PMI_NYFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDNY
+
+USA,SURVEYS:BL6CIN,haver,,USA_PMI_NYFED_NONMAN_CAPEX_EXP6M_NSA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDNY
+
+USA,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM
+
+USA,SURVEYS:DFVNWOS,haver,,USA_PMI_DFED_MANU_NO_EXP6M_1_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDTexas
+
+USA,SURVEYS:KC6NXA,haver,,USA_PMI_KFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDKansas
+
+USA,SURVEYS:RI6NX,haver,,USA_PMI_RFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDRichmond
+
+USA,SURVEYS:BOFNOX,haver,,USA_PMI_PFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDPhilly
+
+USA,SURVEYS:EM6NI,haver,,USA_PMI_NYFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDNY
+
+USA,USA_COM_RIG_COUNT_TOTAL_BAKER_HUGHES,EconDB,,,,,,Total_Rig_Count
+
+USA,BCI:U0M107,haver,,,,,,Leading_Credit_Index
+
+,,,,,,,,
+
+parameter,,,,,,,,
+
+Param Table,trans1,trans2,smooth_front,,,,,
+
+Equity,252,200,1,,,,,
+
+Equity_1st^PCE^,252,1000,21,,,,,
+
+10Y_Gov_Bond,600,200,1,,,,,
+
+Oil_Price_WTI_flip,600,200,1,,,,,
+
+HB_BB_px,252,200,1,,,,,
+
+EN_BB_px,252,200,1,,,,,
+
+Oil_Price_WTI,252,200,1,,,,,
+
+House_Builder_Bloomberg_EPS_Estimate,252,200,1,,,,,
+
+EN_BB_eps,252,200,1,,,,,
+
+Mortgage_Rate_30Y,252,200,1,,,,,
+
+FX_NEER,252,100,1,,,,,
+
+saving_rate,6,6,1,,,,,
+
+salary,12,10,1,,,,,
+
+Mortgage_origination_purchase,12,10,1,,,,,
+
+Housing_supply_to_sales_ratio,24,10,1,,,,,
+
+Housing_Prices,30,16,1,,,,,
+
+Housing_Permit,12,10,1,,,,,
+
+PPI_Manufacturing,12,10,1,,,,,
+
+GS_CAI,1,5,1,,,,,
+
+Trading_Partner_Growth,1,5,1,,,,,
+
+Corporate_BBB_Yield_5Y,12,10,1,,,,,
+
+Consumer_Confidence_CRB,1,10,1,,,,,
+
+Consumer_Confidence_UMICH,1,10,1,,,,,
+
+Consumer_Confidence,1,10,1,,,,,
+
+Retail_Sales_ex_Auto_Fuel,12,10,1,,,,,
+
+Equity^Invest^,252,200,1,,,,,
+
+Capacity_Utilisation_Mining,1,10,1,,,,,
+
+Capex_Plan_Survey_FEDTexas,1,10,1,,,,,
+
+Capex_Plan_Survey_FEDKansas,1,10,1,,,,,
+
+Capex_Plan_Survey_FEDRichmond,1,10,1,,,,,
+
+Capex_Plan_Survey_FEDPhilly,1,10,1,,,,,
+
+Capex_Plan_Survey_FEDNY,1,10,1,,,,,
+
+Capex_Plan_Survey_Composite,1,10,1,,,,,
+
+Capex_tracker_JPM,6,10,1,,,,,
+
+Total_Rig_Count,26,20,1,,,,,
+
+Mortgage_Application_Total_Volume_exRefinancing,52,40,26,,,,,
+
+Expected_New_Order_Survey_MANU_FEDTexas,1,10,1,,,,,
+
+Expected_New_Order_Survey_MANU_FEDKansas,1,10,1,,,,,
+
+Expected_New_Order_Survey_MANU_FEDRichmond,1,10,1,,,,,
+
+Expected_New_Order_Survey_MANU_FEDPhilly,1,10,1,,,,,
+
+Expected_New_Order_Survey_MANU_FEDNY,1,10,1,,,,,
+
+Expected_New_Order_Survey_Composite,1,10,1,,,,,
+
+Leading_Credit_Index,1,10,1,,,,,
+
+Oil_Price_Brent,252,200,1,,,,,

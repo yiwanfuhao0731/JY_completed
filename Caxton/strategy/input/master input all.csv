@@ -1,0 +1,1633 @@
+USA 1c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,Param Table,param,type,,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,
+
+USA,USA_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/USA_0,,,,,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,80,int,,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,
+
+USA,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/USA_0,,,,,potential_yoy,,,pot_gdp_loess_frac,0.75,float,,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+USA,OECDNAQ:E111GDPC,haver,,USA_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,cai_pot_z_sd_roll,240,int,,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,
+
+USA,G10:S111ELUR,haver,,USA_URATE_SA,EconDB,,geo,Unemployment rate,,,core_cpi_targ_z_mean,0,int,,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,1,level gauge,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:CUMFG,haver,,USA_CU_MANU_SA,EconDB,,geo,Capacity_Utilisation,,,core_cpi_targ_z_sd_roll,240,int,,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,2,growth minus potential,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:LEPRIVA,haver,,USA_WAGES_TOTAL_PRIVATE_PROD_NONSUPERVISORY_SA,EconDB,,geo,wage_nfp,,,wages_trend_growth,6,int,,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,3,change gauge,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:LBTOTA,haver,,USA_WAGES_MEDIAN_FULLTIME_WORKERS_SA,EconDB,,geo,wage_median_BLS,,,wages_trend_growth_loess_frac,0.75,float,,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:LXNFC,haver,,USA_WAGES_COMPENSATION_PER_HOUR_SA,EconDB,,geo,wage_comp_hour_nf,,,wages_trend_z_mean,0,int,,,ForwardGrow_sum_Z,ForwardGrow_sum_Z,,,,,0,Condition_sum_Z,,4,forward growth,,,,,,,,,,,,,,,,,,,
+
+USA,USA_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/USA_Inf_Targ,,,,,inflation target,,,wages_trend_z_sd_roll,240,int,,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,1,forward cpi,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:PCE6,haver,,USA_CPI_FRBDALLAS_TRIMMED_MEAN_6M_ANN_SA,EconDB,,geo,USA_FRB_CPI,,,wage_atl_ewm_halflife,1.5,float,,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,1,global gauge,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:JCXFEBM,haver,,USA_PCEPI_CORE_SA,EconDB,,geo,Core_PCE_CPI,,,wages_q_trend_growth,4,int,,,growth vs potential,growth vs potential,GDP Nowcast,potential_yoy,,growth - potential(z score),23,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,
+
+USA,USA_BEI_5Y,EconDB,,,,,,BEI_5Y,,,wages_q_trend_z_sd_roll,80,int,,,GDP slack,GDP slack,growth rate (raw),growth rate (trend),,Growth Slack (z score),23,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:WGTN,haver,,USA_WAGES_ATLANTA_WAGE_MEDIAN_NONSMOOTH_YOY_NSA,EconDB,,geo,wage_atlanta_tracker,,,cai_chg_roll,6,int,,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),30,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:LSW,haver,,USA_WAGES_ECI_INDEX_SA,EconDB,,geo,wage_eci_index,,,cai_chg_z_mean,0,int,,,capacity vs trend,capacity vs trend,capacity utilisation (raw),capacity utilisation (trend),,capacity utilisation (z score),38,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,USA_INF_SURPRISE,EconDB,,,,,,inflation_surprise,,,cai_chg_z_sd_roll,5040,int,,,wage tracker vs trend,wage tracker vs trend,,,,,0,Level_sum_Z,,2,wage tracker vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,ECONOMICS.SURPRISE_INDEX.ESI.CEDI.DM.SI_USD,citivelocity,,,,,,Citi_Econ_Chg_Index,,,citi_chg_index_1st,42,int,,,wage(nfp) vs trend,wage(nfp) vs trend,wage_6m (raw),wages_6m (trend),,wage_6m (z_score),30,wage tracker vs trend,,2,wage(nfp) vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:CASUSXAM,haver,,USA_HOUS_HPI_NOM_NATIONAL_CS_SA,EconDB,,geo,housing_prices_CS,,,citi_chg_index_sd_roll,5040,int,,,wage(atlanta) vs trend,wage(atlanta) vs trend,wage(atlanta) yoy (raw),wages_atlanta_yoy (trend),,wages(atlanta)_trend (z score),40,wage tracker vs trend,,1,wage(atlanta) vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,GS_CAI_Impulse,pre_run_result,RATES_FWDGROW_USA_6m/GS_CAI_total_impulse,,,,,GS_CAI_Impulse,,,wage_chg_in_growth_roll_second,6,int,,,wage(eci) vs trend,wage(eci) vs trend,wage_eci_1st (raw),wages_eci_1st (trend),,wage_eci_1st (z_score),92,wage tracker vs trend,,1,wage(eci) vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,brent,,,wage_q_chg_in_growth_roll_second,2,int,,,wage(bls median) vs trend,wage(bls median) vs trend,wage_BLS_1st (raw),wages_BLS_1st (trend),,wage_BLS_1st (z_score),84,wage tracker vs trend,,1,wage(bls median) vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,INTDAILY:X111BUS,haver,,USA_NEER,EconDB,,geo,FX_NEER,,,wage_chg_in_growth_z_mean,0,int,,,wage(comp hour nonfarm) vs trend,wage(comp hour nonfarm) vs trend,wage_comp_hour_1st (raw),wages_comp_hour_1st (trend),,wage_comp_hour_1st (z_score),125,wage tracker vs trend,,1,wage(comp hour nonfarm) vs trend,,,,,,,,,,,,,,,,,,,
+
+USA,INTDAILY:R111RTH,haver,,USA_POLICY_RATE_UPPER,EconDB,,geo,policy_rate,,,wage_chg_in_growth_z_sd_roll,240,int,,,cpi(GS tracker) vs target,cpi vs target,GS Core Inflation Tracker (raw),inflation target,,cpi(GS tracker) vs target (z score),74,Level_sum_Z,,1,cpi(GS tracker) vs target,,,,,,,,,,,,,,,,,,,
+
+USA,USA_IRS_2Y_1M_OIS,pre_run_result,DATA_RATES_2Y1M_SWAP_OIS/USA_2y1m_irs_citi_ois,,,,,IRS_2y1m_OIS_Citi,,,core_cpi_chg,6,int,,,BEI5 vs target,BEI5 vs target,BEI 5Y (raw),inflation target,,BEI 5y (z score),1,Level_sum_Z,,1,BEI5 vs target,,,,,,,,,,,,,,,,,,,
+
+USA,USA_IRS_5Y,pre_run_result,DATA_RATES_5Y_SWAP_OIS/USA_5y_IRS_OIS,,,,,IRS_5Y,,,core_cpi_chg_second,3,int,,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),23,Changes_sum_Z,,candidate,change in growth,,,,,,,,,,,,,,,,,,,
+
+USA,USA_IRS_2Y,pre_run_result,DATA_RATES_2Y_SWAP_OIS/USA_2y_IRS_OIS,,,,,IRS_2Y,,,cpi_surprise_first,18,int,,,change in citi econ chg index,change in citi econ chg index,Citi_Econ_Chg_Index_1st (raw),,,Citi_Econ_Chg_Index_1st (z score),2,Changes_sum_Z,,4,change in citi econ chg index,,,,,,,,,,,,,,,,,,,
+
+USA,USA_1W_IRS_OIS,pre_run_result,DATA_RATES_1W_SWAP_OIS/USA_1W_IRS_OIS,,,,,IRS_1W_OIS_OPENDATA,,,cpi_pce_1st,6,int,,,change in wage (tracker),change in wage (tracker),,,,,0,Changes_sum_Z,,4,change in wage (tracker),,,,,,,,,,,,,,,,,,,
+
+USA,World_ex_USA_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_USA_avg_fci,,,,,World_avg_FCI,,,cpi_pce_2nd,6,int,,,change in wage(nfp),change in wage(nfp),wage_6x6m (raw),,,wage growth 6x6 (z score),30,change in wage (tracker),,2,change in wage(nfp),,,,,,,,,,,,,,,,,,,
+
+USA,World_ex_USA_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_USA_avg_gdp,,,,,World_ex_USA_avg_GDP,,,cpi_pce_chg_z_sd_roll,240,int,,,change in wage(atlanta),change in wage(atlanta),wage(atlanta)_2nd (raw),,,wage(atlanta) growth 2nd (z score),40,change in wage (tracker),,1,change in wage(atlanta),,,,,,,,,,,,,,,,,,,
+
+USA,World_ex_USA_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_USA_avg_pot_gdp,,,,,World_ex_USA_avg_pot_GDP,,,cai_impulse_z_smooth,21,int,,,change in wage(eci),change in wage(eci),wage_eci_2nd (raw),,,wage(eci) growth 2nd (z score),92,change in wage (tracker),,1,change in wage(eci),,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,hp_impulse_trans_first,12,int,,,change in wage(bls median),change in wage(bls median),wage_bls_2nd (raw),,,wage(bls median) growth 2nd (z score),84,change in wage (tracker),,1,change in wage(bls median),,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,hp_impulse_trans_second,6,int,,,change in wage(comp per hour nonfarm),change in wage(comp per hour nonfarm),wage_comp_hour_2nd (raw),,,wage(comp hour nonfarm) growth 2nd (z score),125,change in wage (tracker),,1,change in wage(comp per hour nonfarm),,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,hp_impulse_z_mean,0,int,,,change in cpi pce,change in cpi pce,cpi pce 2nd (raw),,,cpi(pce)_2nd (z score),46,Changes_sum_Z,,1,change in cpi pce,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,hp_impulse_z_sd_roll,60,int,,,change in surprise in cpi,change in surprise in cpi,cpi surprise first (raw),,,CPI surprise diff (z score),35,Changes_sum_Z,,1,change in surprise in cpi,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,cai_impulse_z_sd_roll,1260,int,,,change in cpi GStracker,change in cpi GStracker,CPI_diff(GS_Tracker) (raw),,,CPI_diff(GS_Tracker)(z score),74,Changes_sum_Z,,candidate,change in cpi GStracker,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_1st,252,int,,,change in bei5,change in bei5,Chg_on_Breakeven_CPI (raw),,,Chg_on_Breakeven_CPI (z score),1,Changes_sum_Z,,1,change in bei5,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_first,378,int,,,housing_price_1st,housing_price_1st,CS_housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),66,Credit_Agg_sum_Z,,2,housing_price_1st,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_second,126,int,,,housing_price_2nd,housing_price_2nd,CS_housing_index_2nd (raw),,,housing_prices_2nd (z score),66,Credit_Agg_sum_Z,,1,housing_price_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_mean,0,int,,,forward growth estimate,forward growth estimate,GS_CAI_Impulse (raw),,GS_CAI_Impulse (z score),GS_CAI_Impulse (z score smooth),0,ForwardGrow_sum_Z,,6,in-house growth estimate,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_sd_roll,1260,int,,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_1st,252,int,,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,ForwardCPI_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_first,378,int,,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_second,126,int,,,FX_impulse_2nd,FX_impulse_2nd,FX (raw),,,FX_Impulse (z score),1,ForwardCPI_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_mean,0,int,,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,1,glob growth pot,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_sd_roll,1260,int,,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,1,glob FCI impulse,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_roll,63,int,,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_long,5,int,,,pricing_z,pricing_z,IRS_5Y,policy_rate,5y-PR-Premium,pricing (z score),1,pricing_sum_z,,candidate,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_mean_roll,5040,int,,,pricing_z_2y1d,pricing_z_2y1d,2y1d,ois_1w,2y1d-1w-20bps,pricing_2y (z score),1,pricing_sum_z,,1,"pricing gauge, steepness between 2y1d and 1w ois",,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_premium_sdRoll,1000,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,ppi_trend_growth_loess_frac,0.75,float,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_type,if_works_top_up,str,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_1,13,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_2,0.5,float,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA 1a,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,Param Table,param,type,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,re_z_sd_option,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,
+
+BRA,BRA_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/BRA_0,,,,,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,60,int,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,,
+
+BRA,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/BRA_0,,,,,potential_yoy,,,pot_gdp_loess_frac,0.9,float,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,,
+
+BRA,E223GDPC@OECDNAQ,haver,,BRA_RGDP_EXT,csv,signals\RATES_LVL_GROWmPOT\data\RGDP.csv,geo,RGDP,,,ip_pot_z_sd_roll,240,int,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,,
+
+BRA,S223D@EMERGE,haver,,C223IZ@OECDMEI,haver,,geo,IP_exCons,,,pot_ip_loess_frac,0.75,float,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,2,level gauge,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ELUR@EMERGE,haver,,,,,,Unemployment rate nsa,nsa,,cai_pot_z_sd_roll,240,int,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,1,growth minus potential,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223LREF@OECDMEI,haver,,,,,,Unemployment rate hist,sa,,core_cpi_targ_z_mean,0,int,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,4,change gauge,,,,,,,,,,,,,,,,,,,,
+
+BRA,S223DUM@EMERGE,haver,,BRA_CU_MANU_SA,EconDB,,aris,Capacity_Utilisation,,,core_cpi_targ_z_sd_roll,240,int,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223EM@EMERGELA,haver,,,,,,wage nsa,,,wages_trend_growth,6,int,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,0.5,forward cpi,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223YMA@OECDMEI,haver,,,,,,wage hist,,,wages_trend_growth_loess_frac,0.75,float,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,2,global gauge,2010_2016,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/BRA_Inf_Targ,,,,,inflation target,,,wages_trend_z_mean,0,int,,g3 fci impulse_sum_Z,g3 fci impulse_sum_Z,,,,,0,Condition_sum_Z,,2,g3 fci impulse_sum_Z,2010_2016,,,,,,,,,,,,,,,,,,,
+
+BRA,H223PCX@EMERGELA,haver,,BRA_CPI_CORE_X_FOOD_ENERGY_SA,EconDB,,,Core_CPI,,,wages_trend_z_sd_roll,240,int,,FX(deviation)_sum_Z,FX(deviation)_sum_Z,,,,,0,Condition_sum_Z,,5,FX(deviation)_sum_Z,,,,,,,,,,,,,,,,,,,,
+
+BRA,ECONOMICS.SURPRISE_INDEX.ESI.CEDI.EM.SI_BRL,citivelocity,,,,,,Citi_Econ_Chg_Index,,,wage_atl_ewm_halflife,1.5,float,,CA % GDP,CA % GDP,Current account % GDP (raw),Current account GDP (actual),,Current account GDP (z_score),2,Condition_sum_Z,,1,current account % GDP,,,,,,,,,,,,,,,,,,,,
+
+BRA,ECONOMICS.SURPRISE_INDEX.ESI.CESI.EM.SI_BRL,citivelocity,,,,,,Citi_Surprise_Index,,,wages_q_trend_growth,4,int,,growth vs potential,growth vs potential,GS CAI,potential_yoy,,growth - potential(z score),40,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,,
+
+BRA,ECONOMICS.SURPRISE_INDEX.ISI.SI_CISI.EM.SI_BRL,citivelocity,,,,,,Citi_inflation_Surprise_Index,,,wages_q_trend_z_sd_roll,80,int,,GDP slack,GDP slack,growth slack(raw),,,Growth Slack (z score),40,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223HG@EMERGE,haver,,BRA_HOUS_HPI_NOM_INDEX_NSA,EconDB,,geo,housing_prices,nsa,,cai_chg_ewm_halflife,1.5,float,,IP slack,IP slack,ip slack(raw),,,Production Slack (z score),51,Level_sum_Z,,1,Industrial production vs potential,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223FCT@EMERGELA,haver,,,,,,credit_private,,,cai_chg_roll,6,int,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),46,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,,
+
+BRA,H223NGDP@EMERGELA,haver,,,,,,NGDP,,,cai_chg_z_mean,0,int,,capacity vs trend,capacity vs trend,capacity utilisation (raw),capacity utilisation (trend),,capacity utilisation (z score),56,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,,
+
+BRA,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,brent,,,cai_chg_z_sd_roll,5040,int,,wage vs trend,wage vs trend,wage_1st (raw),wages_1st (trend),,wage_1st (z_score),46,Level_sum_Z,,candidate,wage vs trend,,,,,,,,,,,,,,,,,,,,
+
+BRA,X111BRZ@INTDAILY,haver,,BRA_NEER,EconDB,,geo,FX_NEER,,,citi_chg_index_1st,126,int,,cpi(core) vs target,cpi(core) vs target,core cpi (raw),inflation target,,Core cpi vs target (z_score),33,Level_sum_Z,,2,Inflation vs target,,,,,,,,,,,,,,,,,,,,
+
+BRA,R223ROT@INTDAILY,haver,,BRA_POLICY_RATE,EconDB,,geo,policy_rate,,,citi_chg_index_sd_roll,5040,int,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),40,Changes_sum_Z,,1,change in growth,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_IRS_2Y_1Y,pre_run_result,DATA_RATES_2Y1Y_SWAP/BRA_2y1y_irs_citi,,,,,IRS_2y1y_Citi,,,citi_surprise_index_1st,126,int,,change in citi econ chg index,change in citi econ chg index,Citi_Econ_Chg_Index_1st (raw),,,Citi_Econ_Chg_Index_1st (z score),2,Changes_sum_Z,,1,change in citi econ chg index,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_IRS_1Y_1Y,pre_run_result,DATA_RATES_EM_1Y1Y_SWAP/BRA_1y1y_irs_citi,,,,,IRS_1y1y_Citi,,,citi_cpi_surprise_index_1st,12,int,,citi surprise index,citi surprise index,Citi_Surprise_Index (raw),,,Citi_Surprise_Index (z score),2,Changes_sum_Z,,1,citi surprise index,,,,,,,,,,,,,,,,,,,,
+
+BRA,World_ex_BRA_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_BRA_avg_fci,,,,,World_avg_FCI,,,citi_surprise_index_sd_roll,5040,int,,change in wage,change in wage,wage_2nd (raw),,,wage_growth_6x6 (z score),46,Changes_sum_Z,,candidate,change in wage growth,,,,,,,,,,,,,,,,,,,,
+
+BRA,World_ex_BRA_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_BRA_avg_gdp,,,,,World_ex_BRA_avg_GDP,,,citi_surprise_inflation_index_sd_roll,240,int,,change in cpi (core),change in cpi (core),core cpi 2nd (raw),,,cpi(core)_2nd (z score),33,Changes_sum_Z,,3,change in cpi(core),,,,,,,,,,,,,,,,,,,,
+
+BRA,World_ex_BRA_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_BRA_avg_pot_gdp,,,,,World_ex_BRA_avg_pot_GDP,,,wage_chg_in_growth_roll_second,6,int,,citi inflation surprise index,citi inflation surprise index,citi cpi surprise 1st (raw),,,citi CPI surprise (z score),33,Changes_sum_Z,,3,citi inflation surprise index,,,,,,,,,,,,,,,,,,,,
+
+BRA,X111BRJ@INTDAILY,haver,,BRA_FXUSD,EconDB,,aris,FX_USD,,,wage_chg_in_growth_z_mean,0,int,,housing_price_1st,housing_price_1st,housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),28,Credit_Agg_sum_Z,,0.5,housing_price_1st,,,,,,,,,,,,,,,,,,,,
+
+BRA,USA_FCI_GS,EconDB,,,,,,USA_FCI_GS,,,wage_chg_in_growth_z_sd_roll,240,int,,housing_price_2nd,housing_price_2nd,housing_prices_2nd (raw),,,housing_prices_2nd (z_score),28,Credit_Agg_sum_Z,,0.5,housing_price_2nd,,,,,,,,,,,,,,,,,,,,
+
+BRA,EUR_FCI_GS,EconDB,,,,,,EUR_FCI_GS,,,core_cpi_chg,9,int,,credit_ngdp_1st,credit_ngdp_1st,credit_ngdp_1st (raw),credit_ngdp_1st_trend (trend),,credit_ngdp_1st (z score),46,Credit_Agg_sum_Z,,1,credit_ngdp_1st,,,,,,,,,,,,,,,,,,,,
+
+BRA,JPN_FCI_GS,EconDB,,,,,,JPN_FCI_GS,,,core_cpi_chg_second,6,int,,credit_ngdp_2nd,credit_ngdp_2nd,credit_ngdp_2nd (raw),,,credit_ngdp_2nd (z_score),46,Credit_Agg_sum_Z,,3,credit_ngdp_2nd,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223VCP1@EMERGELA,haver,,,,,,IPCA_focus_12m_inflation,,,cpi_surprise_first,18,int,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_CPI_INDEX_NSA,EconDB,,,,,,CPI_nsa,,,cpi_pce_1st,6,int,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,,
+
+BRA,hf estimate on External % GDP: Current account balance : net,pre_run_result,FLOW_BOP_CA_TB_CMD_BY_ITEMS_BRA/hf estimate on External % GDP: Current account balance : net,,,,,hf estimate on External % GDP: Current account balance : net,,,cpi_pce_2nd,6,int,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,2,glob growth pot,2010_2016,,,,,,,,,,,,,,,,,,,
+
+BRA,H223BCPG@EMERGELA,haver,,,,,,CA % GDP,,,cpi_pce_chg_z_sd_roll,240,int,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,candidate,glob FCI impulse,2010_2016,,,,,,,,,,,,,,,,,,,
+
+BRA,CINF1@USECON,haver,,,,,,USA_cpi_exp (Michigan survey),,,cai_impulse_z_smooth,21,int,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,2010_2016,,,,,,,,,,,,,,,,,,,
+
+BRA,INTDAILY:R111RTH,haver,,USA_POLICY_RATE_UPPER,EconDB,,geo,USA_policy_rate,,,hp_impulse_trans_first,12,int,,USA_FCI_1st,USA_FCI_1st,USA_FCI_1st (raw),,,USA_FCI_1st (z_score),2,g3 fci impulse_sum_Z,,0.6,USA_FCI_1st,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223FXEF@OECDMEI,haver,,,,,,REER,,,hp_impulse_trans_second,6,int,,USA_FCI_2nd,USA_FCI_2nd,USA_FCI_2nd (raw),,,USA_FCI_2nd (z_score),2,g3 fci impulse_sum_Z,,0.6,USA_FCI_2nd,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_SWAP_5Y_citi,pre_run_result,DATA_RATES_SCI_5Y_EM_SWAP/BRA_5y_irs_citi,,,,,IRS_5Y,,,hp_impulse_z_mean,0,int,,EUR_FCI_1st,EUR_FCI_1st,EUR_FCI_1st (raw),,,EUR_FCI_1st (z_score),2,g3 fci impulse_sum_Z,,0.2,EUR_FCI_1st,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,hp_impulse_z_sd_roll,60,int,,EUR_FCI_2nd,EUR_FCI_2nd,EUR_FCI_2nd (raw),,,EUR_FCI_2nd (z_score),2,g3 fci impulse_sum_Z,,0.2,EUR_FCI_2nd,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_ngdp_1st_trend_roll_win,120,int,,JPN_FCI_1st,JPN_FCI_1st,JPN_FCI_1st (raw),,,JPN_FCI_1st (z_score),2,g3 fci impulse_sum_Z,,0.2,JPN_FCI_1st,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_impulse_trans_first,12,int,,JPN_FCI_2nd,JPN_FCI_2nd,JPN_FCI_2nd (raw),,,JPN_FCI_2nd (z_score),2,g3 fci impulse_sum_Z,,0.2,JPN_FCI_2nd,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_impulse_trans_second,6,int,,fx(deviation),fx(deviation),"REER (hf,raw)",REER (trend),,"FX (REER,flipped) deviation (z_score)",2,FX(deviation)_sum_Z,,3,FX deviation from long term trend,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_impulse_z_sd_roll,60,int,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,FX(deviation)_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,cai_impulse_z_sd_roll,1260,int,,FX_impulse_2nd,FX_impulse_2nd,FX_impulse_2nd (raw),,,FX_Impulse (z score),1,FX(deviation)_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_1st,252,int,,pricing_z_1y1y,pricing_z_1y1y,1y1y,policy_rate,"pricing (1y1y-policy_rate-premium, raw)","pricing (1y1y-policy_rate-premium, z score)",1,pricing_sum_z,,1,"pricing gauge, steepness between 1y1y and selic rate",,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_first,378,int,,pricing_z_1y1y (breakdown),pricing_z_1y1y (breakdown),1y1y_premium,,,,1,pricing_sum_z,,candidate,for charting,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_second,126,int,,real_yield (BRA-USA),real_yield (BRA-USA),real yield (BRA-USA) (raw),,,real yield diff (BRA-USA) (z_score),1,pricing_sum_z,,1,"pricing gauge, selic rate - 12m inflation expection",,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_mean,0,int,,real_yield(BRA breakdown),real_yield(BRA breakdown),real yield (raw),real yield (USA) (raw),,,,pricing_sum_z,,candidate,for charting,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_sd_roll,1260,int,,real_yield_diff vs trend,real_yield_diff vs trend,real yield (BRA-USA) (raw),real_yield_diff(trend line),,real_yield_diff_vs_trend (z_score),2,pricing_sum_z,,candidate,for charting,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_1st,252,int,,real_yield_1st,real_yield_1st,real_yield_diff_1st (raw),,,real_yield_diff_1st (a_score),2,pricing_sum_z,,candidate,for charting,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_first,378,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_second,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_mean,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_sd_roll,1260,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_roll,63,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,FX_reer_deviation_trend_roll,1260,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,FX_reer_deviation_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_long,5,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_premium_sd_halflife,2520,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,real_yield_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,real_yield_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,real_yield_loess_trend,0.75,float,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,ppi_trend_growth_loess_frac,0.75,float,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,g3_fci_1st,21,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,g3_fci_2nd_1,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,g3_fci_2nd_2,15,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,g3_fci_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_type,if_works_top_up,str,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_1,13,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,risk_rule_2,0.5,float,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+AUS 1b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,Param Table,param,type,,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,
+
+AUS,AUS_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/AUS_0,,,,,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,80,int,,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,
+
+AUS,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/AUS_0,,,,,potential_yoy,,,pot_gdp_loess_frac,0.3,float,,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+AUS,OECDNAQ:E193GDPC,haver,,AUS_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,cai_pot_z_sd_roll,240,int,,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,
+
+AUS,G10:S193ELUR,haver,,AUS_URATE_SA,EconDB,,geo,Unemployment rate,,,core_cpi_targ_z_mean,0,int,,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,1,level gauge,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUSVBH,haver,,AUS_BUS_CONF_CAP_U_SA,EconDB,,geo,Capacity_Utilisation,,,core_cpi_targ_z_sd_roll,240,int,,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,2,growth minus potential,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_WAGES_INDEX_SA,EconDB,,,,,,wage,quarterly,,wages_trend_growth,4,int,,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,3,change gauge,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUNWPI,haver,,AUS_WAGES_INDEX_SA1,EconDB,,geo,wage_haver,,,wage_trend_roll,20,int,,,ForwardGrow_sum_Z,ForwardGrow_sum_Z,,,,,0,Condition_sum_Z,,4,forward growth,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/AUS_Inf_Targ,,,,,inflation target,,,wages_trend_z_mean,0,int,,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUNIGIT,haver,,AUS_CPI_MELBOURNEINST_TRIMMED_MEAN_NSA,EconDB,,geo,Core_PCE_CPI_Trimmed_Mean,,,wages_trend_z_sd_roll,80,int,,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,1,forward cpi,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_CPI_CORE_X_FOOD_ENERGY_SA,EconDB,,,,,,Core_PCE_CPI_OECD,,,cai_chg_ewm_halflife,1.5,float,,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,1,global gauge,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_HOUS_CORELOGIC_MEDIAN_CITY_VALUES_MOM_SA,EconDB,,,,,,housing_prices_mom,,,cai_chg_roll,6,int,,,growth vs potential,growth vs potential,GS CAI,potential_yoy,,growth - potential(z score),46,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUSFCSP,haver,,,,,,credit_growth,,,cai_chg_z_sd_roll,240,int,,,GDP slack,GDP slack,growth rate (raw),growth rate (trend),,Growth Slack (z score),33,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUSFCCOP,haver,,,,,,credit_growth_bus,,,wage_chg_in_growth_roll_second,2,int,,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),38,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUSFHMX,haver,,AUS_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_TOTAL_SA,EconDB,,geo,mortgage_approval,,,wage_chg_in_growth_z_mean,0,int,,,capacity vs trend,capacity vs trend,capacity utilisation (raw),capacity utilisation (trend),,capacity utilisation (z score),31,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_FXUSD,EconDB,,,,,,FX_USD,,,wage_chg_in_growth_z_sd_roll,80,int,,,wage vs trend,wage vs trend,wage_1st (raw),wages_1st (trend),,wage_1st (z_score),100,Level_sum_Z,,1,wage vs trend,,,,,,,,,,,,,,,,,,,
+
+AUS,INTDAILY:X111AUJ,haver,,AUS_FXUSD,EconDB,,geo,FX_USD_haver,,,core_cpi_chg,12,int,,,cpi(trimmed mean) vs target,cpi(trimmed mean) vs target,trimmed mean cpi (raw),inflation target,,trimmed mean cpi vs target (z_score),28,Level_sum_Z,,2,cpi(trimmed mean) vs target,,,,,,,,,,,,,,,,,,,
+
+AUS,ANZ:AUSNGDP,haver,,AUS_BOP_NGDP_SA,EconDB,,geo,NGDP,,,core_cpi_chg_second,6,int,,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),33,Changes_sum_Z,,2,change in growth,,,,,,,,,,,,,,,,,,,
+
+AUS,GS_CAI_Impulse,pre_run_result,RATES_FWDGROW_AUS_6m/GS_CAI_total_impulse,,,,,GS_CAI_Impulse,,,cai_impulse_z_smooth,1,int,,,change in wage,change in wage,wage_2nd (raw),,,wage_growth_12x12 (z score),100,Changes_sum_Z,,1,change in wage,,,,,,,,,,,,,,,,,,,
+
+AUS,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,brent,,,hp_impulse_trans_first,12,int,,,change in cpi (trimmed mean),change in cpi (trimmed mean),trimmed mean cpi 2nd (raw),,,cpi(trimmed mean)_2nd (z score),26,Changes_sum_Z,,2,change in cpi (trimmed mean),,,,,,,,,,,,,,,,,,,
+
+AUS,INTDAILY:X111BAU,haver,,AUS_NEER,EconDB,,geo,FX_NEER,,,hp_impulse_trans_second,6,int,,,housing_price_1st,housing_price_1st,housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),33,Credit_Agg_sum_Z,,2,housing_price_1st,,,,,,,,,,,,,,,,,,,
+
+AUS,INTDAILY:R193RTR,haver,,AUS_POLICY_RATE,EconDB,,geo,policy_rate,,,hp_impulse_z_sd_roll,60,int,,,housing_price_2nd,housing_price_2nd,housing_prices_2nd (raw),,,housing_prices_2nd (z_score),33,Credit_Agg_sum_Z,,1,housing_price_2nd,,,,,,,,,,,,,,,,,,,
+
+AUS,INTDAILY:R193RTR,haver,,AUS_POLICY_RATE,EconDB,,geo,policy_rate_haver,,,credit_impulse_trans_first,12,int,,,credit_ngdp_1st,credit_ngdp_1st,credit_ngdp_1st (raw),credit_ngdp_1st_trend (trend),,credit_ngdp_1st (z score),46,Credit_Agg_sum_Z,,2,credit_ngdp_1st,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_IRS_5Y,pre_run_result,DATA_RATES_SCI_5Y_SWAP/AUS_5y_IRS_Libor,,,,,IRS_5Y,,,credit_impulse_trans_second,6,int,,,credit_mortgage_ngdp_2nd,credit_mortgage_ngdp_2nd,mortgage_app_ngdp_2nd (raw),,,mortgage_app_ngdp_2nd (z_score),53,Credit_Agg_sum_Z,,1,mortgage approval ngdp 2nd,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_IRS_2Y_1M_OIS,pre_run_result,DATA_RATES_2Y1M_SWAP_OIS/AUS_2y1m_irs_citi_ois,,,,,IRS_2y1m_OIS_Citi,,,credit_impulse_z_sd_roll,60,int,,,forward growth estimate,forward growth estimate,GS_CAI_Impulse (raw),,GS_CAI_Impulse (z score),GS_CAI_Impulse (z score smooth),0,ForwardGrow_sum_Z,,10,in-house growth estimate,,,,,,,,,,,,,,,,,,,
+
+AUS,AUS_1W_IRS_OIS,pre_run_result,DATA_RATES_1W_SWAP_OIS/AUS_1W_IRS_OIS,,,,,IRS_1W_OIS_OPENDATA,,,oil_impulse_trans_1st,252,int,,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+AUS,World_ex_AUS_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_AUS_avg_fci,,,,,World_avg_FCI,,,oil_impulse_trans_first,378,int,,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,ForwardCPI_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+AUS,World_ex_AUS_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_AUS_avg_gdp,,,,,World_ex_AUS_avg_GDP,,,oil_impulse_trans_second,126,int,,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+AUS,World_ex_AUS_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_AUS_avg_pot_gdp,,,,,World_ex_AUS_avg_pot_GDP,,,oil_impulse_z_mean,0,int,,,FX_impulse_2nd,FX_impulse_2nd,FX (raw),,,FX_Impulse (z score),1,ForwardCPI_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+AUS,RATES.SWAP.AUD.PAR.3Y,citivelocity,,,,,,IRS_3y_Citi,,,oil_impulse_z_sd_roll,1260,int,,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,2,glob growth pot,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_1st,252,int,,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,1,glob FCI impulse,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_first,378,int,,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_second,126,int,,,pricing_z_old,pricing_z_old,IRS_5Y,policy_rate,5y-PR-Premium,pricing (z score),1,pricing_sum_z,,candidate,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_mean,0,int,,,pricing_z_2y1d,pricing_z_2y1d,2y1d,ois_1w,2y1d-1w-20bps,pricing_2y (z score),1,pricing_sum_z,,1,"pricing gauge, steepness between 2y1d and 1w ois",,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_sd_roll,1260,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_roll,63,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_premium_sdRoll,1000,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN 1b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,Param Table,param,type,,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,
+
+CAN,CAN_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/CAN_0,,,,,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,80,int,,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,
+
+CAN,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/CAN_0,,,,,potential_yoy,,,pot_gdp_loess_frac,0.75,float,,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+CAN,OECDNAQ:E156GDPC,haver,,CAN_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,cai_pot_z_sd_roll,240,int,,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V2062815,haver,,CAN_URATE_SA,EconDB,,geo,Unemployment rate,,,capacity_util_z_sd_roll,80,int,,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,1,level gauge,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V4331081,haver,,CAN_CU_TOTAL_SA,EconDB,,geo,Capacity_Utilisation,quarterly,,core_cpi_targ_z_mean,0,int,,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,2,growth minus potential,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:CANEWC,haver,,CAN_WAGES_BOC_COMMON_YOY_NSA,EconDB,,geo,wage_common,not use?,,core_cpi_targ_z_sd_roll,240,int,,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,3,change gauge,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V1996471,haver,,CAN_WAGES_LOC_SA,EconDB,,geo,wage_and_social_contrib,"monthly data updated quarterly, thous CAD",,wages_trend_growth,6,int,,,ForwardGrow_sum_Z,ForwardGrow_sum_Z,,,,,0,Condition_sum_Z,,4,forward growth,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V2062811,haver,,CAN_EMPL_LEVEL_SA,EconDB,,geo,employment_thous,,,wages_trend_growth_loess_frac,0.75,float,,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V3075014,haver,,,,,,wage_hf,nsa!,,wages_trend_z_mean,0,int,,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,1,forward cpi,,,,,,,,,,,,,,,,,,,
+
+CAN,ECONOMICS.SURPRISE_INDEX.ESI.CEDI.DM.SI_CAD,citivelocity,,,,,,Citi_Econ_Chg_Index,,,wages_trend_z_sd_roll,80,int,,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,1,global gauge,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/CAN_Inf_Targ,,,,,inflation target,,,wages_monthly_trend_z_sd_roll,5040,int,,,growth vs potential,growth vs potential,GS CAI,potential_yoy,,growth - potential(z score),46,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V1M85715,haver,,CAN_CPI_TRIMMED_YOY_NSA,EconDB,,geo,Trimmed CPI,,,cai_chg_roll,6,int,,,GDP slack,GDP slack,growth rate (raw),growth rate (trend),,Growth Slack (z score),33,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,
+
+CAN,G10:H156HG,haver,,CAN_HOUS_HPI_NOM_INDEX_SA,EconDB,,geo,housing_prices,,,cai_chg_z_mean,0,int,,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),33,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V36415,haver,,CAN_HH_CREDIT_TOTAL_LOC_SA,EconDB,,geo,credit_hh,,,cai_chg_z_sd_roll,240,int,,,capacity vs trend,capacity vs trend,capacity utilisation (raw),capacity utilisation (trend),,capacity utilisation (z score),111,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_BOP_NGDP_SA,EconDB,,,,,,NGDP,nsa!,,citi_chg_index_1st,42,int,,,wage vs trend,wage vs trend,wage_6m(extended by LMS) (raw),wages_6m (trend),,wages_6m_trend (z score),0,Level_sum_Z,,1,wage vs trend,,,,,,,,,,,,,,,,,,,
+
+CAN,INTDAILY:X156USB,haver,,CAN_FXUSD,EconDB,,geo,FX_USD,,,citi_chg_index_sd_roll,5040,int,,,cpi(trimmed) vs target,cpi(trimmed) vs target,Trimmed CPI (raw),inflation target,,trimmed cpi vs target (z_score),52,Level_sum_Z,,2,cpi(trimmed) vs target,,,,,,,,,,,,,,,,,,,
+
+CAN,GS_CAI_Impulse,pre_run_result,RATES_FWDGROW_CAN_6m/GS_CAI_total_impulse,,,,,GS_CAI_Impulse,,,wage_chg_in_growth_z_mean,0,int,,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),33,Changes_sum_Z,,1,change in growth,,,,,,,,,,,,,,,,,,,
+
+CAN,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,brent,,,wage_monthly_chg_in_growth_roll_second,6,int,,,change in citi econ chg index,change in citi econ chg index,Citi_Econ_Chg_Index_1st (raw),,,Citi_Econ_Chg_Index_1st (z score),2,Changes_sum_Z,,1,change in citi econ chg index,,,,,,,,,,,,,,,,,,,
+
+CAN,INTDAILY:X111BCA,haver,,CAN_NEER,EconDB,,geo,FX_NEER,,,wage_monthly_chg_in_growth_z_sd_roll,5040,int,,,change in wage,change in wage,wage_2nd (raw),,,wage_growth_2nd (z score),0,Changes_sum_Z,,1,change in wage,,,,,,,,,,,,,,,,,,,
+
+CAN,INTDAILY:R156DTR,haver,,CAN_POLICY_RATE,EconDB,,geo,policy_rate,,,core_cpi_chg,6,int,,,change in cpi (trimmed mean),change in cpi (trimmed mean),Trimmed_CPI_2nd (raw),,,Trimmed_CPI_2nd (z score),52,Changes_sum_Z,,1,change in cpi (trimmed mean),,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_IRS_5Y,pre_run_result,DATA_RATES_SCI_5Y_SWAP/CAN_5y_IRS_Libor,,,,,IRS_5Y,,,core_cpi_chg_second,3,int,,,housing_price_1st,housing_price_1st,housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),55,Credit_Agg_sum_Z,,2,housing_price_1st,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_IRS_2Y_1M_OIS,pre_run_result,DATA_RATES_2Y1M_SWAP_OIS/CAN_2y1m_irs_citi_ois,,,,,IRS_2y1m_OIS_Citi,,,cai_impulse_z_smooth,21,int,,,housing_price_2nd,housing_price_2nd,housing_price_2nd (raw),,,housing_price_2nd (z_score),55,Credit_Agg_sum_Z,,1,housing_price_2nd,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_1W_IRS_OIS,pre_run_result,DATA_RATES_1W_SWAP_OIS/CAN_1W_IRS_OIS,,,,,IRS_1W_OIS_OPENDATA,,,hp_impulse_trans_first,12,int,,,credit_ngdp_1st,credit_ngdp_1st,credit_ngdp_1st (raw),credit_ngdp_1st (trend),,credit_ngdp_1st (z_score),47,Credit_Agg_sum_Z,,2,credit_ngdp_1st,,,,,,,,,,,,,,,,,,,
+
+CAN,World_ex_CAN_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_CAN_avg_fci,,,,,World_avg_FCI,,,hp_impulse_trans_second,6,int,,,credit_ngdp_2nd,credit_ngdp_2nd,credit_ngdp_2nd (raw),,,credit_ngdp_2nd (z_score),47,Credit_Agg_sum_Z,,1,credit_ngdp_2nd,,,,,,,,,,,,,,,,,,,
+
+CAN,World_ex_CAN_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_CAN_avg_gdp,,,,,World_ex_CAN_avg_GDP,,,hp_impulse_z_sd_roll,60,int,,,forward growth estimate,forward growth estimate,GS_CAI_Impulse (raw),,GS_CAI_Impulse (z score),GS_CAI_Impulse (z score smooth),0,ForwardGrow_sum_Z,,10,in-house growth estimate (6m),,,,,,,,,,,,,,,,,,,
+
+CAN,World_ex_CAN_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_CAN_avg_pot_gdp,,,,,World_ex_CAN_avg_pot_GDP,,,credit_impulse_trans_first,12,int,,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_impulse_trans_second,6,int,,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,ForwardCPI_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,credit_impulse_z_sd_roll,60,int,,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_1st,252,int,,,FX_impulse_2nd,FX_impulse_2nd,FX (raw),,,FX_Impulse (z score),1,ForwardCPI_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_first,378,int,,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,2,glob growth pot,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_trans_second,126,int,,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,1,glob FCI impulse,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_sd_roll,1260,int,,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_1st,252,int,,,pricing_z_old,pricing_z_old,IRS_5Y,policy_rate,5y-PR-Premium,pricing (z score),1,pricing_sum_z,,candidate,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_first,378,int,,,pricing_z_2y1d,pricing_z_2y1d,2y1d,ois_1w,2y1d-1w-20bps,pricing_2y (z score),1,pricing_sum_z,,1,"pricing gauge, steepness between 2y1d and 1w ois",,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_second,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_roll,63,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_sd_roll,1260,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_premium_sdRoll,1000,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR 1b,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,Param Table,param,type,,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,
+
+GBR,GBR_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/GBR_0,,,,,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,80,int,,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,
+
+GBR,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/GBR_0,,,,,potential_yoy,,,pot_gdp_loess_frac,0.3,float,,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+GBR,OECDNAQ:E112GDPC,haver,,GBR_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,cai_pot_z_sd_roll,240,int,,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,
+
+GBR,G10:S112ELUR,haver,,GBR_URATE_SA,EconDB,,geo,Unemployment rate,,,cai_pot_z_sd_ewm_alpha,0.016528926,float,,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,2,level gauge,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:ONVAA1,haver,,GBR_CU_MANU_CONSTRAINTS_BOEAGENTS_BALANCE_NSA,EconDB,,geo,Capacity_Utilisation_Manu,,,core_cpi_targ_z_mean,0,int,,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,2,growth minus potential,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:ONVAA2,haver,,GBR_CU_SERV_CONSTRAINTS_BOEAGENTS_BALANCE_NSA,EconDB,,geo,Capacity_Utilisation_Serv,,,core_cpi_targ_z_sd_roll,240,int,,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,4,change gauge,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UNVAA3,haver,,GBR_CU_TOTAL_CONSTRAINTS_BOEAGENTS_BALANCE_NSA,EconDB,,geo,Capacity_Utilisation_Tot,,,wages_trend_growth,6,int,,,ForwardGrow_sum_Z,ForwardGrow_sum_Z,,,,,0,Condition_sum_Z,,3,forward growth,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_WAGES_LOC_SA,EconDB,,,,,,wage,,,wages_trend_growth_loess_frac,0.4,float,,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:KAI7,haver,,GBR_WAGES_LOC_SA,EconDB,,geo,wage_regular_pay,,,wages_trend_z_mean,0,int,,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,1,forward cpi,,,,,,,,,,,,,,,,,,,
+
+GBR,ECONOMICS.SURPRISE_INDEX.ESI.CEDI.DM.SI_GBP,citivelocity,,,,,,Citi_Econ_Chg_Index,,,wages_trend_z_sd_roll,240,int,,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,1,global gauge,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/GBR_Inf_Targ,,,,,inflation target,,,cai_chg_roll,6,int,,,growth vs potential,growth vs potential,GS CAI,potential_yoy,,growth - potential(z score),46,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:L5KB,haver,,,,,,Core_CPI,,,cai_chg_z_sd_roll,240,int,,,GDP slack,GDP slack,growth rate (raw),growth rate (trend),,Growth Slack (z score),33,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_CPI,pre_run_result,RATES_LVL_INFLATmTARGET/GBR_CPI,,,,,Headline_CPI,,,citi_chg_index_1st,42,int,,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),80,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,,,,,housing_prices,,,citi_chg_index_sd_roll,5040,int,,,capacity vs trend,capacity vs trend,capacity utilisation (raw),,,capacity utilisation (z score),111,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UNRMIN,haver,,GBR_HOUS_HPI_RIGHT_MOVE_NSA,EconDB,,geo,HPI_rightmove,,,wage_chg_in_growth_roll_second,6,int,,,wage vs trend,wage vs trend,wage_1st (raw),wages_1st (trend),,wage_1st (z_score),63,Level_sum_Z,,1,wage (regular pay) vs trend,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:USB4B5,haver,,GBR_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_LOC_SA,EconDB,,geo,mortgage_approval_ex_refin,,,wage_chg_in_growth_z_mean,0,int,,,core cpi vs target,core cpi vs target,core cpi (raw),inflation target,,core cpi vs target (z_score),40,Level_sum_Z,,3,core cpi vs target,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:USVTVQ,haver,,GBR_HH_CREDIT_MORT_APPROVALS_TOTAL_LOC_SA,EconDB,,geo,mortgage_approval_tot,,,wage_chg_in_growth_z_sd_roll,240,int,,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),33,Changes_sum_Z,,4,change in growth,,,,,,,,,,,,,,,,,,,
+
+GBR,INTDAILY:X111UKJ,haver,,GBR_FXUSD,EconDB,,geo,FX_USD,,,core_cpi_chg,6,int,,,change in citi econ chg index,change in citi econ chg index,Citi_Econ_Chg_Index_1st (raw),,,Citi_Econ_Chg_Index_1st (z score),2,Changes_sum_Z,,2,change in citi econ chg index,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:YBHAQ,haver,,GBR_BOP_NGDP_SA,EconDB,,geo,NGDP,quarterly ngdp,,core_cpi_chg_second,3,int,,,change in wage,change in wage,wage_2nd (raw),,,wage_growth_2nd (z score),63,Changes_sum_Z,,2,change in wage(regular),,,,,,,,,,,,,,,,,,,
+
+GBR,GS_CAI_Impulse,pre_run_result,RATES_FWDGROW_GBR_6m/GS_CAI_total_impulse,,,,,GS_CAI_Impulse,,,cai_impulse_z_smooth,21,int,,,change in cpi (core),change in cpi (core),core cpi 2nd (raw),,,core_cpi_2nd (z score),40,Changes_sum_Z,,1,change in cpi (core),,,,,,,,,,,,,,,,,,,
+
+GBR,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,brent,,,hp_impulse_trans_first,12,int,,,change in headline cpi,change in headline cpi,headline cpi 2nd (raw),,,headline_cpi_2nd (z score),40,Changes_sum_Z,,2,change in headline cpi,,,,,,,,,,,,,,,,,,,
+
+GBR,INTDAILY:X111BUK,haver,,GBR_NEER,EconDB,,geo,FX_NEER,,,hp_impulse_trans_second,6,int,,,housing_price_1st,housing_price_1st,housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),15,Credit_Agg_sum_Z,,2,housing_price_1st,,,,,,,,,,,,,,,,,,,
+
+GBR,INTDAILY:R112RD,haver,,GBR_POLICY_RATE,EconDB,,geo,policy_rate,,,hp_impulse_z_sd_roll,60,int,,,housing_price_2nd,housing_price_2nd,housing_prices_2nd (raw),,,housing_price_2nd (z_score),15,Credit_Agg_sum_Z,,1,housing_price_2nd,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_IRS_5Y,pre_run_result,DATA_RATES_5Y_SWAP_OIS/GBR_5y_IRS_OIS,,,,,IRS_5Y,,,credit_impulse_1st_trend_roll,60,int,,,credit_ngdp_1st,credit_ngdp_1st,mortgage_approval_ngdp_1st (raw),mortgage_approval_ngdp_1st (trend),,mortgage_approval_ngdp_1st (z_score),45,Credit_Agg_sum_Z,,2,mortgage approval pct gdp,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_IRS_2Y_1M_OIS,pre_run_result,DATA_RATES_2Y1M_SWAP_OIS/GBR_2y1m_irs_citi_ois,,,,,IRS_2y1m_OIS_Citi,,,credit_impulse_trans_second,6,int,,,credit_ngdp_2nd,credit_ngdp_2nd,mortgage_approval_ngdp_2nd (raw),,,mortgage_approval_ngdp_2nd (z_score),45,Credit_Agg_sum_Z,,1,mortgage approval (2nd) pct gdp,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_1W_IRS_OIS,pre_run_result,DATA_RATES_1W_SWAP_OIS/GBR_1W_IRS_OIS,,,,,IRS_1W_OIS_OPENDATA,,,credit_impulse_z_sd_roll,60,int,,,forward growth estimate,forward growth estimate,GS_CAI_Impulse (raw),,GS_CAI_Impulse (z score),GS_CAI_Impulse (z score smooth),0,ForwardGrow_sum_Z,,1,in-house growth estimate,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_fci,,,,,World_avg_FCI,,,oil_impulse_trans_1st,252,int,,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_gdp,,,,,World_ex_GBR_avg_GDP,,,oil_impulse_trans_first,378,int,,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,ForwardCPI_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_pot_gdp,,,,,World_ex_GBR_avg_pot_GDP,,,oil_impulse_trans_second,126,int,,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_mean,0,int,,,FX_impulse_2nd,FX_impulse_2nd,FX (raw),,,FX_Impulse (z score),1,ForwardCPI_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,oil_impulse_z_sd_roll,1260,int,,,Headline_m_Core_CPI,Headline_m_Core_CPI,core cpi (raw),headline cpi (raw),,headline m core cpi (z_score),40,ForwardCPI_sum_Z,,1,headline minus core cpi,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_1st,252,int,,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,2,glob growth pot,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_first,378,int,,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,1,glob FCI impulse,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_trans_second,126,int,,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_mean,0,int,,,pricing_z_old,pricing_z_old,IRS_5Y,policy_rate,5y-PR-Premium,pricing (z score),1,pricing_sum_z,,candidate,pricing gauge,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_z_sd_roll,1260,int,,,pricing_z_2y1d,pricing_z_2y1d,2y1d,ois_1w,2y1d-1w-20bps,pricing_2y (z score),1,pricing_sum_z,,1,"pricing gauge, steepness between 2y1d and 1w ois",,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,fx_impulse_roll,63,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,pricing_z_premium_sdRoll,1000,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,exclude_brexit,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA current account,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,in_file_suf_fix1,,,,item_tree_country,COMPONENT_KEY,item_name,parent_key,w_in_parent,is_re_z_needed,direction,input_hf,hf_lag,input_volume,input_volume_nsa,input_volume_lag,input_volume_smooth,map_to_parent_export_method,w_in_parent_export,map_to_parent_import_method,w_in_parent_import,export_value,export_value_nsa,export_value_lag,import_value,import_value_nsa,import_value_lag,Axis_Unit2,,manual_override_in_file_suf,mo_date,mo_value,mo_until,note,,,,,,,,
+
+BRA,BRA_FXUSD,EconDB,,FX_USD,,,,BRA,Current account balance,Current account balance,,,,,,0,,,,,,,,,Current_account_export_thou_nsa,T,26,Current_account_import_thou_nsa,T,26,,,CAI_GS,last_value,-11,2020-05-01,so that the average 3m is about -2,,,,,,,,
+
+BRA,N223IX66@EMERGELA,haver,,Export_Iron_Ore_Volume_NSA,,,,BRA,Trade balance,Trade balance,Current account balance,,,,,0,,,,,no_tran,,no_tran,,Good_and_Serv_Export_thou_nsa,T,26,Good_and_Serv_Import_thou_nsa,T,26,,,,,,,,,,,,,,,
+
+BRA,C223IX66@EMERGELA,haver,,Export_Iron_Ore_Value_thou_USD_NSA,,,,BRA,Primary income balance,Primary income balance,Current account balance,,,,,0,,,,,no_tran,,no_tran,,Primary_income_export_thou,F,26,Primary_income_import_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,C223IX86@EMERGELA,haver,,Export_Fe_alloy_Value_thou_USD_NSA,,,,BRA,Primary income export,Primary income export,Primary income balance,,,export,assume_constant,0,Primary_income_export_thou,F,26,,no_tran,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IX86@EMERGELA,haver,,Export_Fe_alloy_Volume_NSA,,,,BRA,Primary income import,Primary income import,Primary income balance,,,import,assume_constant,0,Primary_income_import_thou,F,26,,,,no_tran,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,COMMODITIES.CURVE.METAL.CR_IRON.SZZF01.METAL_FUTURE,citivelocity,,Iron_Ore_Future_1,,,,BRA,Services balance,Services balance,Trade balance,,,,,0,,,,,no_tran,,no_tran,,Services_Export_thou,F,26,Services_Import_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,C223IX71@EMERGELA,haver,,Export_Soy_bean_Value_thou_USD_NSA,,brazil mainly import grain product,,BRA,"Non cyclical(travel,transport) services balance","Non cyclical(travel,transport) services balance",Services balance,,,,,0,,,,,no_tran,,no_tran,,Service_export_non_travel_transport_thou,F,26,Service_import_non_travel_transport_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,N223IX71@EMERGELA,haver,,Export_Soy_bean_Volume_NSA,,,,BRA,"Cyclical(travel,transport) services balance","Cyclical(travel,transport) services balance",Services balance,,,,,0,,,,,no_tran,,no_tran,,Service_export_travel_transport_thou,F,26,Service_import_travel_transport_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,PZSOYF@DAILY,haver,,Soy_bean_px,,,,BRA,"Non cyclical(travel,transport) services export","Non cyclical(travel,transport) services export","Non cyclical(travel,transport) services balance",,,export,assume_constant,0,Service_export_non_travel_transport_thou,F,26,,no_tran,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,P1011@USECON,haver,,US_PPI_Iron_ore,,,,BRA,"Non cyclical(travel,transport) services import","Non cyclical(travel,transport) services import","Non cyclical(travel,transport) services balance",,,import,assume_constant,0,Service_import_non_travel_transport_thou,F,26,,,,no_tran,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,PZDIOC@DAILY,haver,,Iron_ore_fut_haver,,,,BRA,"Cyclical(travel,transport) services export","Cyclical(travel,transport) services export","Cyclical(travel,transport) services balance",0.45,,export,assume_constant,0,Trading_Partner_Growth,F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,DAILY:PZBRT,haver,,Brent_oil_price,,,Note: aggregation has 2 methods: add_zto: add up the child and zto the value; simply add: simply add the hf of child up,BRA,"Cyclical(travel,transport) services export(TP xCHN grow)","Cyclical(travel,transport) services export(TP xCHN grow)","Cyclical(travel,transport) services balance",0.45,,export,assume_constant,0,Trading_Partner_Growth(xCHN),F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IJKE@EMERGELA,haver,,Export_Crude_oil_Volume_NSA,,,,BRA,"Cyclical(travel,transport) services export(TP_FCI)","Cyclical(travel,transport) services export(TP_FCI)","Cyclical(travel,transport) services balance",0.1,,export,assume_constant,0,TP_FCI,F,2,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IXFG@EMERGELA,haver,,Export_Crude_oil_Value_NSA,,,"note: when agg method is add, no value series is needed; when agg method is add_zto, value series is needed",BRA,"Cyclical(travel,transport) services import","Cyclical(travel,transport) services import","Cyclical(travel,transport) services balance",0.9,,import,assume_constant,0,CAI_GS,F,40,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IKF@EMERGELA,haver,,Import_Mineral_fuel_Volume_NSA,,,,BRA,"Cyclical(travel,transport) services import(FCI)","Cyclical(travel,transport) services import(FCI)","Cyclical(travel,transport) services balance",0.1,,import,assume_constant,0,FCI,F,2,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IMF@EMERGELA,haver,,Import_Mineral_fuel_Value_thou_USD_NSA,,,,BRA,Goods balance,Goods balance,Trade balance,,,,,0,,,,,no_tran,,no_tran,,Good_Export_thou,F,26,Good_Import_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,H223GPMD@EMERGELA,haver,,NGDP_monthly,,,,BRA,Non cmd,Non cmd,Goods balance,,,,,0,,,,,zto,,zto,,NONCMD_Export_thou,F,26,NONCMD_Import_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,H223MGDP@EMERGELA,haver,,NGDP_monthly_lc,,,,BRA,Non cmdty import,Non cmdty import,Non cmd,0.9,,import,assume_constant,0,CAI_GS,F,40,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,CHN_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/CHN_0,CHN_CAI_GS,,,industrial metals,BRA,Non cmdty import(FCI),Non cmdty import(FCI),Non cmd,0.1,,import,assume_constant,0,FCI,F,2,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_CMD_MIL_USD_SA,EconDB,,CMD_Export,,,,BRA,Non cmdty export,Non cmdty export,Non cmd,0.45,,export,assume_constant,0,Trading_Partner_Growth,F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_IMPORTS_CMD_MIL_USD_SA,EconDB,,CMD_Import,,,,BRA,Non cmdty export(TP xCHN grow),Non cmdty export(TP xCHN grow),Non cmd,0.45,,export,assume_constant,0,Trading_Partner_Growth(xCHN),F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX65@EMERGELA,haver,,EXPORTS_ALUMINUM_ORES_VALUE_THOUS_USD_NSA,,,,BRA,Non cmdty export(TP_FCI),Non cmdty export(TP_FCI),Non cmd,0.1,,export,assume_constant,0,TP_FCI,F,2,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX66@EMERGELA,haver,,EXPORTS_IRON_ORES_VALUE_THOUS_USD_NSA,,,,BRA,Cmd,Cmd,Goods balance,,,,,0,,,,,zto,,zto,,CMD_Export_thou,F,26,CMD_Import_thou,F,26,,,,,,,,,,,,,,,
+
+BRA,C223IX67@EMERGELA,haver,,EXPORTS_MANGANESE_VALUE_THOUS_USD_NSA,,,,BRA,Industrial metal,Industrial metal,Cmd,,,,,0,,,,,zto,,zto,,EXPORTS_INDUSTRIAL_METAL_VALUE_THOU_USD_NSA,F,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX76@EMERGELA,haver,,EXPORTS_ALUMINUM_UNWROUGHT_VALUE_THOUS_USD_NSA,,,,BRA,Agriculture,Agriculture,Cmd,,,,,0,,,,,zto,,zto,,EXPORTS_AGRICULTURE_VALUE_THOU_USD_SA,F,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX79@EMERGELA,haver,,EXPORTS_COPPER_CATHODES_VALUE_THOUS_USD_NSA,,,,BRA,Iron ore,Iron ore,Industrial metal,,,,,0,,,,,zto,,zto,,Export_Iron_Ore_Value_thou_USD_NSA,T,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX80@EMERGELA,haver,,EXPORTS_NICKEL_CATHODES_VALUE_THOUS_USD_NSA,,,,BRA,Fe alloy,Fe alloy,Industrial metal,,,,,0,,,,,zto,,zto,,Export_Fe_alloy_Value_thou_USD_NSA,T,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX83@EMERGELA,haver,,EXPORTS_TIN_UNWROUGHT_VALUE_THOUS_USD_NSA,,,,BRA,Soy bean,Soy bean,Agriculture,,,,,0,,,,,zto,,zto,,Export_Soy_bean_Value_thou_USD_NSA,T,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX85@EMERGELA,haver,,EXPORTS_PIG_IRON_VALUE_THOUS_USD_NSA,,,,BRA,Mineral fuel,Mineral fuel,Cmd,,,,,0,,,,,zto,,zto,,EXPORTS_MINERAL_FUELS_VALUE_THOU_USD_SA,F,26,Import_Mineral_fuel_Value_thou_USD_NSA,T,26,,,,,,,,,,,,,,,
+
+BRA,C223IX86@EMERGELA,haver,,EXPORTS_FERROALLOYS_VALUE_THOUS_USD_NSA,,,,BRA,Crude oil,Crude oil,Mineral fuel,,,,,0,,,,,zto,,zto,,Export_Crude_oil_Value_NSA,T,26,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX87@EMERGELA,haver,,EXPORTS_ALUMINUM_ALLOYS_UNWROUGHT_VALUE_THOUS_USD_NSA,,,,BRA,Iron ore export,Iron ore export,Iron ore,0.5,,export,Iron_Ore_Future_1,1,Export_Iron_Ore_Volume_NSA,T,26,126,chg_zto_geochange_63,,chg_zto_geochange_63,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX91@EMERGELA,haver,,EXPORTS_NICKEL_MATTES_VALUE_THOUS_USD_NSA,,,,BRA,Fe alloy export,Fe alloy export,Fe alloy,,,export,Iron_Ore_Future_1,1,Export_Fe_alloy_Volume_NSA,T,26,126,zto,,zto,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX96@EMERGELA,haver,,EXPORTS_IRON_SEMI_VALUE_THOUS_USD_NSA,,,,BRA,Soy bean export,Soy bean export,Soy bean,,,export,Soy_bean_px,1,Export_Soy_bean_Volume_NSA,T,26,126,zto,,zto,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX99@EMERGELA,haver,,EXPORTS_ZINC_UNWROUGHT_VALUE_THOUS_USD_NSA,,,,BRA,Crude oil export,Crude oil export,Crude oil,,,export,Brent_oil_price,1,Export_Crude_oil_Volume_NSA,T,26,126,chg_zto_geochange_63,,chg_zto_geochange_63,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX12@EMERGELA,haver,,EXPORTS_IRON_BARS_VALUE_THOUS_USD_NSA,,,,BRA,Mineral fuel import,Mineral fuel import,Mineral fuel,,,import,Brent_oil_price,1,Import_Mineral_fuel_Volume_NSA,T,26,126,chg_zto_geochange_63,,chg_zto_geochange_63,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX27@EMERGELA,haver,,EXPORTS_IRON_FLAT_VALUE_THOUS_USD_NSA,,,,BRA,Iron ore export(China),Iron ore export(China),Iron ore,0.5,,export,Iron_Ore_Future_1,1,iron_ore_volume_estimate,F,26,,chg_zto_geochange_63,,chg_zto_geochange_63,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,C223IX30@EMERGELA,haver,,EXPORTS_IRON_TUBES_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223IEJN@EMERGELA,haver,,EXPORTS_COPPER_ORES_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_PRECIOUS_VALUE_MIL_USD_NSA,EconDB,,EXPORTS_PRECIOUS_VALUE_MIL_USD_NSA,,agriculture,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_MINERAL_FUELS_VALUE_MIL_USD_SA,EconDB,,EXPORTS_MINERAL_FUELS_VALUE_MIL_USD_SA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_COTTON_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_COTTON_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_COFFEE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_COFFEE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_MEAT_BOVINE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_MEAT_BOVINE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_MEAT_SWINE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_MEAT_SWINE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_CHICKEN_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_CHICKEN_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_TURKEY_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_TURKEY_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_CASHEW_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_CASHEW_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_OIL_CAKES_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_OIL_CAKES_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_TOBACCO_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_TOBACCO_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_GUAVAS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_GUAVAS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_SOYBEANS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_SOYBEANS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_GUTS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_GUTS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_SUGAR_RAW_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_SUGAR_RAW_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_RUBBER_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_RUBBER_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_COCOA_POWDER_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_COCOA_POWDER_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_VEGGIE_WAXES_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_VEGGIE_WAXES_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_RAW_HIDES_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_RAW_HIDES_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_TANNING_EXTRACTS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_TANNING_EXTRACTS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_COCOA_BUTTER_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_COCOA_BUTTER_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_SOYBEAN_OILS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_SOYBEAN_OILS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_COCOA_PASTE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_COCOA_PASTE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_VEGGIE_SAPS_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_VEGGIE_SAPS_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_SUGAR_REFINED_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_SUGAR_REFINED_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_OJ_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_OJ_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_WHEAT_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_WHEAT_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_LIVE_BOVINE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_LIVE_BOVINE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_RICE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_RICE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_MEAT_OFFAL_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_MEAT_OFFAL_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_SALTED_MEAT_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_SALTED_MEAT_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_MAIZE_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_MAIZE_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_OJ_FRESH_VALUE_THOUS_USD_NSA,EconDB,,EXPORTS_OJ_FRESH_VALUE_THOUS_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_EXPORTS_GOODS_MIL_USD_SA,EconDB,,EXPORTS_GOODS_MIL_USD_SA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_IMPORTS_GOODS_MIL_USD_SA,EconDB,,IMPORTS_GOODS_MIL_USD_SA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/BRA_trade_weighted_gdp,Trading_Partner_Growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW_xCHN/BRA_trade_weighted_gdp,Trading_Partner_Growth(xCHN),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/BRA_0,CAI_GS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,H223BCPG@EMERGELA,haver,,CA % GDP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,H223ACSX@EMERGELA,haver,,EXPORTS_SERVICES_MIL_USD_SA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,H223ACSM@EMERGELA,haver,,IMPORTS_SERVICES_MIL_USD_SA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223AGSX@EMERGELA,haver,,EXPORTS_GOODS_AND_SERVICES_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223AGSM@EMERGELA,haver,,IMPORTS_GOODS_AND_SERVICES_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ACYC@EMERGELA,haver,,Primary_income_export_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ACYD@EMERGELA,haver,,Primary_income_import_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ACX@EMERGELA,haver,,Current_account_export_mil_usd_nsa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ACM@EMERGELA,haver,,Current_account_import_mil_usd_nsa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ASXR@EMERGELA,haver,,EXPORTS_SERVICES_TRAVEL_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ASMR@EMERGELA,haver,,IMPORTS_SERVICES_TRAVEL_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ASXT@EMERGELA,haver,,EXPORTS_SERVICES_TRANSPORT_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,N223ASMT@EMERGELA,haver,,IMPORTS_SERVICES_TRANSPORT_MIL_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_FCI_z,pre_run_result,FCI_zto_CAI/BRA_FCI_CAI,FCI_z,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_FCI_GS,EconDB,,FCI,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+BRA,BRA_trade_weighted_fci,pre_run_result,RATES_LVL_TW_GROW_to_FCI/BRA_trade_weighted_fci,TP_FCI,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL current account,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,in_file_suf_fix1,,,item_tree_country,COMPONENT_KEY,item_name,parent_key,w_in_parent,is_re_z_needed,direction,input_hf,hf_lag,input_volume,input_volume_nsa,input_volume_lag,input_volume_smooth,map_to_parent_export_method,w_in_parent_export,map_to_parent_import_method,w_in_parent_import,export_value,export_value_nsa,export_value_lag,import_value,import_value_nsa,import_value_lag,Axis_Unit2,,,,,,,,,,,,,,,
+
+CHL,CHL_FXUSD,EconDB,,FX_USD,,,CHL,Trade balance,Trade balance,,,no,,,,,,,,,,,,Export_Trade_Mil_USD,F,41,Import_Trade_Mil_USD,F,41,,,,,,,,,,,,,,,,
+
+CHL,"DB(CMDTY,INDEX,JMCXEM,TRADED,PI)",jpmdq,,Copper_px_jpm,,,CHL,Services balance,Services balance,Trade balance,,,,,,,,,,zto,,zto,,Export_Services_Mil_USD,F,130,Import_Services_Mil_USD,F,130,,,,,,,,,,,,,,,,
+
+CHL,PZCHF@DAILY,haver,,Copper_px_haver,,,CHL,Services export,Services export,Services balance,0.5,,export,assume_constant,0,Trading_Partner_Growth,F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,COMMODITIES.CURVE.METAL.CR_IRON.SZZF01.METAL_FUTURE,citivelocity,,Iron_Ore_Future_1,,,CHL,Services export(TP xCHN grow),Services export(TP xCHN grow),Services balance,0.5,,export,assume_constant,0,Trading_Partner_Growth(xCHN),F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,N228QXNC@EMERGELA,haver,,Export_Copper_Volume_NSA,,,CHL,Services import,Services import,Services balance,,,import,assume_constant,0,CAI_GS,F,40,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,N228IEJN@EMERGELA,haver,,Export_Copper_Value_Mil_USD_NSA,,,CHL,Goods balance,Goods balance,Trade balance,,no,,,0,,,,,,,,,Export_Goods_Mil_USD_SA,F,41,Import_Goods_Mil_USD_SA,F,41,,,,,,,,,,,,,,,,
+
+CHL,N228QXJL@EMERGELA,haver,,Export_Iron_Volume_NSA,,,CHL,Non cmd,Non cmd,Goods balance,,,,,0,,,,,,,,,Export_noncmd_mil_usd_sa,F,41,Import_noncmd_mil_usd_sa,F,41,,,,,,,,,,,,,,,,
+
+CHL,N228IEJL@EMERGELA,haver,,Export_Iron_Value_Mil_USD_NSA,,,CHL,Non cmdty import,Non cmdty import,Non cmd,,,import,assume_constant,0,CAI_GS,F,40,,,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_EXPORTS_INDUSTRIAL_METALS_VALUE_MIL_USD_SA,EconDB,,Export_Industrial_Metal_Mil_USD_SA,,,CHL,Non cmdty export,Non cmdty export,Non cmd,0.5,,export,assume_constant,0,Trading_Partner_Growth,F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,N228IXAG@EMERGELA,haver,,Export_Agriculture_Mil_USD_NSA,,,CHL,Non cmdty export(TP xCHN grow),Non cmdty export(TP xCHN grow),Non cmd,0.5,,export,assume_constant,0,Trading_Partner_Growth(xCHN),F,26,,zto_geochange_126,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_EXPORTS_PRECIOUS_VALUE_MIL_USD_NSA,EconDB,,Export_Previous_Mil_USD_NSA,,,CHL,Cmd,Cmd,Goods balance,,,,,0,,,,,,,,,Export_cmd_mil_usd_sa,F,41,Import_cmd_mil_usd_sa,F,41,,,,,,,,,,,,,,,,
+
+CHL,CHL_IMPORTS_MINERAL_FUELS_VALUE_MIL_USD_NSA,EconDB,,Import_Mineral_Fuels_Mil_USD_NSA,,,CHL,Industrial metal,Industrial metal,Cmd,,,,,0,,,,,zto,,,,Export_Industrial_Metal_Mil_USD_SA,F,41,,,,,,,,,,,,,,,,,,,
+
+CHL,N228QMTE@EMERGELA,haver,,Import_Mineral_Fuels_Volume_NSA,,,CHL,Copper,Copper,Industrial metal,,,,,0,,,,,zto,,zto,,Export_Copper_Value_Mil_USD_NSA,T,41,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_IMPORTS_AGRICULTURE_VALUE2_MIL_USD_NSA,EconDB,,Import_Agriculture_Mil_USD_NSA,,,CHL,Copper_export,Copper_export,Copper,,,export,Copper_px_haver,1,assume_constant,,,,zto,,zto,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_IMPORTS_INDUSTRIAL_METALS_VALUE_MIL_USD_NSA,EconDB,,Import_Industrial_Metal_Value_Mil_USD_NSA,,,CHL,Mineral fuel,Mineral fuel,Cmd,,,,,,,,,,zto,,zto,,,,,Import_Mineral_Fuels_Mil_USD_NSA,T,41,,,,,,,,,,,,,,,,
+
+CHL,"DB(CMDTY,INDEX,JMCXME,TRADED,PI)",jpmdq,,All_metal_px,,,CHL,Mineral fuel import,Mineral fuel import,Mineral fuel,,,import,Brent_oil_price,1,assume_constant,,,,chg_zto_geochange_63,,chg_zto_geochange_63,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,H228IXD@EMERGELA,haver,,Export_Goods_Mil_USD_SA,,,CHL,Iron,Iron,Industrial metal,,,,,,,,,,zto,,zto,,Export_Iron_Value_Mil_USD_NSA,T,41,,,,,,,,,,,,,,,,,,,
+
+CHL,H228IMD@EMERGELA,haver,,Import_Goods_Mil_USD_SA,,,CHL,Iron_export,Iron_export,Iron,,,export,Iron_Ore_Future_1,2,assume_constant,,,,zto,,zto,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,DAILY:PZBRT,haver,,Brent_oil_price,,,CHL,Precious metal,Precious metal,Cmd,,,,,0,,,,,zto,,zto,,Export_Previous_Mil_USD_NSA,T,41,,,,,,,,,,,,,,,,,,,
+
+CHL,H228NGPD@EMERGELA,haver,,Nominal_GDP_Q,,,CHL,Gold,Gold,Precious metal,,,,,0,,,,,zto,,zto,,Export_Gold_Value_Mil_USD_NSA,T,41,,,,,,,,,,,,,,,,,,,
+
+CHL,H228ACPG@EMERGELA,haver,,CA % GDP,,,CHL,Gold export,Gold export,Gold,,,export,Gold_px_haver,1,assume_constant,,,,zto,,zto,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/CHL_0,CAI_GS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/CHL_trade_weighted_gdp,Trading_Partner_Growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,CHL_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW_xCHN/CHL_trade_weighted_gdp,Trading_Partner_Growth(xCHN),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,N228IX97@EMERGELA,haver,,Export_Gold_Value_Mil_USD_NSA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,PZGLF@DAILY,haver,,Gold_px_haver,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,H228ACSX@EMERGELA,haver,,Export_Services_Mil_USD_Qtr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,H228ACSM@EMERGELA,haver,,Import_Services_Mil_USD_Qtr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CHL,N228IXN@EMERGELA,haver,,Export_Mining_Mil_USD,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR forward growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,,,Param Table,trans1,trans2,smooth_front,,,,COMPONENT_KEY,name,raw,raw2,hf_Impulse,lag,release_lag,parent_key,order_for_adding,w_in_parent,Need_VolAdj,des,roll_win,win_1st,win_2nd,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,
+
+GBR,OECDNAQ:E112GDPC,haver,,GBR_RGDP_LOC_SAAR,EconDB,,,RGDP,,,,,Equity,126,126,1,,,,GS_CAI,GS_CAI,GS_CAI_1st,GS_CAI_2nd,,0,0,,0,,0,GS current activity index,default,3m,3m," % chg,saar", level chg,saar,"3m % chg,saar","3m % chg,saar",3m level chg,,,,,
+
+GBR,UK:ABJRQ,haver,,GBR_RGDP_FINALCONS_PRIV_HOUSEHOLD_LOC_SA,EconDB,,,PCE,,,,,10Y_Gov_Bond,126,300,1,,,,RGDP,RGDP,RGDP_1st,RGDP_2nd,,0,0,,0,,0,Real GDP,default,2q,2q," % chg,saar", level chg,saar,"2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:IKBKQ,haver,,GBR_RGDP_EXP_LOC_SA,EconDB,,,Export,,,,,Brent_LC,126,126,1,,,,PCE,PCE,PCE_1st,PCE_2nd,,0,0,GS_CAI,1,PCE_RGDP,0,personal consumption expenditure,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:BQKQQ,haver,,GBR_RGDP_EXP_GOOD_LOC_SA,EconDB,,,Export_Good,,,,,Brent_LC_flip,300,126,1,,,,Investment_Residential,Investment_Residential,Investment_Residential_1st,Investment_Residential_2nd,,0,0,GS_CAI,2,Investment_Residential_RGDP,0,private fixed investment (residential),default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:IKBEQ,haver,,GBR_RGDP_EXP_SERV_LOC_SA,EconDB,,,Export_Service,,,,,Mortgage_Rate_5Y,6,6,1,,,,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy_1st,Investment_nonResidential_exEnergy_2nd,,0,0,GS_CAI,3,Investment_nonResidential_exEnergy_RGDP,0,"private fixed investment (non residential),ex. energy capex",default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:IKBLQ,haver,,GBR_RGDP_IMP_LOC_SA,EconDB,,,Import,,,,,Mortgage_Rate_2Y,6,6,1,,,,Export_Good,Export_Good,Export_Good_1st,Export_Good_2nd,,0,0,GS_CAI,5,Export_Good_RGDP,0,export in good,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:DFEGQ,haver,,GBR_RGDP_GROSSCAPFORM_FIXED_DWELLINGS_LOC_SA,EconDB,,,Investment_Residential,,,,,debt_servicing,6,6,1,,,,Export_Service,Export_Service,Export_Service_1st,Export_Service_2nd,,0,0,GS_CAI,5,Export_Service_RGDP,0,export in service,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+GBR,UK:NPELQ,haver,,GBR_RGDP_GROSSCAPFORM_FIXED_BUS_LOC_SA,EconDB,,,Business_Capex,2005 Q2: transfer of nuclear reactors from public corporation sector to central government,,,,FX_NEER,63,63,63,,,,Equity,Equity,Equity_1st,Equity_2nd,Equity_Impulse,126,1,PCE,6,2,1,FTSE 100 index,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,UK:CAFUQ,haver,,,,,,Investment_Chg_in_Inventory,need to forcasted separately,,,,FX_NEER^PCE^,126,63,1,,,,10Y_Gov_Bond,10Y_Gov_Bond,10Y_Gov_Bond_1st,10Y_Gov_Bond_2nd,10Y_Gov_Bond_Impulse,126,1,PCE,6,0,1,total return index of 10 year govt bond,default,15m,6m, % chg, level chg,,15m % chg,15m % chg,6m level chg,,,,,
+
+GBR,UK:DS3JQ,haver,,,,,,Investment_nonResidential_Energy,,,,,salary,6,6,1,,,,Housing_Prices,Housing_Prices,Housing_Prices_1st,Housing_Prices_2nd,Housing_Prices_Impulse,6,15,PCE,6,2.5,1,national housing price index,default,15m,10m, % chg, level chg,,15m % chg,15m % chg,10m level chg,,,,,
+
+GBR,INTDAILY:S112FT1,haver,,GBR_EQ,EconDB,,,Equity,,,,,Total_Employment,6,6,1,,,,salary,salary,salary_1st,salary_2nd,,6,0,PCE,6,3,1,salary,default,6m,6m, % chg, level chg,saar,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,GBR_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/GBR_10y_TRI,,,,,10Y_Gov_Bond,,,,,Average_Weekly_Earnings,6,6,1,,,,Total_Employment,Total_Employment,Total_Employment_1st,Total_Employment_2nd,Total_Employment_Impulse,6,81,salary,6,1,1,employment,default,6m,6m, % chg, level chg,saar,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,UK:UNBV42,haver,,GBR_MORT_RATE_AVERAGE_5Y_75LTV_NSA,EconDB,,aris,Mortgage_Rate_5Y,,,,,Mortgage_Approval_pct_GDP,1,6,1,,,,Average_Weekly_Earnings,Average_Weekly_Earnings,Average_Weekly_Earnings_1st,Average_Weekly_Earnings_2nd,Average_Weekly_Earnings_Impulse,6,63,salary,6,1,1,"average weekly earnings, regular pay (=total salary/employment)",default,6m,6m, % chg, level chg,saar,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,UK:UNBV34,haver,,GBR_MORT_RATE_AVERAGE_2Y_75LTV_NSA,EconDB,,aris,Mortgage_Rate_2Y,UK basically use 2 year variable rate,,,,Housing_sales_to_stock_ratio,6,6,1,,,,Brent_LC_flip,Brent_LC_flip,Brent_LC_flip_1st,Brent_LC_flip_2nd,Brent_LC_flip_Impulse,126,1,PCE,6,1,1,brent oil,default,15m,6m, % chg, level chg,,15m % chg,15m % chg,6m level chg,,,,,
+
+GBR,UK:MGRZ,haver,,GBR_EMPLOYMENT_TOTAL_3MMA_CENTRED_SA,EconDB,,,Total_Employment,,,,,Housing_Prices,15,10,1,,,,Consumer_Confidence_Composite,Consumer_Confidence_Composite,Consumer_Confidence_Composite_1st,Consumer_Confidence_Composite_2nd,Consumer_Confidence_Composite_Impulse,6,23,PCE,6,3,1,composite consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,GBR_WAGES_LOC_SA,EconDB,,,,,,Average_Weekly_Earnings,,,,,Housing_Permit,6,6,1,,,,FX_NEER^PCE^,FX_NEER^PCE^,FX_NEER^PCE^_1st,FX_NEER^PCE^_2nd,FX_NEER^PCE^_Impulse,126,1,PCE,6,0,1,nominal effective exchange rates,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,UK:KAI7,haver,,GBR_WAGES_LOC_SA,EconDB,,,Average_Weekly_Earnings_haver,splice,,,,Construction_PMI,1,6,1,,,,debt_servicing,debt_servicing,debt_servicing_1st,debt_servicing_2nd,debt_servicing_Impulse,6,46,PCE,6,1,1,total debt servicing multiply mortgage rate,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,UK:USB4B5,haver,,GBR_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_LOC_SA,EconDB,,,Mortgage_Approval_ex_Refinancing,,,,,Trading_Partner_Growth,1,6,1,,,,Trading_Partner_Growth^PCE^,Trading_Partner_Growth^PCE^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,PCE,6,2,1,trade weighted average of partners CAI,default,1m,6m,ma, level chg,saar,monthly,monthly,6m level chg,,,,,
+
+GBR,GBR_HH_CREDIT_MORT_APPROVALS_EXREFINANCING_HIGHST_LOC_SA,EconDB,,,,,,Mortgage_Approval_HighSt_ex_Refinancing,,,,,PPI_Manufacturing,6,6,1,,,,Mortgage_Rate_5Y,Mortgage_Rate_5Y,Mortgage_Rate_5Y_1st,Mortgage_Rate_5Y_2nd,Mortgage_Rate_5Y_Impulse,6,29,Investment_Residential,6,0,1,"mortgages: fixed rates: MFIs ex central bank, 5-year 75% ltv ratio",default,6m,6m, level chg, level chg,,6m level chg,6m level chg,6m level chg,,,,,
+
+GBR,UK:USVTVQ,haver,,GBR_HH_CREDIT_MORT_APPROVALS_TOTAL_LOC_SA,EconDB,,,Mortgage_Approval,as extention,,,,GS_CAI,1,3,1,,,,Mortgage_Rate_2Y,Mortgage_Rate_2Y,Mortgage_Rate_2Y_1st,Mortgage_Rate_2Y_2nd,Mortgage_Rate_2Y_Impulse,6,29,Investment_Residential,6,1,1,"mortgages: variable rates: MFIs ex central bank, 2-year 75% ltv ratio",default,6m,6m, level chg, level chg,,6m level chg,6m level chg,6m level chg,,,,,
+
+GBR,UK:USVTXK,haver,,GBR_HH_CREDIT_MORT_LOC_SA,EconDB,,,mortgage_lending,,,,,Consumer_Confidence_Composite,1,6,1,,,,Mortgage_Approval_pct_GDP,Mortgage_Approval_pct_GDP,Mortgage_Approval_pct_GDP_1st,Mortgage_Approval_pct_GDP_2nd,Mortgage_Approval_pct_GDP_Impulse,6,46,Investment_Residential,6,1,1,"mortgage loans approved, ex remortgaging, as %GDP",default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,UK:YBHAQ,haver,,GBR_BOP_NGDP_SA,EconDB,,,NGDP,quarterly ngdp in lc,,,,Retail_Sales_ex_Auto_Fuel,6,6,1,,,,Housing_sales_to_stock_ratio,Housing_sales_to_stock_ratio,Housing_sales_to_stock_ratio_1st,Housing_sales_to_stock_ratio_2nd,Housing_sales_to_stock_ratio_Impulse,6,35,Investment_Residential,6,1,1,RICS survey: sales to stocks ratio,default,6m,6m, level chg, level chg,saar,6m level chg,6m level chg,6m level chg,,,,,
+
+GBR,UK:UNRMIN,haver,,GBR_HOUS_HPI_RIGHT_MOVE_NSA,EconDB,,,Housing_Prices_Right_Move,,,,,Equity^Invest^,252,180,1,,,,Housing_Permit,Housing_Permit,Housing_Permit_1st,Housing_Permit_2nd,Housing_Permit_Impulse,6,142,Investment_Residential,6,1,1,work started for dwellings,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,,,,,Housing_Prices_HPI,,,,,Capex_tracker_JPM,3,6,1,,,,Construction_PMI,Construction_PMI,Construction_PMI_1st,Construction_PMI_2nd,Construction_PMI_Impulse,6,28,Investment_nonResidential_exEnergy,6,1,1,PMI : construction,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,G10:S112HG,haver,,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,,Housing_Prices_HPI_haver,splice,,,,Capacity_Utilisation_Manu,1,2,1,,,,Equity^Invest^,Equity^Invest^,Equity^Invest^_1st,Equity^Invest^_2nd,Equity^Invest^_Impulse,126,1,Investment_nonResidential_exEnergy,6,1,1,FTSE 100 index,default,12m,9m, % chg, level chg,,12m % chg,12m % chg,9m level chg,,,,,
+
+GBR,UK:URSHSSR,haver,,GBR_RICS_SALES_STOCK_RATIO_SA,EconDB,,aris,Housing_sales_to_stock_ratio,,,,,Business_Confidence_Composite,1,6,1,,,,GBR_IRS_5Y,GBR_IRS_5Y,GBR_IRS_5Y_1st,GBR_IRS_5Y_2nd,GBR_IRS_5Y_Impulse,126,1,Investment_nonResidential_exEnergy,6,1,1,5 year interest rate,default,6m,6m, level chg, level chg,saar,6m level chg,6m level chg,6m level chg,,,,,
+
+GBR,OECDMEI:C112TSQ,haver,,GBR_BS_RES_UNITS_SA,EconDB,,,Housing_Permit,,,,,Economic_Sentiment,1,6,1,,,,Trading_Partner_Growth^InvNonResi^,Trading_Partner_Growth^InvNonResi^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,Investment_nonResidential_exEnergy,6,2.5,1,trade weighted average of partners CAI,default,1m,3m,ma, level chg,saar,monthly,monthly,3m level chg,,,,,
+
+GBR,INTSRVYS:S112VPMC,haver,,GBR_PMI_CONSTRUCTION_IHS_SA,EconDB,,aris,Construction_PMI,,,,,Retail_Exp_Business_Situation,1,6,1,,,,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel_1st,Retail_Sales_ex_Auto_Fuel_2nd,Retail_Sales_ex_Auto_Fuel_Impulse,6,40,Investment_nonResidential_exEnergy,6,0,1,"retail sales, ex fuel, autos",default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+GBR,GBR_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/GBR_trade_weighted_gdp,,,,,Trading_Partner_Growth,,,,,Exp_Business_Condition_Surv,1,6,1,,,,Consumer_Confidence_Composite^InvNonResi^,Consumer_Confidence_Composite,Consumer_Confidence_Composite_1st,Consumer_Confidence_Composite_2nd,Consumer_Confidence_Composite_Impulse,6,23,Investment_nonResidential_exEnergy,6,1,1,composite consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,GBR_IRS_5Y,EconDB,,,,,,GBR_IRS_5Y,,,,,Bus_Conf_Lloyds,1,6,1,,,,Business_Confidence_Composite,Business_Confidence_Composite,Business_Confidence_Composite_1st,Business_Confidence_Composite_2nd,,6,0,Investment_nonResidential_exEnergy,6,2,1,composite business confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,JPM corporate spread,EconDB,,,,,,Corporate_BBB_Yield_5Y,,,,,GBR_IRS_5Y,300,126,1,,,,Economic_Sentiment,Economic_Sentiment,Economic_Sentiment_1st,Economic_Sentiment_2nd,Economic_Sentiment_Impulse,6,23,Business_Confidence_Composite,6,1,1,European commission economic sentiment indicator,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,INTDAILY:X111BUK,haver,,GBR_NEER,EconDB,,,FX_NEER,,,,,,,,,,,,Retail_Exp_Business_Situation,Retail_Exp_Business_Situation,Retail_Exp_Business_Situation_1st,Retail_Exp_Business_Situation_2nd,Retail_Exp_Business_Situation_Impulse,6,23,Business_Confidence_Composite,6,1,1,retail sector expected busines situation,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,,Oil_Price_Brent,,,,,,,,,,,,Exp_Business_Condition_Surv,Exp_Business_Condition_Surv,Exp_Business_Condition_Surv_1st,Exp_Business_Condition_Surv_2nd,Exp_Business_Condition_Surv_Impulse,6,23,Business_Confidence_Composite,6,1,1,services sector expected demand over next 3 months,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,INTDAILY:X111UKJ,haver,,GBR_FXUSD,EconDB,,,FX_USD,,,,,,,,,,,,Bus_Conf_Lloyds,Bus_Conf_Lloyds,Bus_Conf_Lloyds_1st,Bus_Conf_Lloyds_2nd,Bus_Conf_Lloyds_Impulse,6,23,Business_Confidence_Composite,6,1,1,Lloyds business barometer: overall busines confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+GBR,GBR_CAI_GS,EconDB,,,,,,GS_CAI,,,,,,,,,,,,Capex_tracker_JPM,Capex_tracker_JPM,Capex_tracker_JPM_1st,Capex_tracker_JPM_2nd,Capex_tracker_JPM_Impulse,6,22,Investment_nonResidential_exEnergy,6,1,1,JPM Capex tracker,default,3m,6m, % chg, level chg,saar,3m % chg,3m % chg,6m level chg,,,,,
+
+GBR,UK:K3BI,haver,,GBR_PPI_MANU_EX_FOOD_BEVERAGE_TOBACCO_PETROLEUM_NSA,EconDB,,,PPI_Manufacturing,,,,,,,,,,,,FX_NEER^Export_Good^,FX_NEER^Export_Good^,FX_NEER_1st,FX_NEER_2nd,FX_NEER_Impulse,126,1,Export_Good,6,1,1,nominal effective exchange rates,5040,3m,3m, % chg, level chg,,3m % chg,3m % chg,3m level chg,,,,,
+
+GBR,G10:N112VCE,haver,,GBR_CONS_EXP_OBAL_NSA,EconDB,,aris,Consumer_Confidence_12m_Exp,,,,,,,,,,,,Trading_Partner_Growth^Export_Good^,Trading_Partner_Growth^Export_Good^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,Export_Good,6,2,1,trade weighted average of partners CAI,5040,1m,6m,ma, level chg,saar,monthly,monthly,6m level chg,,,,,
+
+GBR,G10:N112VCC,haver,,GBR_CONS_CONF_OBAL_NSA,EconDB,,aris,Consumer_Confidence,,,,,,,,,,,,FX_NEER^Export_Service^,FX_NEER^Export_Service^,FX_NEER_1st,FX_NEER_2nd,FX_NEER_Impulse,126,1,Export_Service,6,1,1,nominal effective exchange rates,5040,3m,3m, % chg, level chg,,3m % chg,3m % chg,3m level chg,,,,,
+
+GBR,GBR_RSALES_NOM_VAL_SA,EconDB,,,,,,Retail_Sales_ex_Auto_Fuel,,,,,,,,,,,,Trading_Partner_Growth^Export_Service^,Trading_Partner_Growth^Export_Service^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,Export_Service,6,1,1,trade weighted average of partners CAI,5040,1m,6m,ma, level chg,saar,monthly,monthly,6m level chg,,,,,
+
+GBR,G10:S112TRS,haver,,GBR_RSALES_NOM_VAL_SA,EconDB,,,Retail_Sales_ex_Auto_Fuel_haver,splice,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,G10:S112DUH,haver,,GBR_CU_MANU_SA,EconDB,,aris,Capacity_Utilisation_Manu,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,G10:S112VES,haver,,GBR_EC_ECON_SENT_INDEX_SA,EconDB,,aris,Economic_Sentiment,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,EUSRVYS:E112RBE,haver,,GBR_BUS_CONF_EXP_SITUATION_RETAILTRADE_SA,EconDB,,aris,Retail_Exp_Business_Situation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,EUSRVYS:E112SNO,haver,,GBR_BUS_CONF_CONDITIONS_SA,EconDB,,aris,Exp_Business_Condition_Surv,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UNOL3T,haver,,GBR_BUS_BAROMETER_TOTAL_OVERALL_NET_NSA,EconDB,,aris,Bus_Conf_Lloyds,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+AUS forward growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,in_file_suf_fix1,,,Param Table,param,type,,,COMPONENT_KEY,name,raw,trend,z_score_raw,z_score,release_lag,parent_key,order_for_adding,w_in_parent,des,win_1st,win_2nd,,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,,,,,,,,,,
+
+GBR,GBR_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/GBR_0,RGDP_EXT_yoy,,,rgdp_pot_z_sd_roll,80,int,,,condition_m_pricing,condition_m_pricing,,,,,0,,,,condition minus pricing,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,potential_yoy,pre_run_result,RATES_LVL_GROWmPOT/GBR_0,potential_yoy,,,pot_gdp_loess_frac,0.3,float,,,pricing_sum_z,pricing_sum_z,,,,,0,condition_m_pricing,,-0.3,pricing gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_RGDP_LOC_SAAR,EconDB,,RGDP,,,cai_pot_z_sd_roll,240,int,,,Condition_sum_Z,Condition_sum_Z,,,,,0,condition_m_pricing,,0.7,condition gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_URATE_SA,EconDB,,Unemployment rate,,,cai_pot_z_sd_ewm_alpha,0.016528926,float,,,Level_sum_Z,Level_sum_Z,,,,,0,Condition_sum_Z,,2,level gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:ONVAA1,haver,,Capacity_Utilisation_Manu,,,core_cpi_targ_z_mean,0,int,,,GrowthmPotential_sum_Z,GrowthmPotential_sum_Z,,,,,0,Condition_sum_Z,,2,growth minus potential,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:ONVAA2,haver,,Capacity_Utilisation_Serv,,,core_cpi_targ_z_sd_roll,240,int,,,Changes_sum_Z,Changes_sum_Z,,,,,0,Condition_sum_Z,,4,change gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UNVAA3,haver,,Capacity_Utilisation_Tot,,,wages_trend_growth,6,int,,,ForwardGrow_sum_Z,ForwardGrow_sum_Z,,,,,0,Condition_sum_Z,,3,forward growth,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_WAGES_LOC_SA,EconDB,,wage,,,wages_trend_growth_loess_frac,0.4,float,,,Credit_Agg_sum_Z,Credit_Agg_sum_Z,,,,,0,Condition_sum_Z,,2,credit aggregate,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:KAI7,haver,,wage_regular_pay,,,wages_trend_z_mean,0,int,,,ForwardCPI_sum_Z,ForwardCPI_sum_Z,,,,,0,Condition_sum_Z,,1,forward cpi,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_ECON_DATA_CHANGE_INDEX_NSA,EconDB,,Citi_Econ_Chg_Index,,,wages_trend_z_sd_roll,240,int,,,Global_sum_Z,Global_sum_Z,,,,,0,Condition_sum_Z,,1,global gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_Inf_Targ,pre_run_result,RATES_LVL_INFLATmTARGET/GBR_Inf_Targ,inflation target,,,cai_chg_roll,6,int,,,growth vs potential,growth vs potential,GS CAI,potential_yoy,,growth - potential(z score),46,GrowthmPotential_sum_Z,,1,growth vs potential,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:L5KB,haver,,Core_CPI,,,cai_chg_z_sd_roll,240,int,,,GDP slack,GDP slack,growth rate (raw),growth rate (trend),,Growth Slack (z score),33,Level_sum_Z,,1,GDP slack,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_CPI,pre_run_result,RATES_LVL_INFLATmTARGET/GBR_CPI,Headline_CPI,,,citi_chg_index_1st,42,int,,,unemployment vs trend,unemployment vs trend,unemployment rate (raw),unemployment rate (trend),,unemployment rate-trend(z score),80,Level_sum_Z,,1,unemployment vs trend,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_HOUS_HPI_NOM_INDEX_SA,EconDB,,housing_prices,,,citi_chg_index_sd_roll,5040,int,,,capacity vs trend,capacity vs trend,capacity utilisation (raw),,,capacity utilisation (z score),111,Level_sum_Z,,1,capacity vs trend,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UNRMIN,haver,,HPI_rightmove,,,wage_chg_in_growth_roll_second,6,int,,,wage vs trend,wage vs trend,wage_1st (raw),wages_1st (trend),,wage_1st (z_score),63,Level_sum_Z,,1,wage (regular pay) vs trend,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:USB4B5,haver,,mortgage_approval_ex_refin,,,wage_chg_in_growth_z_mean,0,int,,,core cpi vs target,core cpi vs target,core cpi (raw),inflation target,,core cpi vs target (z_score),40,Level_sum_Z,,3,core cpi vs target,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:USVTVQ,haver,,mortgage_approval_tot,,,wage_chg_in_growth_z_sd_roll,240,int,,,change in growth,change in growth,growth_3x6 (raw),,,growth 3x6 (z score),33,Changes_sum_Z,,4,change in growth,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,UK:UBBTMLH,haver,,mortgage_approval_hou_pur_hf,,,core_cpi_chg,6,int,,,change in citi econ chg index,change in citi econ chg index,Citi_Econ_Chg_Index_1st (raw),,,Citi_Econ_Chg_Index_1st (z score),2,Changes_sum_Z,,2,change in citi econ chg index,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_FXUSD_m,EconDB,,FX_m,,,core_cpi_chg_second,3,int,,,change in wage,change in wage,wage_2nd (raw),,,wage_growth_2nd (z score),63,Changes_sum_Z,,2,change in wage(regular),,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_FXUSD,EconDB,,FX_USD,,,cai_impulse_z_smooth,21,int,,,change in cpi (core),change in cpi (core),core cpi 2nd (raw),,,core_cpi_2nd (z score),40,Changes_sum_Z,,1,change in cpi (core),,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_TB_NGDP,EconDB,,NGDP_USD_m,,,hp_impulse_trans_first,12,int,,,change in headline cpi,change in headline cpi,headline cpi 2nd (raw),,,headline_cpi_2nd (z score),40,Changes_sum_Z,,2,change in headline cpi,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GS_CAI_Impulse,pre_run_result,RATES_FWDGROW_GBR_6m/GS_CAI_total_impulse,GS_CAI_Impulse,,,hp_impulse_trans_second,6,int,,,housing_price_1st,housing_price_1st,housing_index_1st (raw),housing_prices_1st (trend),,housing_prices_1st (z score),15,Credit_Agg_sum_Z,,2,housing_price_1st,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,DAILY:PZBRT,haver,,brent,,,hp_impulse_z_sd_roll,60,int,,,housing_price_2nd,housing_price_2nd,housing_prices_2nd (raw),,,housing_price_2nd (z_score),15,Credit_Agg_sum_Z,,1,housing_price_2nd,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_NEER,EconDB,,FX_NEER,,,credit_impulse_1st_trend_roll,60,int,,,credit_ngdp_1st,credit_ngdp_1st,mortgage_approval_ngdp_1st (raw),mortgage_approval_ngdp_1st (trend),,mortgage_approval_ngdp_1st (z_score),45,Credit_Agg_sum_Z,,2,mortgage approval pct gdp,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_POLICY_RATE,EconDB,,policy_rate,,,credit_impulse_trans_second,6,int,,,credit_ngdp_2nd,credit_ngdp_2nd,mortgage_approval_ngdp_2nd (raw),,,mortgage_approval_ngdp_2nd (z_score),45,Credit_Agg_sum_Z,,1,mortgage approval (2nd) pct gdp,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_IRS_5Y,pre_run_result,DATA_RATES_5Y_SWAP_OIS/GBR_5y_IRS_OIS,IRS_5Y,,,credit_impulse_z_sd_roll,60,int,,,forward growth estimate,forward growth estimate,GS_CAI_Impulse (raw),,GS_CAI_Impulse (z score),GS_CAI_Impulse (z score smooth),0,ForwardGrow_sum_Z,,1,in-house growth estimate,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_IRS_2Y_1M_OIS,pre_run_result,DATA_RATES_2Y1M_SWAP_OIS/GBR_2y1m_irs_citi_ois,IRS_2y1m_OIS_Citi,,,oil_impulse_trans_1st,252,int,,,Oil_impulse_1st,Oil_impulse_1st,Oil_1st (raw),Oil_1st (trend),,Oil_1st (z_score),1,ForwardCPI_sum_Z,,1,Oil_impulse_1st,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,GBR_1W_IRS_OIS,pre_run_result,DATA_RATES_1W_SWAP_OIS/GBR_1W_IRS_OIS,IRS_1W_OIS_OPENDATA,,,oil_impulse_trans_first,378,int,,,FX_impulse_1st,FX_impulse_1st,FX_1st (raw),FX_1st (trend),,FX_1st (z_score),1,ForwardCPI_sum_Z,,1,FX_impulse_1st,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_FCI,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_fci,World_avg_FCI,,,oil_impulse_trans_second,126,int,,,Oil_impulse_2nd,Oil_impulse_2nd,Oil (raw),,,Oil_Impulse (z score),1,ForwardCPI_sum_Z,,1,Oil_impulse_2nd,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_gdp,World_ex_GBR_avg_GDP,,,oil_impulse_z_mean,0,int,,,FX_impulse_2nd,FX_impulse_2nd,FX (raw),,,FX_Impulse (z score),1,ForwardCPI_sum_Z,,1,FX_impulse_2nd,,,,,,,,,,,,,,,,,,,,,,,
+
+GBR,World_ex_GBR_avg_GDP,pre_run_result,FCI_zto_CAI_AGG/World_ex_GBR_avg_pot_gdp,World_ex_GBR_avg_pot_GDP,,,oil_impulse_z_sd_roll,1260,int,,,Headline_m_Core_CPI,Headline_m_Core_CPI,core cpi (raw),headline cpi (raw),,headline m core cpi (z_score),40,ForwardCPI_sum_Z,,1,headline minus core cpi,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_trans_1st,252,int,,,glob growth pot,glob growth pot,glob growth vs pot (raw),,,glob growth vs pot (z score),23,Global_sum_Z,,2,glob growth pot,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_trans_first,378,int,,,glob FCI impulse,glob FCI impulse,World_avg_FCI (raw),,,World_avg_FCI (z score),2,Global_sum_Z,,1,glob FCI impulse,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_trans_second,126,int,,,glob change in growth,glob change in growth,Glob_Growth_3x6 (raw),,,Glob_Growth_3x6 (z score),23,Global_sum_Z,,2,glob change in growth,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_z_mean,0,int,,,pricing_z_old,pricing_z_old,IRS_5Y,policy_rate,5y-PR-Premium,pricing (z score),1,pricing_sum_z,,candidate,pricing gauge,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_z_sd_roll,1260,int,,,pricing_z_2y1d,pricing_z_2y1d,2y1d,ois_1w,2y1d-1w-20bps,pricing_2y (z score),1,pricing_sum_z,,1,"pricing gauge, steepness between 2y1d and 1w ois",,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,fx_impulse_roll,63,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,priced_z_mean_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,priced_z_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,pricing_z_roll,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,pricing_z_premium_sdRoll,1000,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,con_smooth_window,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,indicator_lag,0,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,econ_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the econ release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,assets_shift,0,int,"# check forward looking bias: at the end of backtesting, shift all the assets prices release by x days",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,glob_growth_pot_sd_roll,5040,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,glob_chg_growth_1st,126,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,glob_roll_mean,42,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,exclude_brexit,1,int,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Canada forward growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,,,Param Table,trans1,trans2,smooth_front,,,,COMPONENT_KEY,name,raw,raw2,hf_Impulse,lag,release_lag,parent_key,order_for_adding,w_in_parent,Need_VolAdj,des,roll_win,win_1st,win_2nd,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,
+
+CAN,OECDNAQ:E156GDPC,haver,,CAN_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,,,Equity,126,126,1,,,,GS_CAI,GS_CAI,GS_CAI_1st,GS_CAI_2nd,,0,0,,0,,0,GS current activity index,default,3m,3m," % chg,saar", level chg,saar,"3m % chg,saar","3m % chg,saar",3m level chg,,,,,
+
+CAN,CANADA:V6E05724,haver,,CAN_RGDP_FINALCONS_PRIV_LOC_SAAR2,EconDB,,geo,PCE,,,,,10Y_Gov_Bond,126,300,1,,,,RGDP,RGDP,RGDP_1st,RGDP_2nd,,0,0,,0,,0,Real GDP,default,2q,2q," % chg,saar", level chg,saar,"2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V6E05745,haver,,CAN_RGDP_EXP_LOC_SAAR,EconDB,,geo,Export,,,,,Equity^Invest^,126,126,1,,,,PCE,PCE,PCE_1st,PCE_2nd,,0,0,GS_CAI,1,PCE_RGDP,0,personal consumption expenditure,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V6E05748,haver,,CAN_RGDP_IMP_LOC_SAAR,EconDB,,geo,Import,,,,,Mortgage_Rate_5Y,6,6,1,,,,Investment_Residential,Investment_Residential,Investment_Residential_1st,Investment_Residential_2nd,,0,0,GS_CAI,2,Investment_Residential_RGDP,0,private fixed investment (residential),default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V6E05734,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_RESISTRUC_LOC_SAAR,EconDB,,geo,Investment_Residential,,,,,FX_NEER,126,126,1,,,,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy_1st,Investment_nonResidential_exEnergy_2nd,,0,0,GS_CAI,3,Investment_nonResidential_exEnergy_RGDP,0,"private fixed investment (non residential),ex. energy capex",default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V6E05735,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_BUSNONIP_LOC_SAAR,EconDB,,geo,Investment_nonResidential_nonIP,,"non residential structure collapse since 2015, why?",,,IRS_5Y,126,126,1,,,,Investment_nonResidential_Energy,Investment_nonResidential_Energy,Investment_nonResidential_Energy_1st,Investment_nonResidential_Energy_2nd,,0,0,GS_CAI,4,Investment_nonResidential_Energy_RGDP,0,capex in oil&gas extraction industry,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V6E05738,haver,,CAN_RGDP_GROSSCAPFORM_FIXED_BUSIP_LOC_SAAR,EconDB,,geo,Investment_nonResidential_IP,,,,,salary,6,6,1,,,,Export,Export,Export_1st,Export_2nd,,0,0,GS_CAI,5,Export_RGDP,0,export,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+CAN,CANADA:V1H61438,haver,,CAN_NGDP_GROSSCAPFORM_CAPEX_OILGAS_LOC_MIL_SA,EconDB,,geo,Energy_Capex_Nominal,,not annualised,,,Mortgage_Credit_Avg,6,3,1,,,,Equity,Equity,Equity_1st,Equity_2nd,Equity_Impulse,126,1,PCE,6,2.5,1,CAN : stock price index,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,CANADA:V754048,haver,,CAN_NGDP_GROSSCAPFORM_CAPEX_OILGAS_LOC_MIL_SA2,EconDB,,geo,Energy_Capex_historic_Nominal,,annual,,,Oil_LC,126,126,15,,,,10Y_Gov_Bond,10Y_Gov_Bond,10Y_Gov_Bond_1st,10Y_Gov_Bond_2nd,10Y_Gov_Bond_Impulse,126,1,PCE,6,0.5,1,total return index of 10 year govt bond,default,6m,15m, % chg, level chg,,6m % chg,6m % chg,15m level chg,,,,,
+
+CAN,CANADA:V6E07272,haver,,CAN_RGDP_IMPLICITPRICEDEF_MACHINERY_EQUIP_SA,EconDB,,geo,GDP_Deflater_Machinery_Equip,,,,,Housing_Prices,3,9,1,,,,Housing_Prices,Housing_Prices,Housing_Prices_1st,Housing_Prices_2nd,Housing_Prices_Impulse,6,55,PCE,6,4,1,"housing prices, new houses",default,15m,10m, % chg, level chg,,15m % chg,15m % chg,10m level chg,,,,,
+
+CAN,INTDAILY:S156TOI,haver,,CAN_EQ,EconDB,,geo,Equity,,,,,Retail_Sales_ex_Auto_Fuel,6,6,1,,,,Consumer_Confidence_Nano^PCE^,Consumer_Confidence_Nano,Consumer_Confidence_Nano_1st,Consumer_Confidence_Nano_2nd,Consumer_Confidence_Nano_Impulse,13,10,PCE,6,2,1,"consumer confidence, nano",default,1m,3m,ma, level chg,,monthly,monthly,3m level chg,,,,,
+
+CAN,CAN_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/CAN_10y_TRI,,,,,10Y_Gov_Bond,,,,,Capex_tracker_JPM,3,6,1,,,,Oil_LC^PCE^,Oil_LC,Oil_LC_1st,Oil_LC_2nd,Oil_LC_Impulse,126,1,PCE,6,0.5,1,crude oil prices: west Canadian select,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,CANADA:DP00001,haver,,,,,,Mortgage_Rate_5Y,,,,,FX_NEER,126,126,1,,,,salary,salary,salary_1st,salary_2nd,salary_Impulse,6,33,PCE,6,1,1,total wages: labor force survey,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,G10:S156FCHM,haver,,,,,,Mortgage_Credit_Avg,,,,,IRS_5Y,300,126,1,,,,Mortgage_Credit_Avg^PCE^,Mortgage_Credit_Avg,Mortgage_Credit_Avg_1st,Mortgage_Credit_Avg_2nd,Mortgage_Credit_Avg_Impulse,6,46,PCE,6,1,1,residential mortgage credit as percentage of GDP,default,1m,6m, level chg, level chg,saar,1m level chg,1m level chg,6m level chg,,,,,
+
+CAN,CANADA:V36415,haver,,CAN_HH_CREDIT_TOTAL_LOC_SA,EconDB,,geo,HH_Credit_Total,,,,,GS_CAI,1,3,1,,,,Trading_Partner_Growth^PCE^,Trading_Partner_Growth^Export^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,23,PCE,6,0,1,trading partner gdp weighted CAI,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,OECDMEI:C156HWMN,haver,,,,,,Hours_Worked_Weekly,nsa!,not release with nfp at the same time,,,Trading_Partner_Growth,1,3,1,,,,Equity^Invest^,Equity^Invest^,Equity^Invest^_1st,Equity^Invest^_2nd,Equity^Invest^_Impulse,126,1,Investment_nonResidential_exEnergy,6,1,1,CAN : stock price index,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,CANADA:V3075014,haver,,,,,,Hourly_Earnings_haver,nsa!,,,,Housing_Permit_Units,1,6,1,,,,Trading_Partner_Growth^InvNonResi^,Trading_Partner_Growth,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,23,Investment_nonResidential_exEnergy,6,1,1,trading partner gdp weighted CAI,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,CAN_WAGES_HOURLY_SA,EconDB,,,,,,Hourly_Earnings,,,,,Business_Barometer,1,6,1,,,,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel_1st,Retail_Sales_ex_Auto_Fuel_2nd,Retail_Sales_ex_Auto_Fuel_Impulse,6,63,Investment_nonResidential_exEnergy,6,0.5,1,retail sales value ex mortor vehicles & parts dealers,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,CANADA:V2062811,haver,,CAN_EMPL_LEVEL_SA,EconDB,,geo,Empl_Level,,alternative sources of salary,,,Manufacturing_New_Orders,6,6,2,,,,Capex_tracker_JPM,Capex_tracker_JPM,Capex_tracker_JPM_1st,Capex_tracker_JPM_2nd,Capex_tracker_JPM_Impulse,6,22,Investment_nonResidential_exEnergy,6,1,1,jpm capex tracker,default,3m,6m, % chg, level chg,,3m % chg,3m % chg,6m level chg,,,,,
+
+CAN,CANADA:V1996471,haver,,CAN_WAGES_LOC_SA,EconDB,,geo,salary2,,,,,Capacity_Utilization,1,6,1,,,,IRS_5Y,IRS_5Y,IRS_5Y_1st,IRS_5Y_2nd,IRS_5Y_Impulse,126,1,Investment_nonResidential_exEnergy,6,1,1,5y IRS,default,15m,6m, level chg, level chg,saar,15m level chg,15m level chg,6m level chg,,,,,
+
+CAN,CANADA:V6E05783,haver,,CAN_NGDP_LOC_SAAR,EconDB,,geo,NGDP,annual!,,,,Consumer_Confidence_Nano,4,13,1,,,,Manufacturing_New_Orders,Manufacturing_New_Orders,Manufacturing_New_Orders_1st,Manufacturing_New_Orders_2nd,Manufacturing_New_Orders_Impulse,6,66,Investment_nonResidential_exEnergy,6,1,1,new orders: all manufacturing induxtries,default,1m,6m, % chg, level chg,,1m % chg,1m % chg,6m level chg,,,,,
+
+CAN,G10:H156HG,haver,,CAN_HOUS_HPI_NOM_INDEX_SA,EconDB,,geo,Housing_Prices,,,,,Total_Rig_Count,26,26,1,,,,Consumer_Confidence_Nano,Consumer_Confidence_Nano,Consumer_Confidence_Nano_1st,Consumer_Confidence_Nano_2nd,Consumer_Confidence_Nano_Impulse,6,10,Investment_nonResidential_exEnergy,6,0.5,1,"consumer confidence, nano",default,1m,3m,ma, level chg,,monthly,monthly,3m level  chg,,,,,
+
+CAN,CANADA:V1L94117,haver,,CAN_BP_RESIDENTIAL_TOTAL_UNITS_SA,EconDB,,geo,Housing_Permit_Units,,,,,,,,,,,,Business_Barometer,Business_Barometer,Business_Barometer_1st,Business_Barometer_2nd,Business_Barometer_Impulse,6,23,Investment_nonResidential_exEnergy,6,1,1,CFIB business barometer,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,CAN_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/CAN_trade_weighted_gdp,,,,,Trading_Partner_Growth,,,,,,,,,,,,Capacity_Utilization,Capacity_Utilization,Capacity_Utilization_1st,Capacity_Utilization_2nd,Capacity_Utilization_Impulse,6,74,Investment_nonResidential_exEnergy,6,1,1,"capacity utilisation, industry",default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,CAN_IRS_5Y,EconDB,,,,,,IRS_5Y,,,,,,,,,,,,Mortgage_Credit_Avg,Mortgage_Credit_Avg,Mortgage_Credit_Avg_1st,Mortgage_Credit_Avg_2nd,Mortgage_Credit_Avg_Impulse,6,46,Investment_Residential,6,1,1,residential mortgage credit as percentage of GDP,default,1m,6m, level chg, level chg,saar,1m level chg,1m level chg,6m level chg,,,,,
+
+CAN,INTDAILY:X111BCA,haver,,CAN_NEER,EconDB,,geo,FX_NEER,,,,,,,,,,,,Housing_Permit_Units,Housing_Permit_Units,Housing_Permit_Units_1st,Housing_Permit_Units_2nd,Housing_Permit_Units_Impulse,6,56,Investment_Residential,6,1,1,"residential building permits, units created",default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,DAILY:PETEXA,haver,,,,,,Oil_Price_WTI,,,,,,,,,,,,Mortgage_Rate_5Y,Mortgage_Rate_5Y,Mortgage_Rate_5Y_1st,Mortgage_Rate_5Y_2nd,Mortgage_Rate_5Y_Impulse,6,33,Investment_Residential,6,1,1,conventional mortgage lending rate: 5y,default,1m,6m, level chg, level chg,saar,1m level chg,1m level chg,6m level chg,,,,,
+
+CAN,USA_COM_WCS_CRUDE_OIL_SPOT_USD_NSA,EconDB,,,,,,Oil_Price_WCS,,,,,,,,,,,,Oil_LC,Oil_LC,Oil_LC_1st,Oil_LC_2nd,Oil_LC_Impulse,6,1,Investment_nonResidential_Energy,6,1,1,crude oil: west canada select,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,INTDAILY:X156USB,haver,,CAN_FXUSD,EconDB,,geo,FX_USD,,,,,,,,,,,,Total_Rig_Count,Total_Rig_Count,Total_Rig_Count_1st,Total_Rig_Count_2nd,Total_Rig_Count_Impulse,6,6,Investment_nonResidential_Energy,6,1,1,rig count:hughes baker,1040,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,CAN_CAI_GS,EconDB,,,,,,GS_CAI,,,,,,,,,,,,Trading_Partner_Growth^Export^,Trading_Partner_Growth^Export^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,23,Export,6,2,1,trading partner gdp weighted CAI,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+CAN,G10:S156TRSX,haver,,CAN_RSALES_NOM_EX_AUTO_SA,EconDB,,geo,Retail_Sales_ex_Auto_Fuel,,,,,,,,,,,,FX_NEER,FX_NEER,FX_NEER_1st,FX_NEER_2nd,FX_NEER_Impulse,126,1,Export,6,1,1,nominal effective exchange rates,default,6m,3m, % chg, level chg,,6m % chg,6m % chg,3m level chg,,,,,
+
+CAN,CANADA:V4331081,haver,,CAN_CU_TOTAL_SA,EconDB,,aris,Capacity_Utilisation_Manu,use industrial production gap,,,,,,,,,,,Oil_LC^Export^,Oil_LC,Oil_LC_1st,Oil_LC_2nd,Oil_LC_Impulse,126,1,Export,6,2,1,crude oil prices: west Canadian select,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+CAN,OECDMEI:C156IZ,haver,,CAN_IP_EXP_CONS_SA,EconDB,,geo,Industrial_Production,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_COM_RIG_COUNT_BAKER_HUGHES,EconDB,,,,,,Total_Rig_Count,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN,CAN_CONS_CONF_NANOS_INDEX_NSA,EconDB,,,,,,Consumer_Confidence_Nano,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:CFAA,haver,,CAN_BUS_CONF_BAROMETER_OBAL_NSA,EconDB,,aris,Business_Barometer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+CAN,CANADA:V800913,haver,,CAN_NO_MANU_LOC_SA,EconDB,,geo,Manufacturing_New_Orders,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA forward growth,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+ISO,series1,load_fn1,location1,history1,history_fn1,history_loc1,history_splicemethod1,in_file_suf_fix1,,,,,Param Table,trans1,trans2,smooth_front,,,,COMPONENT_KEY,name,raw,raw2,hf_Impulse,lag,release_lag,parent_key,order_for_adding,w_in_parent,Need_VolAdj,des,roll_win,win_1st,win_2nd,Trans1,Trans2,ann,Axis_Unit1,Axis_Unit1_orig,Axis_Unit2,,,,,
+
+USA,OECDNAQ:E111GDPC,haver,,USA_RGDP_LOC_SAAR,EconDB,,geo,RGDP,,,,,Equity,252,200,1,,,,GS_CAI,GS_CAI,GS_CAI_1st,GS_CAI_2nd,,0,0,,0,,0,GDP nowcast,default,1m,6m," % chg,saar", level chg,saar,"1m % chg,saar","1m % chg,saar",6m level chg,,,,,
+
+USA,G10:S111NCPC,haver,,USA_RGDP_FINALCONS_PRIV_LOC_SAAR,EconDB,,geo,PCE,,,,,Equity_1st^PCE^,252,1000,21,not in use..,,,RGDP,RGDP,RGDP_1st,RGDP_2nd,,0,0,,0,,0,Real GDP,default,2q,2q," % chg,saar", level chg,saar,"2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,G10:S111NXC,haver,,USA_RGDP_EXP_LOC_SA,EconDB,,geo,Export,,,,,10Y_Gov_Bond,600,200,1,,,,PCE,PCE,PCE_1st,PCE_2nd,,0,0,GS_CAI,1,PCE_RGDP,0,personal consumption expenditure,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,G10:S111NMC,haver,,USA_RGDP_IMP_LOC_SA,EconDB,,geo,Import,,,,,Oil_Price_WTI_flip,600,200,1,,,,Investment_Residential,Investment_Residential,Investment_Residential_1st,Investment_Residential_2nd,,0,0,GS_CAI,2,Investment_Residential_RGDP,0,private fixed investment (residential),default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,USECON:FRH,haver,,USA_RGDP_GROSSCAPFORM_FIXED_RESIDENTIAL_LOC_SAAR,EconDB,,geo,Investment_Residential,,,,,HB_BB_px,252,200,1,,,,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy,Investment_nonResidential_exEnergy_1st,Investment_nonResidential_exEnergy_2nd,,0,0,GS_CAI,3,Investment_nonResidential_exEnergy_RGDP,0,"private fixed investment (non residential),ex. energy capex",default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,USECON:FNH,haver,,USA_RGDP_GROSSCAPFORM_FIXED_NONRESI_LOC_SAAR,EconDB,,geo,Investment_nonResidential,,,,,EN_BB_px,252,200,1,,,,Investment_nonResidential_Energy,Investment_nonResidential_Energy,Investment_nonResidential_Energy_1st,Investment_nonResidential_Energy_2nd,,0,0,GS_CAI,4,Investment_nonResidential_Energy_RGDP,0,private fixed investment in energy capex,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,G10:S111NCPT,haver,,USA_RGDP_PRIVATE_CONS_CONTRIB_SA,EconDB,,geo,PCE_Contrib,,,,,Oil_Price_WTI,252,200,1,,,,Export,Export,Export_1st,Export_2nd,,0,0,GS_CAI,5,Export_RGDP,0,export,default,2q,2q," % chg,saar", level chg,saar,"contributions in GDP,2q % chg,saar","2q % chg,saar",2q level chg,,,,,
+
+USA,USECON:PTGH,haver,,,,,,Government_Contrib,,,,,House_Builder_Bloomberg_EPS_Estimate,252,200,1,,,,FX_NEER,FX_NEER,FX_NEER_1st,FX_NEER_2nd,FX_NEER_Impulse,126,1,Export,6,1,1,nominal effective exchange rates,default,12m,6m, % chg, level chg,,12m % chg,12m % chg,6m level chg,,,,,
+
+USA,USECON:PTIH,haver,,,,,,Investment_Contrib,,,,,EN_BB_eps,252,200,1,,,,Trading_Partner_Growth^Export^,Trading_Partner_Growth^Export^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,Export,6,1,1,trade weighted average of partners CAI,default,1m,6m,ma, level chg,saar,monthly,monthly,6m level chg,,,,,
+
+USA,USECON:PTFRH,haver,,,,,,Investment_Residential_Contrib,,,,,Mortgage_Rate_30Y,252,200,1,,,,Oil_Price_WTI^Capex^,Oil_Price_WTI^Capex^,Oil_Price_WTI_1st,Oil_Price_WTI_2nd,Oil_Price_WTI_Impulse,126,1,Investment_nonResidential_Energy,6,2,1,"crude oil price : WTI intermediate, Cushing",default,12m,12m, % chg, level chg,,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,USECON:PTFNH,haver,,,,,,Investment_nonResidential_Contrib,,,,,FX_NEER,252,100,1,,,,Capacity_Utilisation_Mining,Capacity_Utilisation_Mining,Capacity_Utilisation_Mining_1st,Capacity_Utilisation_Mining_2nd,Capacity_Utilisation_Mining_Impulse,6,37,Investment_nonResidential_Energy,6,1,1,FRB : capacity utilisation : mining,default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USNA:FNSPCH,haver,,,,,,Investment_Non_Resi_Power_Comm,,,,,saving_rate,6,6,1,,,,Corporate_BBB_Yield_5Y,Corporate_BBB_Yield_5Y,Corporate_BBB_Yield_5Y_1st,Corporate_BBB_Yield_5Y_2nd,Corporate_BBB_Yield_5Y_Impulse,6,22,Investment_nonResidential_exEnergy,6,1,1,S&P global fixed income research: industrials BBB bond yields,default,12m,12m, level chg, level chg,,12m level chg,12m level chg,12m level chg,,,,,
+
+USA,USNA:FNSMNH,haver,,,,,,Investment_Non_Resi_Mining_Shafts_Well,,,,,salary,12,10,1,,,,Equity^Invest^,Equity^Invest^,Equity^Invest^_1st,Equity^Invest^_2nd,Equity^Invest^_Impulse,126,1,Investment_nonResidential_exEnergy,6,1,1,S&P 500 stock price index,default,12m,12m, % chg, level chg,,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,USECON:PTFNEIH,haver,,,,,,Investment_Non_Resi_Industrial_Equi,,,,,Mortgage_origination_purchase,12,10,1,,,,PPI_Manufacturing,PPI_Manufacturing,PPI_Manufacturing_1st,PPI_Manufacturing_2nd,PPI_Manufacturing_Impulse,6,33,Investment_nonResidential_exEnergy,6,1,1,manufacturing PPI,default,12m,12m, % chg, level chg,saar,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,G10:S111NXT,haver,,,,,,Export_Contrib,,,,,Housing_supply_to_sales_ratio,24,10,1,,,,Trading_Partner_Growth^InvNonResi^,Trading_Partner_Growth^InvNonResi^,Trading_Partner_Growth_1st,Trading_Partner_Growth_2nd,Trading_Partner_Growth_Impulse,6,22,Investment_nonResidential_exEnergy,6,1,1,trade weighted average of partners CAI,default,1m,6m,ma, level chg,saar,monthly,monthly,6m level chg,,,,,
+
+USA,G10:S111NMT,haver,,,,,,Import_Contrib,,,,,Housing_Prices,30,16,1,,,,Capex_Plan_Survey_Composite,Capex_Plan_Survey_Composite,Capex_Plan_Survey_Composite_1st,Capex_Plan_Survey_Composite_2nd,,6,0,Investment_nonResidential_exEnergy,6,1,1,the composite capex planning survey,default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,INTDAILY:S111SP5,haver,,USA_EQ,EconDB,,geo,Equity,,,,,Housing_Permit,12,10,1,,,,Capex_Plan_Survey_FEDKansas,Capex_Plan_Survey_FEDKansas,Capex_Plan_Survey_FEDKansas_1st,Capex_Plan_Survey_FEDKansas_2nd,Capex_Plan_Survey_FEDKansas_Impulse,6,22,Capex_Plan_Survey_Composite,6,0.5,1,"Fed Kansas outlook survey : capex, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,DAILY:MTGF30,haver,,,,,,Mortgage_Rate_30Y,,,,,PPI_Manufacturing,12,10,1,,,,Capex_Plan_Survey_FEDNY,Capex_Plan_Survey_FEDNY,Capex_Plan_Survey_FEDNY_1st,Capex_Plan_Survey_FEDNY_2nd,Capex_Plan_Survey_FEDNY_Impulse,6,13,Capex_Plan_Survey_Composite,6,0.5,1,"Fed New York outlook survey : capex, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,OECDMEI:C111HWM,haver,,USA_HOURS_WORKED_MANU_WEEKLY_HOURS_SA,EconDB,,geo,Hours_Worked_Weekly,,,,,GS_CAI,1,5,1,,,,Capex_Plan_Survey_FEDPhilly,Capex_Plan_Survey_FEDPhilly,Capex_Plan_Survey_FEDPhilly_1st,Capex_Plan_Survey_FEDPhilly_2nd,Capex_Plan_Survey_FEDPhilly_Impulse,6,17,Capex_Plan_Survey_Composite,6,0.5,1,"Fed Philly outlook survey : capex, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:LANAGRA,haver,,USA_EMPL_LEVEL_SA,EconDB,,geo,Empl_Level,,,,,Trading_Partner_Growth,1,5,1,,,,Capex_Plan_Survey_FEDRichmond,Capex_Plan_Survey_FEDRichmond,Capex_Plan_Survey_FEDRichmond_1st,Capex_Plan_Survey_FEDRichmond_2nd,Capex_Plan_Survey_FEDRichmond_Impulse,6,20,Capex_Plan_Survey_Composite,6,0.5,1,"Fed Richmond outlook survey : capex, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,OECDMEI:C111YHNS,haver,,USA_WAGES_HOURLY_MANU_INDEX_SA,EconDB,,geo,Hourly_Earnings,,,,,Corporate_BBB_Yield_5Y,12,10,1,,,,Capex_Plan_Survey_FEDTexas,Capex_Plan_Survey_FEDTexas,Capex_Plan_Survey_FEDTexas_1st,Capex_Plan_Survey_FEDTexas_2nd,Capex_Plan_Survey_FEDTexas_Impulse,6,22,Capex_Plan_Survey_Composite,6,0.5,1,"Fed Texas outlook survey : capex, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:YPSVRM,haver,,,,,,saving_rate,,,,,Consumer_Confidence_CRB,1,10,1,,,,Expected_New_Order_Survey_Composite,Expected_New_Order_Survey_Composite,Expected_New_Order_Survey_Composite_1st,Expected_New_Order_Survey_Composite_2nd,,6,0,Investment_nonResidential_exEnergy,6,1,1,the composite expected new order survey,default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:HMTOP,haver,,USA_HH_CREDIT_MORT_PURCHASE_ORIG_NSA,EconDB,,geo,mortgage_orig,,,,,Consumer_Confidence_UMICH,1,10,1,,,,Expected_New_Order_Survey_MANU_FEDTexas,Expected_New_Order_Survey_MANU_FEDTexas,Expected_New_Order_Survey_MANU_FEDTexas_1st,Expected_New_Order_Survey_MANU_FEDTexas_2nd,Expected_New_Order_Survey_MANU_FEDTexas_Impulse,6,22,Expected_New_Order_Survey_Composite,6,0.5,1,"Fed Texas Mfg outlook survey : new order, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:HCT,haver,,USA_HOUSING_COMPLETION_PRIV_NEW_THOU_SAAR,EconDB,,geo,Housing_completion,,,,,Consumer_Confidence,1,10,1,,,,Expected_New_Order_Survey_MANU_FEDKansas,Expected_New_Order_Survey_MANU_FEDKansas,Expected_New_Order_Survey_MANU_FEDKansas_1st,Expected_New_Order_Survey_MANU_FEDKansas_2nd,Expected_New_Order_Survey_MANU_FEDKansas_Impulse,6,22,Expected_New_Order_Survey_Composite,6,0.5,1,"Fed Kansas Mfg outlook survey : new order, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:HCCT,haver,,,,,,Housing_underconst,,,,,Retail_Sales_ex_Auto_Fuel,12,10,1,,,,Expected_New_Order_Survey_MANU_FEDRichmond,Expected_New_Order_Survey_MANU_FEDRichmond,Expected_New_Order_Survey_MANU_FEDRichmond_1st,Expected_New_Order_Survey_MANU_FEDRichmond_2nd,Expected_New_Order_Survey_MANU_FEDRichmond_Impulse,6,20,Expected_New_Order_Survey_Composite,6,0.5,1,"Fed Richmond Mfg outlook survey : new_order, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:HN1MT,haver,,USA_HOUSING_SUPPLY_RATIO_NEWONEFAMILY_MONTHS_SA,EconDB,,aris,Housing_supply_to_sales_ratio,,,,,Equity^Invest^,252,200,1,,,,Expected_New_Order_Survey_MANU_FEDPhilly,Expected_New_Order_Survey_MANU_FEDPhilly,Expected_New_Order_Survey_MANU_FEDPhilly_1st,Expected_New_Order_Survey_MANU_FEDPhilly_2nd,Expected_New_Order_Survey_MANU_FEDPhilly_Impulse,6,17,Expected_New_Order_Survey_Composite,6,0.5,1,"Fed Philly Mfg outlook survey : new order, 6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:HN1US,haver,,,,,,Housing_sales_new,,,,,Capacity_Utilisation_Mining,1,10,1,,,,Expected_New_Order_Survey_MANU_FEDNY,Expected_New_Order_Survey_MANU_FEDNY,Expected_New_Order_Survey_MANU_FEDNY_1st,Expected_New_Order_Survey_MANU_FEDNY_2nd,Expected_New_Order_Survey_MANU_FEDNY_Impulse,6,13,Expected_New_Order_Survey_Composite,6,0.5,1,"Empire Mfg outlook survey : new order,  6m ahead",default,1m,12m,ma, level chg,,monthly,monthly,12m level chg,,,,,
+
+USA,USECON:CASUSXAM,haver,,USA_HOUS_HPI_NOM_NATIONAL_CS_SA,EconDB,,geo,Housing_Prices,,,,,Capex_Plan_Survey_FEDTexas,1,10,1,,,,Consumer_Confidence,Consumer_Confidence,Consumer_Confidence_1st,Consumer_Confidence_2nd,,6,0,Investment_nonResidential_exEnergy,6,0.5,1,composite consumer confidence (Umich &CRB),default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,G10:S111HP,haver,,USA_HOUS_HPI_REAL_INDEX_SA,EconDB,,geo,Housing_Permit,,,,,Capex_Plan_Survey_FEDKansas,1,10,1,,,,Consumer_Confidence_CRB,Consumer_Confidence_CRB,Consumer_Confidence_CRB_1st,Consumer_Confidence_CRB_2nd,Consumer_Confidence_CRB_Impulse,6,23,Consumer_Confidence,6,1,1,CRB consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,USA_trade_weighted_gdp,pre_run_result,RATES_LVL_TW_GROW/USA_trade_weighted_gdp,,,,,Trading_Partner_Growth,,,,,Capex_Plan_Survey_FEDRichmond,1,10,1,,,,Consumer_Confidence_UMICH,Consumer_Confidence_UMICH,Consumer_Confidence_UMICH_1st,Consumer_Confidence_UMICH_2nd,Consumer_Confidence_UMICH_Impulse,6,28,Consumer_Confidence,6,1,1,UMich consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,USECON:FSBBB5,haver,,,,,,Corporate_BBB_Yield_5Y,,,,,Capex_Plan_Survey_FEDPhilly,1,10,1,,,,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel,Retail_Sales_ex_Auto_Fuel_1st,Retail_Sales_ex_Auto_Fuel_2nd,Retail_Sales_ex_Auto_Fuel_Impulse,6,37,Investment_nonResidential_exEnergy,6,0.5,1,retail sales & food services ex autos and gas,default,12m,12m, % chg, level chg,saar,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,USA_IRS_5Y,EconDB,,,,,,USA_IRS_5Y,,,,,Capex_Plan_Survey_FEDNY,1,10,1,,,,Capex_tracker_JPM,Capex_tracker_JPM,Capex_tracker_JPM_1st,Capex_tracker_JPM_2nd,Capex_tracker_JPM_Impulse,6,22,Investment_nonResidential_exEnergy,6,1,1,JPM Capex tracker,default,6m,12m, % chg, level chg,saar,6m % chg,6m % chg,12m level chg,,,,,
+
+USA,INTDAILY:X111BUS,haver,,USA_NEER,EconDB,,geo,FX_NEER,,,,,Capex_Plan_Survey_Composite,1,10,1,,,,Housing_Permit,Housing_Permit,Housing_Permit_1st,Housing_Permit_2nd,Housing_Permit_Impulse,6,40,Investment_Residential,6,1,1,housing units authorized by builidng permit,default,12m,12m, % chg, level chg,,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,DAILY:PZTEXA,haver,,,,,,Oil_Price_WTI,,,,,Capex_tracker_JPM,6,10,1,,,,Housing_supply_to_sales_ratio,Housing_supply_to_sales_ratio,Housing_supply_to_sales_ratio_1st,Housing_supply_to_sales_ratio_2nd,Housing_supply_to_sales_ratio_Impulse,6,45,Investment_Residential,6,1,1,months supply at current sales rate for new 1-family houses for sale,default,12m,12m, level chg, level chg,,12m level chg,12m level chg,12m level chg,,,,,
+
+USA,2 year brent future,EconDB,,,,,,Oil_Price_FUT_2Y_Brent,,,,,Total_Rig_Count,26,20,1,,,,Mortgage_Application_Total_Volume_exRefinancing,Mortgage_Application_Total_Volume_exRefinancing,Mortgage_Application_Total_Volume_exRefinancing_1st,Mortgage_Application_Total_Volume_exRefinancing_2nd,Mortgage_Application_Total_Volume_exRefinancing_Impulse,26,10,Investment_Residential,6,1,1,MBA : volume index : mortgage loan app for purchase,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+USA,2 year wti future,EconDB,,,,,,Oil_Price_FUT_2Y_WTI,,,,,Mortgage_Application_Total_Volume_exRefinancing,52,40,26,,,,Mortgage_Rate_30Y,Mortgage_Rate_30Y,Mortgage_Rate_30Y_1st,Mortgage_Rate_30Y_2nd,Mortgage_Rate_30Y_Impulse,126,2,Investment_Residential,6,1,1,30-year fixed mortgage rate,default,12m,12m, level chg, level chg,,12m level chg,12m level chg,12m level chg,,,,,
+
+USA,DAILY:PZBRT,haver,,GBR_COM_BRENT_CRUDE_OIL_SPOT_USD,EconDB,,geo,Oil_Price_Brent,,,,,Expected_New_Order_Survey_MANU_FEDTexas,1,10,1,,,,House_Builder_Bloomberg_EPS_Estimate,House_Builder_Bloomberg_EPS_Estimate,House_Builder_Bloomberg_EPS_Estimate_1st,House_Builder_Bloomberg_EPS_Estimate_2nd,House_Builder_Bloomberg_EPS_Estimate_Impulse,126,1,Investment_Residential,6,0,1,house builders bloomberg forward EPS,default,12m,12m, level chg, level chg,,12m level chg,12m level chg,12m level chg,,,,,
+
+USA,USA_CAI_GS,EconDB,,,,,,GS_CAI_unused,,,,,Expected_New_Order_Survey_MANU_FEDKansas,1,10,1,,,,Equity,Equity,Equity_1st,Equity_2nd,Equity_Impulse,126,1,PCE,6,8,1,S&P 500 stock price index,default,12m,12m, % chg, level chg,,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,USA_RGDP_EXT_yoy,pre_run_result,RATES_LVL_GROWmPOT/USA_0,,,,,GS_CAI,,,,,Expected_New_Order_Survey_MANU_FEDRichmond,1,10,1,,,,10Y_Gov_Bond,10Y_Gov_Bond,10Y_Gov_Bond_1st,10Y_Gov_Bond_2nd,10Y_Gov_Bond_Impulse,126,1,PCE,6,2,1,total return index of 10 year T-bonds,default,30m,12m, % chg, level chg,,30m % chg,30m % chg,12m level chg,,,,,
+
+USA,HB_BB_px,csv,macro_data\equity\house_energy_eps.csv,,,,,HB_BB_px,,,,,Expected_New_Order_Survey_MANU_FEDPhilly,1,10,1,,,,Housing_Prices,Housing_Prices,Housing_Prices_1st,Housing_Prices_2nd,Housing_Prices_Impulse,6,63,PCE,6,2,1,S&P CoreLogic Case-Shiller home price index,default,30m,20m, % chg, level chg,,30m % chg,30m % chg,20m level chg,,,,,
+
+USA,HB_BB_eps,csv,macro_data\equity\house_energy_eps.csv,,,,,House_Builder_Bloomberg_EPS_Estimate,,,,,Expected_New_Order_Survey_MANU_FEDNY,1,10,1,,,,Mortgage_Application_Total_Volume_exRefinancing^PCE^,Mortgage_Application_Total_Volume_exRefinancing,Mortgage_Application_Total_Volume_exRefinancing_1st,Mortgage_Application_Total_Volume_exRefinancing_2nd,Mortgage_Application_Total_Volume_exRefinancing_Impulse,26,10,PCE,6,1,1,MBA : volume index : mortgage loan app for purchase,default,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+USA,EN_BB_px,csv,macro_data\equity\house_energy_eps.csv,,,,,EN_BB_px,,,,,Expected_New_Order_Survey_Composite,1,10,1,,,,salary,salary,salary_1st,salary_2nd,salary_Impulse,6,30,PCE,6,2,1,salary,default,12m,12m, % chg, level chg,saar,12m % chg,12m % chg,12m level chg,,,,,
+
+USA,EN_BB_eps,csv,macro_data\equity\house_energy_eps.csv,,,,,EN_BB_eps,,,,,Leading_Credit_Index,1,10,1,,,,Oil_Price_WTI^PCE^,Oil_Price_WTI^PCE^,Oil_Price_WTI_flip_1st,Oil_Price_WTI_flip_2nd,Oil_Price_WTI_flip_Impulse,126,1,PCE,6,1,1,"WTI intermediate, Cushing",default,30m,12m, % chg, level chg,,30m % chg,30m % chg,12m level chg,,,,,
+
+USA,SURVEYW:MBAMP,haver,,,,,,Mortgage_Application_Total_Volume_exRefinancing,,,,,Oil_Price_Brent,252,200,1,,,,saving_rate,saving_rate,saving_rate_1st,saving_rate_2nd,saving_rate_Impulse,6,46,PCE,6,0.5,1,personal saving rate,default,3m,6m,ma, level chg,,3mma,3mma,6m level chg,,,,,
+
+USA,Gasoline price,EconDB,,,,,,gas,,,,,Export_Dom_VA_Constant,89,,,,,,Consumer_Confidence^PCE^,Consumer_Confidence^PCE^,Consumer_Confidence_1st,Consumer_Confidence_2nd,,6,23,PCE,6,1,1,conference board consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,OECDMEI:C111PMN,haver,,,,,,PPI_Manufacturing,,,,,,,,,,,,Consumer_Confidence_CRB^PCE^,Consumer_Confidence_CRB^PCE^,Consumer_Confidence_CRB_1st,Consumer_Confidence_CRB_2nd,Consumer_Confidence_CRB_Impulse,6,23,Consumer_Confidence^PCE^,6,1,1,CRB consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,USA_10y_TRI,pre_run_result,DATA_RATES_10Y_SWAP_OIS/USA_10y_TRI,,,,,10Y_Gov_Bond,,,,,,,,,,,,Consumer_Confidence_UMICH^PCE^,Consumer_Confidence_UMICH^PCE^,Consumer_Confidence_UMICH_1st,Consumer_Confidence_UMICH_2nd,Consumer_Confidence_UMICH_Impulse,6,28,Consumer_Confidence^PCE^,6,1,1,UMich consumer confidence,default,1m,6m,ma, level chg,,monthly,monthly,6m level chg,,,,,
+
+USA,CBDB:CCIEN,haver,,USA_CONS_EXP_CB_SA,EconDB,,aris,Consumer_Confidence_CRB,,,,,,,,,,,,Total_Rig_Count,Total_Rig_Count,Total_Rig_Count_1st,Total_Rig_Count_2nd,Total_Rig_Count_Impulse,26,2,Investment_nonResidential_Energy,6,1,1,total rig count,1040,6m,6m, % chg, level chg,,6m % chg,6m % chg,6m level chg,,,,,
+
+USA,USECON:CSENT,haver,,,,,,Consumer_Confidence_UMICH,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:NRSXM7,haver,,USA_RSALES_NOM_EX_AUTO_FUELS_MIL_SA,EconDB,,,Retail_Sales_ex_Auto_Fuel,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,USECON:CUB0,haver,,USA_CU_MINING_SA,EconDB,,aris,Capacity_Utilisation_Mining,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:DFCEXPS,haver,,USA_PMI_DFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDTexas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:DSFCXPS,haver,,USA_PMI_DFED_SERV_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDTexas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:KC6CXNA,haver,,USA_PMI_KFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDKansas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:KCS6SX,haver,,,,,,Capex_Plan_Survey_SERV_FEDKansas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:RI6CX,haver,,USA_PMI_RFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDRichmond,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:RIS6CX,haver,,USA_PMI_RFED_NONMAN_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDRichmond,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:BOFCEX,haver,,USA_PMI_PFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_FEDPhilly,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:EM6CI,haver,,USA_PMI_NYFED_MANU_CAPEX_EXP6M_SA,EconDB,,aris,Capex_Plan_Survey_MANU_FEDNY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:BL6CIN,haver,,USA_PMI_NYFED_NONMAN_CAPEX_EXP6M_NSA,EconDB,,aris,Capex_Plan_Survey_SERV_FEDNY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,WORLD_CAPEX_NOWCAST_DM_JPM_INDEX_SA,EconDB,,,,,,Capex_tracker_JPM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:DFVNWOS,haver,,USA_PMI_DFED_MANU_NO_EXP6M_1_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDTexas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:KC6NXA,haver,,USA_PMI_KFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDKansas,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:RI6NX,haver,,USA_PMI_RFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDRichmond,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:BOFNOX,haver,,USA_PMI_PFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDPhilly,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,SURVEYS:EM6NI,haver,,USA_PMI_NYFED_MANU_NO_EXP6M_SA,EconDB,,aris,Expected_New_Order_Survey_MANU_FEDNY,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,USA_COM_RIG_COUNT_TOTAL_BAKER_HUGHES,EconDB,,,,,,Total_Rig_Count,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+USA,BCI:U0M107,haver,,,,,,Leading_Credit_Index,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

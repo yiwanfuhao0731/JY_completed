@@ -1,0 +1,1969 @@
+Country,Code,Title,Order,transType,transPer,chartLine,BOP_Adj,VertLine1,VertLine2,y1,y2,Freq,Table,Include
+
+CAN,CAN_CU_TOTAL_SA,Capacity: Capacity Utilization,1,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_BUS_CONF_EMPL_OBAL_SA,Prod: Bus Conf (Emp),1,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_BUS_CONF_BAROMETER_OBAL_NSA,Prod: Bus Conf (Total),1,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_IP_EX_CONS_SA,Prod: Indust Prod X Const,1,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_NO_MANU_LOC_SA,Prod: New Orders,1,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_PMI_MANU_IHS_SA,Prod: PMI Manu,1,nt,nt,50,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_PMI_SA,Prod: PMI Total,1,nt,nt,50,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_RSALES_REAL_SA,Demand: Real Retail Sales,2,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_RSALES_NOM_VAL_SA,Demand: Retail Sales,2,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_RSALES_NOM_EX_AUTO_SA,Demand: Retail Sales x Auto,2,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_EMPL_LEVEL_SA,Emp: Payrolls,3,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_URATE_SA,Emp: UE,3,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_ULC_INDEX_SA,Emp: ULC,3,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_LABOR_COMP_UNIT_LABOR_EARLY_EST_INDEX_SA,Emp: ULC2,3,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_WAGES_LOC_SA,Emp: Wage Growth,3,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_WAGES_HOURLY_SA,Emp: Wage Growth,3,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_BP_UNITS_SA,Housing: Building Permits,4,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_BS_RES_LOC_SA,Housing: Housing Starts,4,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_HOUS_HPI_NOM_INDEX_SA,Housing: House Prices,4,perChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_BUS_CREDIT_TOTAL_LOC_SA,Credit: Business Credit (6m Ann),5,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_HH_CREDIT_CONS_LOC_SA,Credit: Consumer Credit (6m Ann),5,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_HH_CREDIT_MORT_LOC_SA,Credit: Mortgage Credit (6m Ann),5,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_HH_CREDIT_TOTAL_LOC_SA,Credit: Total Household Credit (6m Ann),5,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_CPI_INDEX_SA,Inflation: HL CPI,6,perChg,6,0.02,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_CPI_CORE_X_FOOD_ENERGY_SA,Inflation: Core CPI,6,perChg,6,0.02,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_EXPORTS_GOODS_MIL_USD_SA,Trade: Exports (6m Ann),6,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_IMPORTS_GOODS_MIL_USD_SA,Trade: Imports (6m Ann),6,lvlChg,6,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+CAN,CAN_CTOT,Terms of Trade,6,nt,nt,ave,1,2015-01-20,2017-07-14,nlim,nlim,m,growth,1
+
+USA,USA_RSALES_NOM_SA,Demand: Nom Retail Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_CONS_CONF_CB_SA,Demand: Cons Conf (CB),1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_CONS_CONF_UM_INDEX_NSA,Demand: Cons Conf (UM),1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_RSALES_REAL_SA,Demand: Real Retail Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_ISM_NONMAN_SA,Production: ISM NonManu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_ISM_MANU_SA,Production: ISM Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_KFED_MANU_EXP6M_SA,Production: KFED Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_NYFED_MANU_CUR_SA,Production: NYFED Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_PFED_MANU_CUR_SA,Production: PYFED Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_DFED_MANU_COMP_CUR_SA,Production: DYFED Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_NYFED_NONMAN_BACTIVITY_CUR_NSA,Production: NYFED NonManu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_DFED_SERV_BACTIVITY_CUR_SA,Production: DYFED Serv,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_SBO_NFIB_INDEX_SA,Production: NFIB,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_IP_SA,Production: IP,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_IP_EX_CONS_SA,Production: IP x Const,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_CU_TOTAL_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_MANU_SA,Production: PMI Manu,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_SERVICES_SA,Production: PMI Serv,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_PMI_IHS_ADV_SA,Production: PMI Markit,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_EMPL_NONFARM_TOTAL_MOM_SA,Employment: NFP,4,ma,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_WAGES_TOTAL_PRIVATE_SA,Employment: Wages,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_WAGES_ATLFED_SA,Employment: Wages Atlanta Fed,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_WAGES_ECI_INDEX_SA,Employment: ECI,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_BP_RES_UNITS_SA,Housing: Building Permits,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_HH_CREDIT_TOTAL_LOC_NSA,Credit: Total Household,6,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_HH_CREDIT_HOUSING_1TO4FAM_LOC_NSA,Credit: Housing,6,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+USA,USA_HH_CREDIT_CONS_LOC_SA,Credit: Consumer Credit,6,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_CONS_CONF_OBAL_SA,Demand: Cons Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_RSALES_NOM_VAL_SA,Demand: Nominal RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_RSALES_REAL_EX_AUTOS_SA,Demand: Real RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_RSALES_REAL_EX_AUTOS_FUELS_SA,Demand: Real RS X Auto F,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BUS_CONF_OBAL_SA,Production: Bus Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_EC_ECON_SENT_INDEX_SA,Production: Econ Sentiment,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_IP_EX_CONS_SA,Production: IP,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_CU_MANU_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_NO_MANU_INDEX_SA,Production: New Orders,2,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BUS_CONF_RETAIL_OBAL_SA,Production: Bus Conf Retail,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BUS_CONF_SERV_OBAL_SA,Production: Bus Conf Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BUS_CONF_SENTIX_OBAL_NSA,Production: Bus Conf Sentiment,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BUS_CONF_CLIMATE_OBAL_SA,Production: Bus Conf Overall Climate,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_PMI_CONSTRUCTION_IHS_SA,Production: PMI Construc,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_PMI_SERVICES_IHS_SA,Production: PMI Serv,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_PMI_IHS_SA,Production: PMI Comp,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_ULC_INDEX_SA,Employment: ULC,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_WAGES_INDEX_SA,Employment: Wages,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_HH_CREDIT_TOTAL_EUR_NSA,Credit: Total HH Credit (6m Ann),4,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_HH_CREDIT_CONS_EUR_NSA,Credit: Consumer Credit (6m Ann),4,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_HH_CREDIT_MORT_EUR_NSA,Credit: Mortgage Credit (6m Ann),4,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_CPI_INDEX_SA,Inflation: Headline (6m Ann),5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Inflation: Core CPI (6m Ann),5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_CONS_CONF_INDEX_NSA,Demand: Cons Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_RSALES_NOM_VAL_SA,Demand: Nom RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_RSALES_NOM_INDEX_SA,Demand: Real RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_IP_EX_CONS_SA,Production: IP x Const,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_CU_TOTAL_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BUS_CONF_INDUS_OBAL_SA,Production: Bus Conf Industrial,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BUS_CONF_RETAIL_OBAL_SA,Production: Bus Conf Retail,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BUS_CONF_SERVICES_OBAL_SA,Production: Bus Conf Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BUS_CONF_CONST_OBAL_SA,Production: Bus Conf Const,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_PMI_SERVICES_IHS_SA,Production: PMI Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_PMI_IHS_SA,Production: PMI Comp,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_ULC_EARLY_EST_INDEX_SA,Employment: ULC,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BP_RES_LOC_SA,Housing: Building Permits,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_BS_RES_UNITS_SA,Housing: Building Starts,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_WAGES_LOC_SA,Employment: Wages,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_RSALES_REAL_SA,Employment: Wages,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+ESP,ESP_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_CONS_CONF_PER_NSA,Demand: Cons Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_RSALES_NOM_INC_AUTO_LOC_SA,Demand: Nom RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_RSALES_REAL_SA,Demand: Real RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BUS_CONF_NSA,Production: Bus Conf,2,perChg,12,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BUS_CONF_INDEX_NSA,Production: Bus Conf,2,perChg,12,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_IP_MINING_SA,Production: IP Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_IP_MANU_SA,Production: IP Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_IP_CONS_SA,Production: IP Construc,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_CU_MANU_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_CONSTRU_LOC_SA,Production: Construction,2,perChg,12,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_PMI_SA,Production: PMI Comp,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_EMPL_LEVEL_NSA,Employment: Payrolls,3,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_ULC_INDEX_SA,Employment: ULC,3,perChg,4,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_URATE_SA,Employment: UE,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_WAGES_INDEX_NSA,Employment: Wages,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BP_UNITS_SA,Housing: Building Permits (Units),4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BP_INDEX_SA,Housing: Building Permits (Index),4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BP_RES_LOC_SA,Housing: Building Plans Resi,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_BP_NONRES_LOC_SA,Housing: Building Plans NonResi,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_HH_CREDIT_TOTAL_LOC_NSA,Credit: Total HH Credit (6m Ann),5,lvlChg,12,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SAF,SAF_HH_CREDIT_MORT_FLOW_LOC_NSA,Credit: Mortgage Credit (6m Ann),5,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_RSALES_NOM_INC_AUTO_LOC_SA,Demand: Nom RS Inc Auto,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_RSALES_NOM_EX_AUTO_INDEX_SA,Demand: Nom RS X Auto,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_RSALES_REAL_INC_AUTOS_SA,Demand: Real RS Inc Auto,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BUS_CONF_SA,Production: Bus Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BUS_CONF_INDUS_OBAL_SA,Production: Bus Conf Industrial,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BUS_CONF_RETAIL_OBAL_SA,Production: Bus Conf Retail,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BUS_CONF_SERVICES_OBAL_SA,Production: Bus Conf Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_IP_EX_CONS_SA,Production: IP x Const,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_IP_MINING_SA,Production: IP Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_IP_MANU_SA,Production: IP Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_IP_CONS_SA,Production: IP Construc,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_NO_TOTAL_INDEX_SA,Production: New Orders,2,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_NO_TOTAL_DOMESTIC_INDEX_SA,Production: New Orders Domestic,2,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_ULC_INDEX_SA,Employment: ULC,3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_WAGES_AVG_MONTHLY_LOC_SA,Employment: Wages,3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_WAGES_HOURLY_MANU_AVG_MONTHLY_INDEX_SA,Employment: Wages Manu,3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BP_UNITS_SA,Housing: Building Permits (Units),4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_BS_RES_UNITS_SA,Housing: Building Plans Resi,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_HH_CREDIT_TOTAL_LOC_NSA,Credit: Total HH Credit (6m Ann),4,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_HH_CREDIT_MORT_LOC_NSA,Credit: Mortgage Credit (6m Ann),5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_HH_CREDIT_CONS_LOC_NSA,Credit: Consumer Credit (6m Ann),5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,5,lvlChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_CPI_INDEX_SA,Inflation: HL CPI,7,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CZE,CZE_CPI_CORE_SA,Inflation: Core CPI,7,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_AUTO_SALES_UNITS_SA,Demand: Auto Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_BUS_CONF_ACTIVITY_CUR_NSA,Production: Bus Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_BUS_CONF_ACTIVITY_EXPECTED_NSA,Production: Bus Conf Exp,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_CONS_CONF_INDEX_NSA,Demand: Cons Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_CPI_INDEX_SA,Inflation: HL CPI,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_CPI_CORE_X_FOOD_SA,Inflation: Core CPI,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_LDI_LEAD_SA,Production: LDI,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_IP_MINING_NSA,Production: IP Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_IP_MANU_SA,Production: IP Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_HOUS_HPI_NOM_INDEX_NSA,Housing: Home Prices,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+IDN,IDN_RSALES_REAL_SA,Demand: Real RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,0
+
+MEX,MEX_CONS_CONF_INDEX_NSA,Demand: Consumer Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_RSALES_NOM_INC_AUTO_LOC_SA,Demand: Nom RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_RSALES_REAL_SA,Demand: Real RS,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_BUS_CONF_INDEX_SA,Production: Bus Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_CU_MANU_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_IP_INC_CONS_SA,Production: IP,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_IP_MINING_SA,Production: IP Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_IP_MANU_SA,Production: IP Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_IP_CONS_SA,Production: IP Construc,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,50,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_ULC_MANU_INDEX_SA,Employment: ULC,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_WAGES_LOC_SA,Employment: Wages,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_WAGES_HOURLY_MANU_INDEX_SA,Employment: Wages Manu,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_HOUS_HPI_NOM_INDEX_NSA,Housing: Home Prices,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_CPI_INDEX_SA,Inflation: HL CPI,5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+MEX,MEX_CPI_CORE_X_FOOD_ENERGY_SA,Inflation: Core CPI,5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+EUR,EUR_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2014-05-01,2017-02-01,-2,5,m,BOP,1
+
+EUR,EUR_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_NET_GDP_NSA,Port Net,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_ASSET_GDP_NSA,Port Outflows,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_LIAB_GDP_NSA,Port Inflows,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+EUR,EUR_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2014-05-01,2017-02-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_CA_GDP_SAAR,Current Account,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_CA_TB_GDP_SAAR,Trade Balance,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+SAF,SAF_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2011-01-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_PORTINV_NET_GDP_NSA,Portfolio Net,1,ma,1,0,-1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_PORTINV_ASSET_GDP_NSA,Portfolio Outflows,1,ma,1,0,-1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_PORTINV_LIAB_GDP_NSA,Portfolio Inflows,1,ma,1,0,1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+MAL,MAL_BOP_NET_ERRORS_GDP,Errors and Omissions,1,ma,1,0,1,2014-05-01,2017-01-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+CZE,CZE_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2011-05-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_LIAB_DEBT_GOVT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_NET_EQ_GDP_NSA,EQ Net,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_ASSET_EQ_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_PORTINV_LIAB_EQ_GDP_NSA,EQ Inflows,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows Dep,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows Loans,1,ma,1,0,-1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows Dep,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+GBR,GBR_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows Loans,1,ma,1,0,1,2014-07-01,2017-03-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows Debt,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows EQ,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows Debt,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows EQ,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows Deposits,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows Loans,1,ma,1,0,-1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows Deposits,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+AUS,AUS_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows Loans,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_CA_GDP_NSA,Current Account,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_CA_TB_GDP_NSA,Trade Balance,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_NET_GDP_NSA,FDI Net,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows Debt,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows EQ,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows Debt,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows EQ,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_NET_EQ_GDP_NSA,EQ Net,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_NET_GDP_NSA,Other Net,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_ASSET_GDP_NSA,Other Outflows,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Other Outflows Deposits,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Other Outflows Loans,-1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_LIAB_GDP_NSA,Other Inflows,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Other Inflows Deposits,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+CAN,CAN_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Other Inflows Loans,1,ma,1,0,1,2013-01-01,2017-09-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows Debt,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows EQ,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows Debt,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows EQ,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows Deps,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows Loans,1,ma,1,0,-1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows Deps,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+MEX,MEX_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows Loans,1,ma,1,0,1,2014-11-01,2016-01-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows Debt,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows EQ,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows Debt,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_LIAB_DEBT_REALESTATE_GDP_NSA,FDI Inflows Debt Real Estate,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows EQ,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_ASSET_GOVT_GDP_NSA,Port Outflows: Gov,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_ASSET_MFI_GDP_NSA,Port Outflows: MFI,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_ASSET_RES_GDP_NSA,Port Outflows: Other,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_GOVT_GDP_NSA,Debt Inflows: Gov,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_GOVT_FC_GDP_NSA,Debt Inflows: Gov: FX,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_GOVT_LC_GDP_NSA,Debt Inflows: Gov: LC,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_MFI_GDP_NSA,Debt Inflows: Bank,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_MFI_FC_GDP_NSA,Debt Inflows: Bank: FX,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_MFI_LC_GDP_NSA,Debt Inflows: Bank: LC,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_RES_GDP_NSA,Debt Inflows: Other,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_RES_FC_GDP_NSA,Debt Inflows: Other: FX,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_PORTINV_LIAB_DEBT_RES_LC_GDP_NSA,Debt Inflows: Other: LC,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_NET_DEPOSITS_GDP_NSA,Banking Net: Deposits,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_NET_LOANS_GDP_NSA,Banking Net: Loans,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_NET_OTHER_GDP_NSA,Banking Net: Other,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows: Deposits,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows: Loans,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_ASSET_OTHER_GDP_NSA,Banking Outflows: Other,1,ma,1,0,-1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows: Deposits,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows: Loans,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+TUR,TUR_BOP_FA_OTHER_LIAB_OTHER_GDP_NSA,Banking Inflows: Other,1,ma,1,0,1,2018-03-01,2018-10-01,nlim,nlim,m,BOP,1
+
+WLD,AUS_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,AUT_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,BEL_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,BRA_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,BUL_CPI_INDEX_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CAN_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CHE_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CHE_CPI_CORE_X_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CHL_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CHN_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,COL_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CRO_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,CZE_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,DEN_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,DEU_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ESP_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,EUR_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,FIN_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,FRA_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,GBR_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,GBR_CPI_CORE_X_FOOD_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,GRE_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,HUN_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ICE_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,IDN_CPI_CORE_X_FOOD_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,IND_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,IRE_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ISE_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ITA_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,JPN_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,KOR_CPI_CORE_X_FOOD_OIL_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,MAL_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,MEX_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,NOR_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,NZD_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,PER_CPI_CORE_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,PHP_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,POL_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,POR_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ROM_CPI_INDEX_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,RUS_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,SAF_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,SGP_CPI_CORE_X_ACCOM_PRIV_ROADS_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,SWE_CPI_CORE_X_RAW_FOOD_ENERGY_NSA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,THA_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,TUR_CPI_CORE_X_FOOD_ENERGY_TOBAC_GOLD_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,TWN_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,USA_CPI_CORE_X_FOOD_ENERGY_SA,Core Inflation (6m),1,perChg,6,0,1,nl,nl,nlim,nlim,m,CORINF,1
+
+WLD,ARG_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,AUS_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,BRA_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,CAN_BOP_CA_GDP_NSA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,CHE_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,CHL_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,CHN_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,COL_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,CZE_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,EUR_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,GBR_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,HUN_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,IDN_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,IND_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,ISE_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,JPN_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,KOR_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,MAL_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,MEX_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,NOR_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,NZD_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,PER_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,PHP_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,POL_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,ROM_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,RUS_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,SAF_BOP_CA_GDP_SAAR,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,SGP_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,SWE_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,THA_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,TUR_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,TWN_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,URY_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,USA_BOP_CA_GDP_SA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,VNM_BOP_CA_GDP_NSA,Current Account (3m),1,ma,3,0,1,nl,nl,nlim,nlim,m,CA,1
+
+WLD,ARG_FXUSD,ARG,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,BRA_FXUSD,BRA,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,CHL_FXUSD,CHL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,CHN_FXUSD,CHN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,COL_FXUSD,COL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,CZE_FXUSD,CZE,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,HUN_FXUSD,HUN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,IDN_FXUSD,IDN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,IND_FXUSD,IND,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,ISE_FXUSD,ISE,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,KOR_FXUSD,KOR,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,MAL_FXUSD,MAL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,MEX_FXUSD,MEX,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,PER_FXUSD,PER,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,PHP_FXUSD,PHP,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,POL_FXUSD,POL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,ROM_FXUSD,ROM,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,RUS_FXUSD,RUS,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,SAF_FXUSD,SAF,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,SGP_FXUSD,SGP,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,THA_FXUSD,THA,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,TUR_FXUSD,TUR,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,TWN_FXUSD,TWN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,URY_FXUSD,URY,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,EMFX,1
+
+WLD,ARG_REER,ARG,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,BRA_REER,BRA,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,CHL_REER,CHL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,CHN_REER,CHN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,COL_REER,COL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,CZE_REER,CZE,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,HUN_REER,HUN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,IDN_REER,IDN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,IND_REER,IND,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,ISE_REER,ISE,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,KOR_REER,KOR,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,MAL_REER,MAL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,MEX_REER,MEX,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,PER_REER,PER,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,PHP_REER,PHP,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,POL_REER,POL,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,ROM_REER,ROM,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,RUS_REER,RUS,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,SAF_REER,SAF,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,SGP_REER,SGP,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,THA_REER,THA,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,TUR_REER,TUR,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,TWN_REER,TWN,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+WLD,URY_REER,URY,1,nt,nt,ave,1,nl,nl,nlim,nlim,d,RealFX,1
+
+KOR,KOR_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_PRIMEINC_NET_GDP_SA,Current Account: Prime Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_SECONDARYINC_NET_GDP_SA,Current Account: Second Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_NET_GOODS_GDP_SA,Trade Balance: Net Goods,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_NET_SERV_GDP_SA,Trade Balance: Net Services,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_EXPORTS_GOODS_GDP_SA,Trade Balance: Goods Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Trade Balance: Serve Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_IMPORTS_GOODS_GDP_SA,Trade Balance: Goods Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Trade Balance: Services Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_EXPORTS_MINERAL_FUELS_VALUE_MIL_USD_SA,Trade Balance: Fuel Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_IMPORTS_MINERAL_FUELS_VALUE_MIL_USD_SA,Trade Balance: Fuel Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_ASSET_GDP_NSA,FDI: Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI: Outflows: Debt,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI: Outflows: EQ,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_LIAB_GDP_NSA,FDI: Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI: Inflows: Debt,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI: Inflows: EQ,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_LIAB_DEBT_LT_GDP_NSA,Debt Inflows: ST,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_LIAB_DEBT_ST_GDP_NSA,Debt Inflows: LT,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_ASSET_DEBT_LT_GDP_NSA,Debt Outflows: ST,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_ASSET_DEBT_ST_GDP_NSA,Debt Outflows: LT,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,EQ Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_NET_GDP_NSA,Other Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_ASSET_GDP_NSA,Other Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Other Outflows: Deposits,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Other Outflows: Loans,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_LIAB_GDP_NSA,Other Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Other Inflows: Deposits,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+KOR,KOR_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Other Inflows: Loans,1,ma,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,CHN_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,HKG_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,IDN_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,IND_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,JPN_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,KOR_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,MAL_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,THA_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,VNM_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,PHP_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,SGP_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,TWN_EXPORTS_GOODS_MIL_USD_SA,Exports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,EXP,1
+
+WLD,CHN_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,HKG_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,IDN_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,IND_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,JPN_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,KOR_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,MAL_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,THA_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,VNM_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,PHP_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,SGP_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+WLD,TWN_IMPORTS_GOODS_MIL_USD_SA,Imports (6m Change USD Mil SA),1,lvlChg,3,0,1,nl,nl,nlim,nlim,m,IMP,1
+
+RUS,RUS_CONS_CONF_PER_NSA,Demand: Consumer Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_RSALES_REAL_SA,Demand: Retail Sales,1,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_PMI_SERVICES_IHS_SA,Production: PMI Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_PMI_IHS_SA,Production: Headline,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_BUS_CONF_NSA,Production: Business Confidence,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_CU_MINING_SA,Capacity Utilization: Mining,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_CU_MANU_SA,Capacity Utilization: Manufacturing,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_LDI_LEAD_NSA,Growth: LDI,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_ULC_INDEX_NSA,ULC,3,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_WAGES_AVG_MONTHLY_LOC_NSA,Wages 6m,3,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_HOUS_HPI_NOM_INDEX_SA,Home Prices: 6m,4,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_HH_CREDIT_MORT_LOCAL_CUR_LOC_NSA,Credit: Mortgage Credit (6m Ann),5,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_HH_CREDIT_MORT_FOR_CUR_LOC_NSA,Credit: Mortgage Credit FX (6m Ann),5,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_BP_LOC_SA,Housing: Building Permits,6,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_CPI_INDEX_SA,Inflation: 6m Headline,7,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+RUS,RUS_CPI_CORE_X_FOOD_ENERGY_SA,Inflation: 6m Core,7,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_LDI_LEAD_SA,Growth: LDI,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_IP_MINING_NSA,Production: IP: Mining,2,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_IP_MANU_SA,Production: IP: Manu,2,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_PMI_MANU_IHS_SA,Production: PMI Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_BUS_CONF_ACTIVITY_CUR_NSA,Production: Business Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_BUS_CONF_ACTIVITY_EXPECTED_NSA,Production: Business Conf: Exp,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_AUTO_SALES_UNITS_SA,Demand: Auto Sales,3,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_CONS_CONF_INDEX_NSA,Demand: Consumer Conf,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_CONS_EXP_INDEX_NSA,Demand: Consumer Conf Expect,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_RSALES_REAL_SA,Demand: Real Retail Sales,3,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_EMPL_LEVEL_NSA,Employment: Employed,4,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_CPI_INDEX_SA,Inflation: Headline (6m),5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_PPI_SA,Inflation: PPI (6m),5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_PPI_DOM_AGR_NSA,Inflation: PPI: Agg,5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_PPI_DOM_MINING_NSA,Inflation: PPI: Mining,5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_PPI_DOM_MANU_NSA,Inflation: PPI: Manu,5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+IDN,IDN_CPI_CORE_X_FOOD_SA,Inflation: Core (6m),5,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CONS_CONF_INDEX_SA,Demand: Consumer Conf,1,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CONS_EXP_INDEX_SA,Demand: Consumer Conf: Exp,1,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_RSALES_NOM_VAL_SA,Demand: Nominal Retail Sales,1,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BUS_CONF_OBAL_SA,Production: Business Conf,2,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BUS_CONF_BCONFIDENCE_SA,Production: Business Conf: Total,2,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_IP_EX_CONS_SA,Production: IP,2,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_PMI_CONSTRUCTION_SA,Production: PMI: Construction,2,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_PMI_MANU_SA,Production: PMI: Manu,2,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_PMI_SERVICES_SA,Production: PMI: Serv,2,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CU_MANU_SA,Capacity: Capacity Utilization: Manu,2.1,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CU_TOTAL_SA,Capacity: Capacity Utilization: Total,2.1,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_EMPL_LEVEL_SA,Employment: Payrolls,3,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_URATE_SA,Employment: UE,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_LABOR_COMP_UNIT_LABOR_EARLY_EST_INDEX_SA,Employment: Unit Labor Comp,3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_ULC_NONFARM_INDEX_SA,Employment: Unit Labor Cost,3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_ULC_TOTAL_EARLY_EST_INDEX_SA,Employment: Unit Labor Cost (early),3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_WAGES_INDEX_SA,Employment: Wages,3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_WAGES_AVG_WEEKLY_LOC_SA,Employment: Wages (Weekly),3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices (6m),3,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BP_RES_UNITS_SA,Housing: Building Permits,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_NEW_HOUSING_SA,Housing: Building Starts New Housing,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_OTHER_RES_SA,Housing: Building Starts Other Res,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_TOTAL_SA,Housing: Building Starts Total,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_PRIV_TOTAL_SA,Housing: Building Starts: Private,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_PRIV_OTHER_RES_SA,Housing: Building Starts: Private Other,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BS_PRIV_NEW_HOUSING_SA,Housing: Building Starts: Private Total,3,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CPI_INDEX_SA,Inflation: Headline (6m),4,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CPI_CORE_UIG_SA,Inflation: Core UIG,4,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CPI_CORE_X_FOOD_ENERGY_SA,Inflation: Core x Food and Energy,4,perChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_CPI_CORE_X_VOL_COMP_SA,Inflation: Core x Vol Comp (6m),4,perChg,2,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_BUS_CREDIT_LOC_SA,Credit: Business Credit (6m Ann),4.1,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_HH_CREDIT_EX_MORT_LOC_SA,Credit: HH ex Mortgage (6m Ann),4.1,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_HH_CREDIT_MORT_LOC_SA,Credit: HH Mortgage (6m Ann),4.1,lvlChg,6,0,1,nl,nl,nlim,nlim,m,growth,1
+
+AUS,AUS_HH_INTEREST_PAYMENTS_TO_DISPOSABLEINCOME_RATIO_SA,Credit: Interest to Income,4.1,nt,nt,0,1,nl,nl,nlim,nlim,m,growth,1
+
+PHP,PHP_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+PHP,PHP_BOP_CA_PRIMEINC_NET_GDP_SA,Income Balance: Primary,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+PHP,PHP_BOP_CA_SECONDARYINC_NET_GDP_NSA,Income Balance: Secondary,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+PHP,PHP_BOP_CA_TB_NET_GOODS_GDP_SA,Goods Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+PHP,PHP_BOP_CA_TB_NET_SERV_GDP_SA,Services Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+PHP,PHP_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Equity Inflows,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Equity Outflows,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking: Outflows: Deposits,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_ASSET_GDP_NSA,Banking: Outflows: Total,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking: Outflows: Loans,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking: Inflows: Deposits,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_LIAB_GDP_NSA,Banking: Inflows: Total,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking: Inflows: Loans,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_FA_FDI_NET_GDP_NSA,FDI: Net,1,ma,1,0,-1,nl,nl,-4,4,m,BOP,1
+
+PHP,PHP_BOP_NET_ERRORS_GDP,Errors,1,ma,1,0,1,nl,nl,-4,4,m,BOP,1
+
+SWE,SWE_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_PRIMEINC_NET_GDP_SA,Primary Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_SECONDARYINC_NET_GDP_SA,Secondary Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_EXPORTS_GOODS_GDP_SA,Goods Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Services Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_IMPORTS_GOODS_GDP_SA,Goods Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Services Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_NET_GOODS_GDP_SA,Goods Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_CA_TB_NET_SERV_GDP_SA,Services Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_FDI_NET_GDP_NSA,Net FDI,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Equity Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_ASSET_GDP_NSA,Portfolio Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Equity Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_LIAB_GDP_NSA,Portfolio Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Net Debt,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,Net Equity,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_PORTINV_NET_GDP_NSA,Net Portfolio,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows: Deposits,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows: Total,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows: Loans,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows: Deposits,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows: Total,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows: Loans,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_FA_OTHER_NET_GDP_NSA,Banking Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+SWE,SWE_BOP_NET_ERRORS_GDP,Errors,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_PRIMEINC_NET_GDP_SA,Current Account: Primary Income,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_SECONDARYINC_NET_GDP_NSA,Current Account: Secondary Income,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_NET_GOODS_GDP_NSA,Net Goods,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_NET_SERV_GDP_SA,Net Services,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_EXPORTS_GOODS_GDP_SA,Good Exports,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Services Exports,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_IMPORTS_GOODS_GDP_SA,Goods Imports,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Services Imports,1,ma,1,0,1,2016-02-01,2018-01-01,nlim,nlim,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_NET_GDP_NSA,Net FDI,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows: Total,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows: Debt,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows: Total,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows: Debt,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows: EQ,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_ASSET_GDP_NSA,Portfolio Outflows: Total,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Portfolio Outflows: Debt,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Portfolio Outflows: EQ,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_LIAB_GDP_NSA,Portfolio Inflows: Total,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Portfolio Inflows: Debt,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Portfolio Inflows: EQ,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_NET_GDP_NSA,Banking: Net,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_ASSET_GDP_NSA,Banking Outflows: Total,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking Outflows: Deposits,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking Outflows: Loans,1,ma,1,0,-1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_LIAB_GDP_NSA,Banking Inflows: Total,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking Inflows: Deposits,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+BRA,BRA_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking Inflows: Loans,1,ma,1,0,1,2016-02-01,2018-01-01,-5,5,m,BOP,1
+
+SWE,SWE_CONSUMPTION_NOM_HH_INDEX_NSA,Demand: Nominal Consumption,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CONSUMPTION_REAL_HH_INDEX_SA,Demand: Real Consumption,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CONS_CONF_INDEX_SA,Demand: Consumer Confidence,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CONS_EXP_OBAL_NSA,Demand: Consumer Confidence (expect),1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_PMI_MANU_SA,Production: PMI Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_PMI_SERVICES_SA,Production: PMI Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_BUS_CONF_INDEX_SA,Production: Business Confidence,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_IP_EX_CONS_SA,Production: IP,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_NO_MANU_VAL_INDEX_SA,Production: New Orders,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_NO_TOTAL_VOL_INDEX_SA,Production: New Orders Real,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_EC_ECON_SENT_INDEX_SA,Production: Bus Sentiment,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CU_TOTAL_SA,Capacity Utilization,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CU_MINING_SA,Capacity Utilization: Mining,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CU_MANU_SA,Capacity Utilization: Manufacturing,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_URATE_SA,Employment: UE,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_WAGES_LOC_SA,Employment: Wages,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_EMPL_LEVEL_SA,Employment: Payrolls,4,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_LABOR_COMP_UNIT_LABOR_EARLY_EST_INDEX_SA,Employment: Wages (compensation),4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_BS_RES_UNITS_SA,Housing: Building Starts,5,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_HOUS_HPI_NOM_AVG_PRICE_NSA,Housing: HPI ave,5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_HOUS_HPI_NOM_INDEX_SA,Housing: HPI,5,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CPI_INDEX_SA,Inflation: Headline CPI,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CPI_CORE_FIXED_INTEREST_LESS_ENERGY_NSA,Inflation: Core Inflation ,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CPI_CORE_FIXED_INTEREST_CONSTANT_TAXES_SA,Inflation: Core Inflation x Taxes,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+SWE,SWE_CPI_CORE_X_RAW_FOOD_ENERGY_NSA,Inflation: Core Inflation x food and En,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_AUTO_SALES_PLUS_PARTS_INDEX_NSA,Demand: Auto Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_RSALES_NOM_INDEX_NSA,Demand: Nom Retail Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_RSALES_NOM_EX_AUTO_LOC_SA,Demand: Nom Retail Sales (ex Auto),1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_RSALES_REAL_SA,Demand: Real Retail Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_CONS_CONF_OBAL_SA,Demand: Consumer Confidence,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_SA,Production: Business Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_OBAL_NSA,Production: Business Conf 2,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_CONST_SA,Production: Business Conf: Construction,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_INDUS_SA,Production: Business Conf: Indus,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_RETAIL_SA,Production: Business Conf: Retail,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BUS_CONF_SERVICES_SA,Production: Business Conf: Servicies,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_EC_ECON_SENT_INDEX_SA,Production: Econ Sentiment,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_IP_EX_CONS_SA,Production: IP (ex Construction),2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_IP_CONS_SA,Production: IP: Construction,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_IP_MANU_SA,Production: IP: Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_IP_MINING_SA,Production: IP: Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_NO_INDUSTRIAL_INDEX_SA,Production: New Orders,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_PMI_MANU_IHS_SA,Production: PMI,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_ULC_EARLY_EST_INDEX_SA,Employment: ULC,3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_WAGES_AVG_MONTHLY_LOC_SA,Employment: Wages,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_WAGES_HOURLY_MANU_AVG_MONTHLY_INDEX_SA,Employment: Wages: Manu,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,4,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BS_RES_UNITS_SA,Housing: Resi Building Permits,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_EXPORTS_GOODS_MIL_USD_SA,Trade: Exports (6m Ann),5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_IMPORTS_GOODS_MIL_USD_SA,Trade: Imports (6m Ann),5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_PRIVATE_CREDIT_MIL_LOC_NSA,Credit: Total Private (6m),6,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_CPI_INDEX_SA,Inflation: CPI,7,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_CPI_CORE_X_FOOD_ENERGY_SA,Inflation: CPI (Core),7,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_CPI_HCPI_INDEX_SA,Inflation: CPI (harmonized),7,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+POL,POL_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_GDP_SA,Trade Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_PRIMEINC_NET_GDP_SA,Income Balance: Primary,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_SECONDARYINC_NET_GDP_SA,Income Balance: Secondary,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_NET_GOODS_GDP_SA,Trade Balance: Net: Goods,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_NET_SERV_GDP_SA,Trade Balance: Net: Services,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_EXPORTS_GOODS_GDP_SA,Trade Balance: Exports: Goods,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Trade Balance: Exports: Services,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_IMPORTS_GOODS_GDP_SA,Trade Balance: Imports: Goods,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Trade Balance: Imports: Services,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+POL,POL_BOP_FA_FDI_NET_GDP_NSA,FDI: Net,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_ASSET_GDP_NSA,FDI: Outflows: Total,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI: Outflows: Debt,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI: Outflows: Equity,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_LIAB_GDP_NSA,FDI: Inflows: Total,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI: Inflows: Debt,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI: Inflows: Equity,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Debt: Net,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,Equity: Net,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt: Outflows,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Equity: Outflows,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt: Inflows,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Equity: Inflows,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_NET_GDP_NSA,Banking: Net,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_ASSET_GDP_NSA,Banking: Outflows: Total,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking: Outflows: Deposits,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking: Outflows: Loans,1,ma,1,0,-1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_LIAB_GDP_NSA,Banking: Inflows: Total,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking: Inflows: Deposits,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+POL,POL_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking: Inflows: Loans,1,ma,1,0,1,nl,nl,-7,7,m,BOP,1
+
+IND,IND_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_CA_PRIMEINC_NET_GDP_SA,Current Account: Primary Income,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_CA_SECONDARYINC_NET_GDP_SA,Current Account: Secondary Income,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_CA_TB_GDP_SA,Trade balance:  Net,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_CA_TB_NET_GOODS_GDP_SA,Trade balance:  Goods,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_CA_TB_NET_SERV_GDP_SA,Trade balance:  Services,1,ma,1,0,1,2011-08-01,2017-01-01,nlim,nlim,m,BOP,1
+
+IND,IND_BOP_FA_FDI_NET_GDP_NSA,FDI Net,1,ma,1,0,-1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_ASSET_GDP_NSA,FDI Outflows: Total,1,ma,1,0,-1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI Outflows: Debt,1,ma,1,0,-1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI Outflows: EQ,1,ma,1,0,-1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_LIAB_GDP_NSA,FDI Inflows: Total,1,ma,1,0,1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI Inflows: Debt,1,ma,1,0,1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI Inflows: EQ,1,ma,1,0,1,2011-08-01,2017-01-01,-4,4,m,BOP,1
+
+IND,IND_BOP_FA_PORTINV_NET_GDP_NSA,Portfolio Net,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Portfolio: Debt Inflows,1,ma,1,0,1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Portfolio: EQ Inflows,1,ma,1,0,1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_PORTINV_ASSET_GDP_NSA,Portfolio Outflows,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_NET_GDP_NSA,Banking: Net,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_LIAB_GDP_NSA,Banking: Inflows,1,ma,1,0,1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_ASSET_GDP_NSA,Banking: Outflows,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking: Inflows: Deposits,1,ma,1,0,1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking: Inflows: Loans,1,ma,1,0,1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking: Outflows: Deposits,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+IND,IND_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking: Outflows: Loans,1,ma,1,0,-1,2011-08-01,2017-01-01,-7,7,m,BOP,1
+
+HUN,HUN_BOP_CA_GDP_SA,Current Account,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_PRIMEINC_NET_GDP_SA,Current Account: Prime Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_SECONDARYINC_NET_GDP_SA,Current Account: Second Income,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_GDP_SA,Current Account: Trade Balance,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_NET_GOODS_GDP_SA,Current Account: Trade Balance: Net Goods,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_NET_SERV_GDP_SA,Current Account: Trade Balance: Net Services,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_EXPORTS_GOODS_GDP_NSA,Current Account: Trade Balance: Good Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Current Account: Trade Balance: Serv Exports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_IMPORTS_GOODS_GDP_NSA,Current Account: Trade Balance: Goods Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Current Account: Trade Balance: Serv Imports,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_NET_GDP_NSA,FDI: Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_ASSET_GDP_NSA,FDI: Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_LIAB_GDP_NSA,FDI: Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI: Outflows: Debt,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI: Outflows EQ,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI: Inflows: Debt,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI: Inflows EQ,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Debt Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,EQ Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Debt Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,EQ Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_NET_GDP_NSA,Other: Net,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_ASSET_GDP_NSA,Other: Outflows,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Other: Outflows: Deposits,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Other: Outflows: Loans,1,ma,1,0,-1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_LIAB_GDP_NSA,Other: Inflows,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Other: Inflows: Deposits,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+HUN,HUN_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Other: Inflows: Loans,1,ma,1,0,1,nl,nl,nlim,nlim,m,BOP,1
+
+GBR,GBR_RSALES_NOM_VAL_SA,Demand: Nominal Retail Sales2,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_RSALES_NOM_EX_FUEL_THOUS_LOC_NSA,Demand: Nominal Retail Sales (ex Fuels),1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_RSALES_REAL_SA,Demand: Real Retail Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_RSALES_REAL_EX_FUEL_THOUS_LOC_SA,Demand: Real Retail Sales (ex Fuels),1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CONS_CONF_OBAL_NSA,Demand: Consumer Conf,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CONS_EXP_OBAL_NSA,Demand: Consumer Conf: Exp,1,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_IP_EX_CONS_SA,Production: IP,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CU_MANU_SA,Production: Cap Util,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_PMI_IHS_SA,Production: PMI: Composite,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_PMI_SERVICES_IHS_SA,Production: PMI: Serv,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_PMI_MANU_IHS_SA,Production: PMI: Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_PMI_CONSTRUCTION_IHS_SA,Production: PMI: Construction,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BUS_CONF_OBAL_SA,Production: Business Conf,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BUS_CONF_INDUS_OBAL_SA,Production: Business Conf: Indus,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BUS_CONF_RETAIL_OBAL_SA,Production: Business Conf: Retail,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BUS_CONF_SERVICES_OBAL_SA,Production: Business Conf: Services,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BUS_CONF_CONST_OBAL_SA,Production: Business Conf: Construction,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_EC_ECON_SENT_INDEX_SA,Production: Economic Sentiment,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_ULC_INDEX_SA,Employment: ULC,3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_WAGES_LOC_SA,Employment: Wages: Total,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_WAGES_HOURLY_MANU_INDEX_SA,Employment: Wages: Manu Hourly,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BS_RES_UNITS_SA,Housing: Building Permits,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_BS_RES_VOL_SA,Housing: Building Permits Units,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HOUS_HPI_NOM_INDEX_SA,Housing: Home Prices,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HH_CREDIT_TOTAL_LOC_SA,Credit: HH: Total,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HH_CREDIT_CONS_LOC_SA,Credit: HH: Consumer,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HH_CREDIT_MORT_LOC_SA,Credit: HH: Mortgage,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HH_CREDIT_CONS_UNSECURED_LOC_NSA,Credit: HH: Consumer Unsec,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_HH_CREDIT_CONS_MIL_LOC_SA,Credit: HH: Consumer2,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_PRIVATE_CREDIT_MIL_LOC_SA,Credit: Total,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CPI_INDEX_SA,Inflation: Headline CPI,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CPI_RPI_INDEX_SA,Inflation: Headline RPI,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CPI_CORE_X_FOOD_ENERGY_HICP_SA,Inflation: Core (x Food and Energy),6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+GBR,GBR_CPI_CORE_X_FOOD_SA,Inflation: Core (x Food),6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+THA,THA_BOP_CA_GDP_SA,Current Account: Total,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_PRIMEINC_NET_GDP_SA,Current Account: Prime Income,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_SECONDARYINC_NET_GDP_NSA,Current Account: Secondary Income,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_GDP_SA,Current Account: Trade,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_NET_GOODS_GDP_SA,Current Account: Trade: Net Goods,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_NET_SERV_GDP_SA,Current Account: Trade: Net Serv,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_EXPORTS_GOODS_GDP_NSA,Current Account: Trade: Exp Goods,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Current Account: Trade: Exp Serv,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_IMPORTS_GOODS_GDP_NSA,Current Account: Trade: Imp Goods,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_CA_TB_IMPORTS_SERV_GDP_NSA,Current Account: Trade: Imp Serv,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_NET_GDP_NSA,FDI: net,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_ASSET_GDP_NSA,FDI: Outflows: Total,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_ASSET_DEBT_GDP_NSA,FDI: Outflows: Debt,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_ASSET_EQ_GDP_NSA,FDI: Outflows: Equity,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_LIAB_GDP_NSA,FDI: Inflows: Total,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_LIAB_DEBT_GDP_NSA,FDI: Inflows: Debt,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_FDI_LIAB_EQ_GDP_NSA,FDI: Inflows: Equity,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Port: Net: Debt,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,Port: Net: Equity,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Port: Outflows: Debt,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Port: Outflows: Equity,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Port: Inflows: Debt,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Port: Inflows: Equity,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_NET_GDP_NSA,Banking: net,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_ASSET_GDP_NSA,Banking: Outflows: Total,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_ASSET_DEPOSITS_GDP_NSA,Banking: Outflows: Deposits,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_ASSET_LOANS_GDP_NSA,Banking: Outflows: Loans,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_LIAB_GDP_NSA,Banking: Inflows: Total,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_LIAB_DEPOSITS_GDP_NSA,Banking: Inflows: Deposits,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_FA_OTHER_LIAB_LOANS_GDP_NSA,Banking: Inflows: Loans,1,ma,1,0,1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+THA,THA_BOP_NET_ERRORS_GDP,Error and Omisions,1,ma,1,0,-1,2015-04-01,2016-09-01,nlim,nlim,m,BOP,1
+
+HUN,HUN_RSALES_NOM_EX_AUTO_LOC_SA,Demand: Retail Sales: Nominal: Ex Auto,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_AUTO_SALES_PLUS_PARTS_LOC_SA,Demand: Auto Sales,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_RSALES_NOM_EX_AUTO_FUELS_LOC_SA,Demand: Retail Sales: Nominal: Ex Auto+Fuel,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_RSALES_REAL_SA,Demand: Retail Sales: Real,1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_CONS_CONF_OBAL_SA,Demand: Consumer Conf,1,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BUS_CONF_SA,Production: Business Conf,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_IP_EX_CONS_SA,Production: IP: Ex Construction,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_IP_MINING_SA,Production: IP: Mining,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_IP_MANU_SA,Production: IP: Manu,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_IP_CONS_SA,Production: IP: Construction,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_S_MANU_INDEX_SA,Production: Manufacturing,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_NO_MANU_INDEX_SA,Production: New Orders,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BUS_CONF_INDUS_OBAL_SA,Production: Business Conf: Indus,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BUS_CONF_RETAIL_OBAL_SA,Production: Business Conf: Retail,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BUS_CONF_SERVICES_OBAL_SA,Production: Business Conf: Services,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BUS_CONF_CONST_OBAL_SA,Production: Business Conf: Construction,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_EC_ECON_SENT_INDEX_SA,Production: Econ Sentiment,2,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_BP_UNITS_SA,Housing: Building Permits,3,ma,1,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_HOUS_HPI_NOM_INDEX_SA,Housing: HPI,3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_ULC_EARLY_EST_INDEX_SA,Employment: Wages: ULC,4,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_URATE_SA,Employment: URATE,4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_WAGES_AVG_MONTHLY_LOC_SA,Employment: Wages: Monthly Earnings,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_WAGES_HOURLY_MANU_AVG_MONTHLY_INDEX_SA,Employment: Wages: Manu Earnings,4,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_HH_CREDIT_TOTAL_LOC_NSA,Credit: Total,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_HH_CREDIT_CONS_LOC_NSA,Credit: Consumer,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_HH_CREDIT_MORT_LOC_NSA,Credit:  Mortgage,5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_PRIVATE_CREDIT_BIL_LOC_NSA,Credit: Total Private (6m),5,lvlChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_CPI_INDEX_SA,Inflation: Headline,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_INFEXP_EXP_12M,Inflation: Inflation Exp (12 M),6,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+HUN,HUN_CPI_CORE_SA,Inflation: Core,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+COL,COL_CAI_GS,Activity: CAI,1,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_RSALES_NOM_EX_AUTO_FUELS_INDEX_SA,Demand: Retail Sales: Nominal,2.1,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_RSALES_NOM_INC_AUTO_LOC_SA,Demand: Retail Sales: Nominal (w Auto),2.2,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_RSALES_REAL_EX_AUTOS_FUELS_SA,Demand: Retail Sales: Real,2.3,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_CONS_EXP_SA,Demand: Consumer Confidence: Exp,2.4,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_CONS_CONF_PER_NSA,Demand: Consumer Confidence,2.5,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_BUS_CONF_NSA,Production: Business Conf,3.1,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_BUS_CONF_INDUS_OBAL_NSA,Production: Business Conf: Indus,3.2,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_IP_MANU_SA,Production: IP: Manu,3.3,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_PMI_MANU_IHS_SA,Production: PMI manu,3.4,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_CU_TOTAL_SA,Production: Cap Util,3.5,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_EMPL_LEVEL_SA,Employment: NFP,4.1,lvlChg,12,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_URATE_SA,Employment: UE Rate,4.2,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_WAGES_INDEX_SA,Employment: Wages,4.3,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_BP_RES_AREA_UNITS_SA,Housing: Building Permits,5.1,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_BP_AREA_UNITS_SA,Housing: Building Permits 2,5.2,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_HOUS_HPI_NOM_INDEX_NSA,Housing: Home Prices,5.3,perChg,4,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_HH_CREDIT_CONS_BIL_LOC_NSA,Credit: Consumer,6.1,lvlChg,12,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_HH_CREDIT_MORT_BIL_LOC_NSA,Credit: Mortgage,6.2,lvlChg,12,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_PRIVATE_CREDIT_BIL_LOC_NSA,Credit: Total Private,6.3,lvlChg,12,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_CPI_CORE_SA,Inflation: Core,7.1,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_CPI_INDEX_SA,Inflation: Headline,7.2,perChg,6,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_INFEXP_AVG_EXP_12M,Inflation: Expectations,7.3,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+COL,COL_BOP_CA_GDP_SA,Current Account,7.3,nt,nt,ave,1,2014-04-01,2016-11-01,nlim,nlim,m,growth,1
+
+CHE,CHE_LDI_LEAD_SA,Current Activity: Swiss Composite Activity,0.11,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_RSALES_NOM_EX_AUTO_FUELS_INDEX_SWDA,"Demand: Nominal Retail Sales: Ex Auto/Fuels (6m %, ann)",1.1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_RSALES_REAL_EX_AUTO_FUELS_INDEX_SWDA,"Demand: Real Retail Sales: Ex Auto/Fuels (6m %, ann)",1.3,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CONS_CONF_OBAL_NSA,Demand: Consumer Confidence: Overall,1.4,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CONS_EXP_OBAL_SA,Demand: Consumer Confidence: Expectations,1.5,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_RSALES_NOM_EX_AUTO_SA,Demand: Nominal Retail Sales: Ex Auto,1.11,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_RSALES_REAL_EX_AUTOS_SA,Demand: Real Retail Sales: Ex Auto,1.2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_HOUS_HPI_NOM_INDEX_SA,"Housing: Home Prices (6m, ann)",4.1,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_PMI_MANU_IHS_SA,Production: PMI: Manu,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_PMI_SA,Production: PMI: Headline,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_BUS_CONF_OBAL_SA,Production: Business Confidence,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_IP_EX_CONS_SA,Production: IP: Ex Construction,2,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CU_MANU_SA,Capacity Utilization,2,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_URATE_SA,Employment: UE Rate,3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_ULC_EARLY_EST_INDEX_SA,Employment: Unit Labor Cost (6m),3,perChg,2,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_WAGES_YOY_LOC_NSA,Employment: Wages (yoy),3,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_PRIVATE_CREDIT_MIL_LOC_SA,Credit: Total Private (12m),5,lvlChg,12,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CPI_INDEX_SA,Inflation: Headline Inflation (6m),6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CPI_CORE_SA,Inflation: Core CPI (6m): Overall,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_CPI_CORE_X_ENERGY_SA,Inflation: Core CPI (6m): X Energy,6,perChg,6,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_INFEXP_ANN_BUS_EXP_12M,Inflation: Expectations: 12m,6,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_INFEXP_ANN_BUS_EXP_5Y,Inflation: Expectations: 5y,6,nt,nt,ave,1,nl,nl,nlim,nlim,m,growth,1
+
+CHE,CHE_BOP_CA_GDP_SA,Current Account: Total (%GDP),1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_TB_GOODS_GDP,Current Account: Trade Balance,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_TB_GOODS_NONCMD_TO_NGDP,Trade: Non CMD Balance,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_EXPORTS_GOODS_NONCMD_TO_NGDP,Trade Balance: Exports: Non Commodity,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_IMPORTS_GOODS_NONCMD_TO_NGDP,Trade Balance: Imports: Non Commodity,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_TB_CMD_TO_NGDP,Trade: CMD Balance,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_EXPORTS_CMD_TO_NGDP,Trade: Exports: Commodity,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_IMPORTS_CMD_TO_NGDP,Trade: Imports: Commodity,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_PRIMEINC_NET_GDP_NSA,Current Account: Primary Income,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_SECONDARYINC_NET_GDP_NSA,Current Account: Secondary Income,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_NET_GOODS_GDP_SA,Current Account: Net Trade: Goods,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_NET_SERV_GDP_SA,Current Account: Net Trade: Services,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_EXPORTS_GOODS_GDP_SA,Current Account: Exports: Goods,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_EXPORTS_SERV_GDP_SA,Current Account: Exports: Services,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_IMPORTS_GOODS_GDP_SA,Current Account: Imports: Goods,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_CA_TB_IMPORTS_SERV_GDP_SA,Current Account: Imports: Services,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_FDI_NET_GDP_NSA,FDI: Net,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_FDI_ASSET_GDP_NSA,FDI: Outflows,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_FDI_LIAB_GDP_NSA,FDI: Inflows,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_NET_DEBT_GDP_NSA,Portfolio: Net flows: Debt,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_NET_EQ_INVFUNDS_GDP_NSA,Portfolio: Net flows: Equities,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_LIAB_DEBT_GDP_NSA,Portfolio: Inflows: Debt,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_LIAB_EQ_INVFUNDS_GDP_NSA,Portfolio: Inflows: Equities,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_ASSET_DEBT_GDP_NSA,Portfolio: Outflows: Debt,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_PORTINV_ASSET_EQ_INVFUNDS_GDP_NSA,Portfolio: Outflows: Equities,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_OTHER_NET_GDP_NSA,Banking: Net Flows: Total,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_OTHER_ASSET_GDP_NSA,Banking: Outflows,1,ma,1,0,-1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1
+
+CHE,CHE_BOP_FA_OTHER_LIAB_GDP_NSA,Banking: Inflows,1,ma,1,0,1,2014-11-01,2017-04-01,nlim,nlim,m,BOP,1

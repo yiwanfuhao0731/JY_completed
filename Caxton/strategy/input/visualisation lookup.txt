@@ -1,0 +1,211 @@
+Title,Title_last_date,Title_last_value,Order,transType,transPer,chartLine,BOP_Adj,Cor,Annualize,VertLine1,VertLine2,y1,y2,Freq,Table,Include,AxisUnit,Legend,TransformationName
+
+Composite Growth,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Composite Growth,
+
+CAI,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(%),CAI,3m %chg
+
+Growth: RGDP,1,1,2,ann_6m_geo_smooth_chg,2,,1,,1,nl,nl,nlim,nlim,m,growth,1,(%),RGDP,
+
+Prod: Capacity Utilization,1,1,2,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Cap Util,
+
+Prod: Capacity Utilization: Manu,1,1,2,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Cap Util: Manu,
+
+Prod: Capacity Utilization: Mining,1,1,2,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Cap Util: Mining,
+
+Prod: Bus Conf (Emp),1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Business Conf Employ,
+
+Prod: Bus Conf: Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Business Conf Employ,
+
+Prod: Bus Conf (Total),1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Business Conf Total,
+
+Prod: IP X Const,1,1,2,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),IP X Const,6m %chg
+
+Prod: IP X Const (Q),1,1,2,ann_6m_geo_smooth_chg,2,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),IP X Const,6m %chg
+
+Prod: IP,1,1,2,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),IP,6m %chg
+
+Prod: IP: Manu,1,1,2,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),IP,6m %chg
+
+Prod: New Orders,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,New Orders,
+
+Prod: New Orders: Volume,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,New Orders: Volume,
+
+Prod: Manu Index,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Manu Index,
+
+Prod: PMI: Manu,1,1,2,nt,nt,50,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Manu,
+
+Prod: PMI: Total,1,1,2,nt,nt,50,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Total,
+
+Prod: PMI: Composite,1,1,2,nt,nt,50,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Composite,
+
+Prod: PMI: Construc,1,1,2,nt,nt,50,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Construc,
+
+Prod: PMI: Serv,1,1,2,nt,nt,50,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Serv,
+
+Prod: Econ Sentiment,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Econ Sentiment,
+
+Prod: Tankan,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Tankan,
+
+Prod: Bus Conf: Total,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Total,
+
+Prod: Bus Conf: Expectations,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Expectations,
+
+Prod: Bus Conf: NAB,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: NAB,
+
+Prod: Bus Conf: Retail,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Retail,
+
+Prod: Bus Conf: Services,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Services,
+
+Prod: Bus Conf: Sentiment,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Sentiment,
+
+Prod: Bus Conf: Construction,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Construction,
+
+Prod: Bus Conf: Industrial,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Industrial,
+
+Prod: Bus Conf: Overall Climate,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: Bus Conf: Overall Climate,
+
+Prod: ISM,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,ISM: NonManu,
+
+Prod: ISM: NonManu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,ISM: NonManu,
+
+Prod: ISM: Manu,1,1,2,nt,nt,nl,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,ISM: Manu,
+
+Prod: PMI: Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Manu,
+
+Prod: PMI: Serv,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,PMI: Serv,
+
+Prod: KFED Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: KFED Manu,
+
+Prod: NYFED Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: NYFED Manu,
+
+Prod: PFED Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: PFED Manu,
+
+Prod: DFED Manu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: DFED Manu,
+
+Prod: NYFED NonManu,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: NYFED NonManu,
+
+Prod: DYFED Serv,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: DFED Serv,
+
+Prod: NFIB,1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Prod: NFIB,
+
+Dem: Retail Sales: Real,1,1,1,ann_6m_geo_smooth_chg,6,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real,6m %chg
+
+Dem: Retail Sales: Real: Ex Auto,1,1,1,ann_6m_geo_smooth_chg,6,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real: Ex Auto,6m %chg
+
+Dem: Retail Sales: Real: Ex Auto/Fuel,1,1,1,ann_6m_geo_smooth_chg,6,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real: Ex Auto/Fuel,6m %chg
+
+Dem: Retail Sales: Real: Ex Fuel,1,1,1,ann_6m_geo_smooth_chg,6,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real: Ex Fuel,6m %chg
+
+Dem: Retail Sales: Nominal,1,1,1,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal,6m %chg
+
+Dem: Retail Sales: Nominal: Ex Auto,1,1,1,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal: Ex Auto,6m %chg
+
+Dem: Retail Sales: Nominal: Ex Fuel,1,1,1,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal: Ex Fuel,6m %chg
+
+Dem: Retail Sales: Nominal: Ex Auto/Fuel,1,1,1,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal: Ex Auto/Fuel,6m %chg
+
+Dem: Retail Sales: Nominal (Q),1,1,1,ann_6m_geo_smooth_chg,2,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal,6m %chg
+
+Dem: Retail Sales: Nominal: Ex Auto/Fuel (Q),1,1,1,ann_6m_geo_smooth_chg,2,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal: Ex Auto/Fuel,6m %chg
+
+Dem: Retail Sales: Real (Q),1,1,1,ann_6m_geo_smooth_chg,2,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real,6m %chg
+
+Dem: Retail Sales: Real: Ex Auto/Fuel (Q),1,1,1,ann_6m_geo_smooth_chg,2,nl,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Real: Ex Auto/Fuel,6m %chg
+
+Dem: Auto Sales (Q),1,1,1,ann_6m_geo_smooth_chg,2,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Nominal: Ex Auto/Fuel,6m %chg
+
+Dem: Cons Conf (CB),1,1,2,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Cons Conf (CB),
+
+Dem: Cons Conf (UM),1,1,2,nt,nt,nl,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Cons Conf: Umich,
+
+Dem: Cons Conf,1,1,1,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Cons Conf,
+
+Dem: Cons Con,1,1,1,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Cons Conf: Conf Board,
+
+Dem: Cons Conf: Expectations,1,1,1,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,Index,Cons Conf: Expectations,
+
+Dem: Auto Registrations,1,1,1,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,,Dem: Auto Registrations,
+
+Dem: Auto Sales,1,1,1,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,,Dem: Auto Sales,
+
+Dem: Household Consumption,1,1,1,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Consumption,6m %chg
+
+Emp: Payrolls,1,1,3,ann_6m_aris_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(Thous),Payrolls,6m diff
+
+Emp: NFP,1,1,3,ann_6m_aris_smooth_chg,6,ave,1,1,1,nl,nl,-5000,5000,m,growth,1,(Thous),Payrolls,6m diff
+
+Emp: Payrolls (Q),1,1,3,ann_6m_aris_smooth_chg,2,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(Thous),Payrolls,6m diff
+
+Emp: UE,1,1,3,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),UE,
+
+Emp: ULC,1,1,3,ann_6m_geo_smooth_chg,2,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),ULC,6m %chg
+
+Emp: Wage Growth,1,1,3,ann_6m_geo_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,6m %chg
+
+Emp: Wage Growth (Q),1,1,3,ann_6m_geo_smooth_chg,2,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,6m %chg
+
+Emp: Wage Growth (yoy),1,1,3,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,12m %chg
+
+Emp: Wage Growth,1,1,3,ann_6m_geo_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,6m %chg
+
+Emp: Wage Growth: Contractual,1,1,3,ann_6m_geo_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,6m %chg
+
+Emp: Wage Growth: Manu,1,1,3,ann_6m_geo_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Wage Growth,6m %chg
+
+Emp: Wages Atlanta Fed,1,1,3,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Wages Atlanta Fed,12m %chg
+
+Emp: ECI,1,1,3,ann_6m_geo_smooth_chg,2,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),ECI,6m %chg
+
+Emp: Productivity,1,1,3,ann_6m_geo_smooth_chg,2,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Productivity,6m %chg
+
+Housing: Building Permits,1,1,4,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Permits,
+
+Housing: Building Starts: Total,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Starts,
+
+Housing: Building Starts: New Housing,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Starts,
+
+Housing: Building Starts: Other Res,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Starts,
+
+Housing: Building Starts: Private Total,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Starts,
+
+Housing: Building Starts: Private Other,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Building Starts,
+
+Housing: Housing Starts,1,1,4,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(Thous),Housing Starts,
+
+Housing: Home Prices,1,1,4,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),House Prices,6m %chg
+
+Housing: Home Prices (Q),1,1,2,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),House Prices,6m %chg
+
+Credit: Business Credit,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Business Credit,6m %chg
+
+Credit: Consumer Credit,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Consumer Credit,6m %chg
+
+Credit: Mortgage Credit,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Mortgage Credit,6m %chg
+
+Credit: Total Household Credit,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Total household Credit,6m %chg
+
+Credit: Total Household Credit(%GDP),1,1,5,nt,nt,ave,1,1,,nl,nl,nlim,nlim,m,growth,1,(%),Total household Credit(Flow),"6m ann, %GDP"
+
+Credit: Total Private,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Total household Credit,6m %chg
+
+Credit: Loans to Non Fin Corps,1,1,5,ann_6m_geo_smooth_chg,6,ave,1,1,1,nl,nl,nlim,nlim,m,growth,1,(%),Loans to Non Fin Corps,6m %chg
+
+Inflation: HL,1,1,6,ann_6m_geo_smooth_chg,6,nl,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Headline,6m %chg
+
+Inflation: Core,1,1,6,ann_6m_geo_smooth_chg,6,nl,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Core CPI,6m %chg
+
+Inflation,1,1,6,ann_6m_geo_smooth_chg,6,nl,1,0,1,nl,nl,nlim,nlim,m,growth,1,(%),Core,6m %chg
+
+Inflation Target,1,1,6,nt,nt,nl,1,0,,nl,nl,nlim,nlim,m,growth,1,(%),Target,
+
+Trade: Exports (6m Ann),1,1,6,ann_6m_aris_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(Mil US$),Exports,6m diff
+
+Trade: Imports (6m Ann),1,1,6,ann_6m_aris_smooth_chg,6,ave,1,0,1,nl,nl,nlim,nlim,m,growth,1,(Mil US$),Imports,6m diff
+
+Terms of Trade,1,1,6,nt,nt,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,Index,Terms of Trade,
+
+External: Current Account (%GDP),1,1,6,multi_const,100,ave,1,0,,nl,nl,nlim,nlim,m,growth,1,(% GDP),Current Account,
+
+External: Goods Exports,1,1,6,multi_const,0.001,,1,0,1,nl,nl,nlim,nlim,m,growth,1,(Bn US$),Exports,3mma
+
+External: Goods Imports,1,1,6,multi_const,0.001,,1,0,1,nl,nl,nlim,nlim,m,growth,1,(Bn US$),Imports,3mma

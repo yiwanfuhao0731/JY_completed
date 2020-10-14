@@ -1,0 +1,29 @@
+Country,Country Code
+
+Code,DB Code
+
+Title,Manual Input of Title
+
+Order,"Can ignore, just for me to order the series"
+
+transType,"nt = no transformation, perChg = % Change, lvlChg = level change"
+
+transPer,Period for Transformation
+
+chartLine,Horizontal line which is either a number specified or an average
+
+BOP_Adj,"Typically equal to 1, -1 if the series need to be inverted."
+
+VertLine1,Veritical line based on a date to indicate important periods
+
+VertLine2,Veritical line based on a date to indicate important periods
+
+y1,Ability to specify a y lim
+
+y2,Ability to specify a y lim
+
+Freq,Data frequency
+
+Table,You can ignore
+
+Include,You can ignore

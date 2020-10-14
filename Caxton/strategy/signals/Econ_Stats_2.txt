@@ -1,0 +1,706 @@
+# import sys when runing from the batch code
+
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)),"../.."))
+import pandas as pd
+import numpy as np
+from datetime import datetime
+# visualisation packages
+import math
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+import collections
+from matplotlib.font_manager import FontProperties
+
+import Analytics.abstract_sig_econ_dashboard as abs_sig
+import time
+from backtesting_utils.cache import cache_response, clear_cache
+from zzz_NC_signal.ECON_GROWTH.run_signal import signal3 as ECON_GROWTH_sig
+from backtesting_utils.chart import set_ax_invisible
+from Analytics.transform_fns import ann_6m_geo_smooth_chg,ann_6m_aris_smooth_chg
+# part of the utilities
+dateparse = lambda x: pd.datetime.strptime(x, '%d/%m/%Y')
+dateparse2 = lambda x: pd.datetime.strptime(x, '%Y-%m-%d')
+
+class signal3(abs_sig.sig_ECON_dashboard):
+    def __init__(self):
+        # in this case, both Econ and csv file data are used
+        super(signal3, self).__init__()
+
+    @cache_response('ECON_Stats_2', 'disk_8h',skip_first_arg=True)
+    def get_data_dict(self,*args,**kwargs):
+        self.add_sig_info()
+        self.add_dir_info(**kwargs)
+        self.pre_run_result = self.pre_run(**kwargs)
+        self.raw_data_new_fmt = self.convert_data_to_chart_dict(self.pre_run_result,self.chart_control_file,self.chart_sheet_name) # pre processing all the result and use directly the pre result
+        cleaned_chart_data = self.cleaned_chart_data(**kwargs)
+        #result_dict = self.fullkey_result_dict(self.raw_data_new_fmt)
+        result_dict = self.fullkey_result_dict(cleaned_chart_data['cleaned_data'])
+        return {'result_dict':result_dict,'raw_data_new_fmt':self.raw_data_new_fmt,'cleaned_data':cleaned_chart_data['cleaned_data'],'correlation':cleaned_chart_data['correlation']}
+
+    def add_sig_info(self):
+        self.signal_ID = 'JY_dashboard_005'
+        self.Short_Name = 'ECON_Stats_2'
+        self.Description = '''
+                       ECON stats charting main file
+                       '''
+        self.override_master_input_dir='zzz_NC_input//ECON_VIS.xlsx'
+        self.exec_path = __file__
+
+    def add_dir_info(self, *args, **kwargs):
+        super(signal3,self).add_dir_info(*args,**kwargs)
+        self.chart_control_file = os.path.join(self.PROJ_DIR, "zzz_NC_input\Econ Control File _2.xlsx")
+        self.chart_sheet_name = 'Control'
+
+    def pre_run(self,**kwargs):
+        '''
+        :return: dictionary of pre-processing data from all pre-running result
+        '''
+        result_dict = {}
+        result_dict.update(ECON_GROWTH_sig().get_data_dict(**kwargs)['raw_data_new_fmt'])
+        return result_dict
+
+    def convert_data_to_chart_dict(self,data_dict,control_file,sheet_name):
+        # data downloader for control file @FT format
+        import_df = pd.read_excel(control_file, sheet_name=sheet_name, index_col=False, header=0)
+        # replace with invalid_name
+        import_df.fillna('invalid_name', inplace=True)
+
+        # assemble the unique id
+        import_df['chartID'] = ['chart' + str(i) for i in import_df.index]
+
+        chart_list = import_df['chartID'].values.tolist()
+        code_col = [c for c in import_df.columns if c in ['Code', 'Code.1', 'Code.2']]
+        code_df = import_df.loc[:, code_col]
+        # download the data
+        # check if series downloaded, if already exist, continue, else download.
+        result_dict = collections.OrderedDict()
+        for k, id in enumerate(chart_list):
+            # initialise
+            result_dict[id] = []
+            # find all the series to be downloaded
+            ser_list = code_df.iloc[k, :].values.tolist()
+
+            for s in ser_list:
+                if s != 'invalid_name':
+                    df = data_dict[s]
+                    result_dict[id].append(df)
+        return result_dict
+
+    def cleaned_chart_data(self,**kwargs):
+        parsed_trans_dict = self.import_parse_trans(self.chart_control_file,self.chart_sheet_name)
+        step1_result = self.step1_repeat_missing_and_sa(parsed_trans_dict)
+        step2_result = self.step2_bop_adj(parsed_trans_dict,step1_result['cleaned_data'])
+        step3_result = self.step3_trans(parsed_trans_dict,step2_result['cleaned_data'],origin_freq=step1_result['origin_freq'])
+        step4_result = self.step4_chg_freq(parsed_trans_dict,step3_result['cleaned_data'])
+        correlation = self.step5_calc_corr(parsed_trans_dict,step1_result['raw_data_new_fmt'],self.pre_run_result,self.rgdp_dict())
+        return {'cleaned_data':step4_result['cleaned_data'],
+                'correlation':correlation}
+
+    def import_parse_trans(self,control_file,sheet_name):
+        '''
+        read control file relevant parameters, transformation funcs, transformation periods
+        '''
+        param_df = pd.read_excel(control_file,sheet_name=sheet_name,index_col = False, header = 0,na_values=['NA',''])
+        param_df.fillna('invalid_name',inplace=True)
+        param_df['chartID'] = ['chart'+str(i) for i in param_df.index]
+        all_id = ['chart'+str(i) for i in param_df.index]
+
+        #self.code_in_each_id = param_df.loc[:,'Code'].values.tolist()
+        col = [c for c in param_df.columns if
+               c in ['chartID', 'sa', 'sa.1', 'sa.2']]
+        sa = param_df.loc[:, col].set_index('chartID').T.to_dict('list')
+        # read transType, transPer, BOP_Adj, Freq into dictionary
+        col = [c for c in param_df.columns if c in ['chartID', 'transType','transType.1','transType.2']]
+        transType = param_df.loc[:, col].set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if
+               c in ['chartID', 'transPer', 'transPer.1', 'transPer.2']]
+        transPer = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if
+               c in ['chartID', 'BOP_Adj', 'BOP_Adj.1', 'BOP_Adj.2']]
+        BOP_Adj = param_df.loc[:, col].set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if
+               c in ['chartID', 'Freq', 'Freq.1','Freq.2']]
+        Freq = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if
+               c in ['chartID', 'Annualize', 'Annualize.1', 'Annualize.2']]
+        Annualise = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        # parse correlation columns
+        col  =[c for c in param_df.columns if
+               c in ['chartID', 'Cor', 'Cor.1', 'Cor.2']]
+        Cor = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        iso = param_df.loc[:, ['chartID', 'Country']].dropna().set_index('chartID').T.to_dict('list')
+        return {'all_id':all_id,
+                'sa':sa,
+                'transType':transType,
+                'transPer':transPer,
+                'BOP_Adj':BOP_Adj,
+                'Freq':Freq,
+                'Annualise':Annualise,
+                'Cor':Cor,
+                'iso':iso}#
+
+    def import_parse_chart_style(self,control_file,sheet_name):
+        '''
+        :return: parse from the control file the title,vertline, AxisUnit, Legend,
+                TransformationName, style, color parameters into dictoinaries
+        '''
+        param_df = pd.read_excel(control_file, sheet_name=sheet_name, index_col=False, header=0, na_values=['NA', ''])
+        param_df.fillna('invalid_name',inplace=True)
+        param_df['chartID'] = ['chart' + str(i) for i in param_df.index]
+        all_id = ['chart' + str(i) for i in param_df.index]
+
+        # read chart in each id
+        code_in_each_chart = collections.OrderedDict()
+        code_col = [c for c in param_df.columns if
+                    c in ['Code', 'Code.1', 'Code.2']]
+        code_df = param_df.loc[:, code_col]
+        for i,id in enumerate(all_id):
+            # find all the series to be downloaded
+            code_in_each_chart[id] = [id+'_'+s for s in code_df.iloc[i, :].values.tolist() if s!='invalid_name']
+
+        Title = param_df.loc[:, ['chartID', 'Title']].dropna().set_index('chartID').T.to_dict('list')
+        Title_last_date = param_df.loc[:, ['chartID', 'Title_last_date']].dropna().set_index('chartID').T.to_dict('list')
+        Title_last_value = param_df.loc[:, ['chartID', 'Title_last_value']].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID', 'chartLine','chartLine.1','chartLine.2']]
+        chartLine = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        VertLine1 = param_df.loc[:, ['chartID', 'VertLine1']].dropna().set_index('chartID').T.to_dict('list')
+        VertLine2 = param_df.loc[:, ['chartID', 'VertLine2']].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID', 'y1', 'y1.1']]
+        y1 = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID', 'y2', 'y2.1']]
+       y2 = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID','AxisUnit', 'AxisUnit.1','AxisUnit.2']]
+        AxisUnit = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID','Legend', 'Legend.1','Legend.2']]
+        Legend = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        TransformationName = param_df.loc[:, ['chartID', 'TransformationName']].dropna().set_index('chartID').T.to_dict('list')
+        param_df.loc[param_df['twin_axis']=='invalid_name','twin_axis2']=0
+        param_df.loc[param_df['twin_axis.1'] == 'invalid_name', 'twin_axis3'] = 0
+        twin_axis2 = param_df.loc[:,['chartID','twin_axis','twin_axis.1']].dropna().set_index('chartID').T.to_dict('list')
+        iso = param_df.loc[:, ['chartID', 'Country']].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID','style','style.1', 'style.2']]
+        linesytle = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        #col = [c for c in param_df.columns if c in ['chartID', 'Cor', 'Cor.1', 'Cor.2']]
+        #self.correlation_param = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        col = [c for c in param_df.columns if c in ['chartID', 'color', 'color.1', 'color.2']]
+        lineColor = param_df.loc[:, col].dropna().set_index('chartID').T.to_dict('list')
+        #correlation = self.step5_calc_corr()
+        return {'all_id':all_id,
+                'code_in_each_chart':code_in_each_chart,
+                'Title':Title,
+                'Title_last_date':Title_last_date,
+                'Title_last_value':Title_last_value,
+                'chartLine':chartLine,
+                'VertLine1':VertLine1,
+                'VertLine2':VertLine2,
+                'y1':y1,
+                'y2':y2,
+                'AxisUnit':AxisUnit,
+                'Legend':Legend,
+                'TransformationName':TransformationName,
+                'twin_axis2':twin_axis2,
+                'iso':iso,
+                'linesytle':linesytle,
+                'lineColor':lineColor,
+                }
+
+    def step1_repeat_missing_and_sa(self,parsed_control_dict):
+        #initialise the frequency dict
+        raw_data_new_fmt = self.raw_data_new_fmt.copy()
+        cleaned_data = collections.OrderedDict()
+        origin_freq = {}
+        for id in parsed_control_dict['all_id']:
+            # initialise the cleaned data
+            cleaned_data[id] = []
+            origin_freq[id] = []
+            for i,df in enumerate(raw_data_new_fmt[id]):
+                # flag freq specified in file is different from actual
+                freq = self.SU.get_freq(df)
+                origin_freq[id].append(freq)
+                if parsed_control_dict['sa'][id][i] == 1:
+                    df = self.SU.sea_adj(df)
+                if freq == 'M':
+                    try:
+                        df = self.SU.conversion_down_to_m(df,method='repeat',col_to_repeat=-1, agg_method = 'last')
+                    except:
+                        df = self.SU.conversion_down_to_m(df,method='repeat',col_to_repeat=-1, agg_method = 'last')
+                elif freq == 'Q':
+                    df = self.SU.conversion_to_q(df,method='repeat',col_to_repeat = -1)
+
+                cleaned_data[id].append(df)
+        return {'raw_data_new_fmt':raw_data_new_fmt,
+                'cleaned_data':cleaned_data,
+                'origin_freq':origin_freq}
+
+    def step2_bop_adj(self,parsed_control_dict,cleaned_data):
+        for id in parsed_control_dict['all_id']:
+            for i,df in enumerate(cleaned_data[id]):
+                cleaned_data[id][i] = df * parsed_control_dict['BOP_Adj'][id][i]
+        return {'cleaned_data':cleaned_data}
+
+    def step3_trans(self,parsed_control_dict,cleaned_data,origin_freq):
+        for id in parsed_control_dict['all_id']:
+            for i,df in enumerate(cleaned_data[id]):
+                if parsed_control_dict['transType'][id][i] in ['nt','invalid_name']:
+                    continue
+                # percentage change and annualised
+                elif parsed_control_dict['transType'][id][i] in ['ann_6m_geo_smooth_chg']:
+                    try:
+                        cleaned_data[id][i] = ann_6m_geo_smooth_chg(df)
+                    except:
+                        cleaned_data[id][i] = ann_6m_geo_smooth_chg(df)
+                elif parsed_control_dict['transType'][id][i] in ['ann_6m_aris_smooth_chg']:
+                    cleaned_data[id][i] = ann_6m_aris_smooth_chg(df)
+                elif parsed_control_dict['transType'][id][i] == 'perChg':
+                    if parsed_control_dict['Annualise'][id][i]==1 or parsed_control_dict['Annualise'][id][i]==1.0:
+                        if origin_freq[id][i] == 'M':
+                            cleaned_data[id][i] = df.dropna().pct_change(int(parsed_control_dict['transPer'][id][i]))*100*(12/parsed_control_dict['transPer'][id][i])
+                        if origin_freq[id][i] == 'Q':
+                            cleaned_data[id][i] = df.dropna().pct_change(int(parsed_control_dict['transPer'][id][i])) * 100 * (4 / parsed_control_dict['transPer'][id][i])
+                    else:
+                        if origin_freq[id][i] == 'M':
+                            cleaned_data[id][i] = df.dropna().pct_change(int(parsed_control_dict['transPer'][id][i]))*100
+                        if origin_freq[id][i] == 'Q':
+                            cleaned_data[id][i] = df.dropna().pct_change(int(parsed_control_dict['transPer'][id][i]))*100
+                # level change and annualised
+                elif parsed_control_dict['transType'][id][i] == 'lvlChg':
+                    if parsed_control_dict['Annualise'][id][i]==1 or parsed_control_dict['Annualise'][id][i]==1.0:
+                        if origin_freq[id][i] == 'M':
+                            cleaned_data[id][i] = df.dropna().diff(int(parsed_control_dict['transPer'][id][i]))*(12/parsed_control_dict['transPer'][id][i])
+                        elif origin_freq[id][i] == 'Q':
+                            cleaned_data[id][i] = df.dropna().diff(int(parsed_control_dict['transPer'][id][i])) * (4 / parsed_control_dict['transPer'][id][i])
+                    else:
+                        if origin_freq[id][i] == 'M':
+                            cleaned_data[id][i] = df.dropna().diff(int(parsed_control_dict['transPer'][id][i]))
+                        elif origin_freq[id][i] == 'Q':
+                            cleaned_data[id][i] = df.dropna().diff(int(parsed_control_dict['transPer'][id][i]))
+                elif parsed_control_dict['transType'][id][i] == 'multi_const':
+                    cleaned_data[id][i] = df.dropna() * parsed_control_dict['transPer'][id][i]
+        return {'cleaned_data':cleaned_data}
+
+    def step4_chg_freq(self,parsed_control_dict,cleaned_data):
+        for id in parsed_control_dict['all_id']:
+            for i,df in enumerate(cleaned_data[id]):
+                if parsed_control_dict['Freq'][id][i] == 'm':
+                    cleaned_data[id][i] = self.SU.conversion_down_to_m(df,method='repeat',col_to_repeat=-1, agg_method = 'last')
+                elif parsed_control_dict['Freq'][id][i] == 'q':
+                    cleaned_data[id][i] = self.SU.conversion_to_q(df,method='repeat',col_to_repeat = -1)
+        return {'cleaned_data':cleaned_data}
+
+    def step5_calc_corr(self,parsed_control_dict,raw_data_new_fmt,raw_raw,rgdp_dict):
+        correlation = {}
+        for id in parsed_control_dict['all_id']:
+            correlation[id] = []
+            for i,df in enumerate(raw_data_new_fmt[id]):
+                if len(df.index)<7:
+                    correlation[id].append('invalid_name')
+                else:
+                    if parsed_control_dict['Cor'][id][i] in [1,1.0]:
+                        try:
+                            key = rgdp_dict[parsed_control_dict['iso'][id][0]] + '_6x6'
+                            df_rgdp = raw_raw[key]
+                        except:
+                            df_rgdp = raw_raw['USA_RGDP_LOC_SAAR_6x6']
+                        freq = self.SU.get_freq(df)
+                        # transformation for the series df: 6m change if the it is yoy (pick yoy based on transType), else 6x6 change
+                        if freq == 'M':
+                            df = self.SU.conversion_down_to_m(df)
+                        elif freq =='Q':
+                            df = self.SU.conversion_to_q(df)
+
+                        if parsed_control_dict['transType'][id][i] not in ['perChg','lvlChg']:
+                            if freq=='M':
+                                df = df.dropna().diff(6)*2
+                            elif freq=='Q':
+                                df = df.dropna().diff(2)*2
+                        elif parsed_control_dict['transType'][id][i] in ['perChg','ann_6m_geo_smooth_chg']:
+                            if freq == 'M':
+                                df = df.dropna().pct_change(6) * 2
+                                df = df.dropna().diff(6)*2
+                            elif freq =='Q':
+                                df = df.dropna().pct_change(2) * 2
+                                df = df.dropna().diff(2) * 2
+                        elif parsed_control_dict['transType'][id][i] in ['lvlChg','ann_6m_aris_smooth_chg']:
+                            if freq == 'M':
+                                df = df.dropna().diff(6) * 2
+                                df = df.dropna().diff(6)*2
+                            elif freq =='Q':
+                                df = df.dropna().diff(2) * 2
+                                df = df.dropna().diff(2) * 2
+                        df_comb = pd.merge(df, df_rgdp, left_index=True, right_index=True, how='inner').loc['2005':,
+                                  :].dropna()
+                        correlation[id].append(df_comb.corr().values[1][0])
+                    else:
+                        correlation[id].append('invalid_name')
+        return correlation
+
+    def fullkey_result_dict(self,data_dict):
+        result_dict = {}
+        for k, v in data_dict.items():
+            for v_i in v:
+                    result_dict[k + '_' + v_i.columns[0]] = v_i
+        return result_dict
+
+    def rgdp_dict(self):
+        # download the raw GDP data into the
+        return {'USA': 'USA_RGDP_LOC_SAAR',
+                     'AUS': 'AUS_RGDP_LOC_SAAR',
+                     'CAN': 'CAN_RGDP_LOC_SAAR',
+                     'CHE': 'CHE_RGDP_LOC_SAAR',
+                     'EUR': 'EUR_RGDP_LOC_SAAR',
+                     'GBR': 'GBR_RGDP_LOC_SAAR',
+                     'JPN': 'JPN_RGDP_LOC_SAAR',
+                     'NOR': 'NOR_RGDP_LOC_SAAR',
+                     'NZD': 'NZD_RGDP_LOC_SAAR',
+                     'SWE': 'SWE_RGDP_LOC_SAAR',
+                     'KOR':'KOR_RGDP_LOC_SAAR',
+                     }
+
+    def create_econ_stats_2_page(self,data_dict,parsed_trans_dict,parsed_chart_style,RPTDIR,Short_Name,correlation,chart_start_dt = '2005-01-01'):
+        # define start date
+        chart_start_dt = chart_start_dt if chart_start_dt not in [None] else '2005-01-01'
+        # define end date
+        chart_end_dt = datetime.now().strftime('%Y-%m-%d')
+
+        # init report pdf
+        report = PdfPages(
+            os.path.join(RPTDIR, Short_Name+'(' + datetime.now().strftime('%Y%m%d') + ').pdf'))
+
+        # set the total number of charts
+        chart_each_page = 9
+        # set the number of rows in each page
+        chart_rows = 3
+        # set the number of columns in each page
+        chart_cols = 3
+
+        # create pages country by country
+        iso = ['USA','CAN','EUR','GBR','CHE','JPN','AUS','SWE','NOR','NZD','KOR','ARG','BRA','CHL','CHN','COL','CRO','CZE','HKG','HUN','IDN','IND','ISE','MAL','MEX','PER','PHP','POL','ROM','RUS','SAF','SGP','THA','TUR','TWN','VNM']#
+        #iso = ['CAN']
+        chart_for_each_country = []
+        for c in iso:
+            chart_for_this_country = []
+            for id in parsed_trans_dict['all_id']:
+                if parsed_trans_dict['iso'][id][0] == c:
+                    chart_for_this_country.append(id)
+            chart_for_each_country.append(chart_for_this_country)
+
+        # calculate the starting page for each country
+        country_start_page = [1]
+        for chart_for_country_i in chart_for_each_country[:]:
+            pages_number = math.ceil(len(chart_for_country_i) / chart_each_page)
+            start_page = country_start_page[-1] + pages_number
+            country_start_page.append(start_page)
+
+        # create the front page
+        if 1==1:
+            fig, ax = plt.subplots(1, 1, figsize=(18.27, 12.69))
+            # plt.subplots_adjust(left=0, bottom=0, right=0, top=0, wspace=0, hspace=0)
+            last_update = datetime.strftime(datetime.now(), format='%Y-%m-%d')
+            txt = [['    '+iso[i]+' : '+str(country_start_page[i])] for i in range(len(iso))]
+            txt2=[    [''],
+                   ['Last update : ' + last_update], [''], [''], [''], [''], [''], [''], [''], [''], ['']]
+            txt = txt+txt2
+            collabel = (['Economic Conditions : '])
+            # ax.axis('tight')
+            ax.axis('off')
+            table = ax.table(cellText=txt, colLabels=collabel, loc='center')
+            for key, cell in table.get_celld().items():
+                cell.set_linewidth(0)
+            cells = [key for key in table._cells]
+            for cell in cells:
+                table._cells[cell]._loc = 'left'
+                table._cells[cell].set_text_props(fontproperties=FontProperties(family='serif', size=20))
+                table._cells[cell].set_height(.05)
+            table._cells[(0, 0)].set_text_props(fontproperties=FontProperties(weight='bold', family='serif', size=30))
+
+            # table.scale(1, 4)
+            report.savefig(fig, bbox_inches='tight', dpi=100)
+
+        page_counter = 0
+        for chart_of_country_i in chart_for_each_country:
+            print (chart_of_country_i)
+            pages_number = math.ceil(len(chart_of_country_i) / chart_each_page)
+
+            chart_in_page = [chart_each_page] * (pages_number - 1) + [len(chart_of_country_i) - chart_each_page * (pages_number - 1)]
+
+            for i, n in enumerate(chart_in_page):
+                fig, axarr = plt.subplots(chart_rows, chart_cols, figsize=(18.8640182, 12.69), dpi=100)
+                start_idx = i * chart_each_page
+                end_idx = start_idx + n
+                chart_in_this_page = chart_of_country_i[start_idx:end_idx]
+                print ('chart_in_current_page = ',chart_in_this_page)
+                page_counter +=1
+                for ii in range(chart_rows):
+                    for jj in range(chart_cols):
+                        if ii * chart_cols + jj < len(chart_in_this_page):
+                            ax = axarr[ii, jj]
+                            k = chart_in_this_page[ii * chart_cols + jj]
+                            print(ii, jj, k)
+                            # find the number of lines in this chart
+                            current_n = len(parsed_chart_style['code_in_each_chart'][k])
+
+                            this_dfs = []
+                            for i in range(current_n):
+                                df = data_dict[parsed_chart_style['code_in_each_chart'][k][i]]
+                                mask = (df.index >= chart_start_dt) & (df.index <= chart_end_dt)
+                                df = df.loc[mask,:]
+                                this_dfs.append(df)
+
+                            #print (this_dfs)
+                            # make sure the first date is before chart_start_dt
+                            for i,df in enumerate(this_dfs):
+                                if df.index[0]>pd.to_datetime(chart_start_dt):
+                                    dummy_df = pd.DataFrame([np.nan],index = [pd.to_datetime(chart_start_dt)] ,columns= df.columns)
+                                    df = pd.concat([df,dummy_df],axis=0)
+                                    df.sort_index(inplace=True)
+
+                            # Define X and Y
+                            this_xs = []
+                            this_ys = []
+                            lns = []
+                            for i in range(current_n):
+                                this_xs.append(pd.to_datetime(this_dfs[i].index).date)
+                                this_ys.append(this_dfs[i].iloc[:, 0])
+                            line_style = 'solid' if (parsed_chart_style['linesytle'][k][0] == 'invalid_name' or parsed_chart_style['linesytle'][k][0] == 'solid') else parsed_chart_style['linesytle'][k][0]
+                            line_color = 'b' if (parsed_chart_style['lineColor'][k][0] == 'invalid_name' or parsed_chart_style['linesytle'][k][0] == 'b') else parsed_chart_style['linesytle'][k][0]
+
+                            lns = lns + ax.plot(this_xs[0], this_ys[0], color=line_color, ls=line_style, lw=0.9, label=parsed_chart_style['Legend'][k][0])
+
+                            if int(current_n) >= 2:
+                                line_style = 'solid' if (parsed_chart_style['linesytle'][k][1] == 'invalid_name' or parsed_chart_style['linesytle'][k][
+                                    1] == 'solid') else parsed_chart_style['linesytle'][k][1]
+                                line_color = 'r' if (parsed_chart_style['lineColor'][k][1] == 'invalid_name' or parsed_chart_style['lineColor'][k][1] == 'r') else parsed_chart_style['lineColor'][k][1]
+
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    ax2 = ax.twinx()
+                                    lns = lns + ax2.plot(this_xs[1], this_ys[1], color=line_color, ls=line_style, lw=0.9,
+                                                     label=parsed_chart_style['Legend'][k][1])
+                                else:
+                                    lns = lns + ax.plot(this_xs[1], this_ys[1], color=line_color, ls=line_style, lw=0.9,
+                                                     label=parsed_chart_style['Legend'][k][1])
+
+                            if int(current_n) ==3:
+                                line_style = 'solid' if (parsed_chart_style['linesytle'][k][2] == 'invalid_name' or parsed_chart_style['linesytle'][k][
+                                    2] == 'solid') else parsed_chart_style['linesytle'][k][2]
+                                line_color = 'k' if (parsed_chart_style['lineColor'][k][2] == 'invalid_name' or parsed_chart_style['lineColor'][k][2] == 'k') else parsed_chart_style['lineColor'][k][2]
+
+                                if parsed_chart_style['twin_axis2'][k][1] in [1,1.0]:
+                                    ax3 = ax.twinx()
+                                    lns = lns + ax3.plot(this_xs[2], this_ys[2], color=line_color, ls=line_style, lw=0.9,
+                                                         label=parsed_chart_style['Legend'][k][2])
+                                else:
+                                    lns = lns + ax.plot(this_xs[2], this_ys[2], color=line_color, ls=line_style, lw=0.9,
+                                                        label=parsed_chart_style['Legend'][k][2])
+
+                            labs = [l.get_label() for l in lns]
+                            ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+                            # set dashes for all
+                            for iii,l in enumerate(lns):
+                                if parsed_chart_style['linesytle'][k][iii] == 'dashed':
+                                    l.set_dashes([5,5])
+
+                            # find all the lines on the right axis:
+                            lines_on_first_ax = [0]
+                            if current_n >=2:
+                                for l_n in range(current_n-1):
+                                    if (parsed_chart_style['twin_axis2'][k][l_n] == 'invalid_name') or (parsed_chart_style['twin_axis2'][k][l_n] == 0):
+                                        lines_on_first_ax = lines_on_first_ax + [l_n+1]
+
+                            # set ymin and ymax
+                            y_mean = this_dfs[0].loc['2013-01-01':].mean().values if len(this_dfs[0].loc['2013-01-01':].index)>10 else this_dfs[0].loc['2000-01-01':].mean().values
+                            y_min = this_dfs[0].min().values
+                            y_max = this_dfs[0].max().values
+                            y_max1 = y_mean + (y_mean - y_min) * 1.1
+                            y_max2 = y_mean + (y_max - y_mean) * 1.1
+                            y_max = y_max1 if y_max1 > y_max2 else y_max2
+                            y_min = y_mean - (y_mean - y_min) * 1.1
+                            y_min = y_min if parsed_chart_style['y1'][k][0] == 'nlim' else parsed_chart_style['y1'][k][0]
+                            y_max = y_max if parsed_chart_style['y2'][k][0] == 'nlim' else parsed_chart_style['y2'][k][0]
+                            ax.set_ylim(y_min, y_max)
+
+                            if int(current_n) == 2:
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    y_mean = this_dfs[1].loc['2013-01-01':].mean().values if len(
+                                        this_dfs[1].loc['2013-01-01':].index) > 10 else this_dfs[1].loc[
+                                                                                        '2000-01-01':].mean().values
+                                    y_min = this_dfs[1].min().values
+                                    y_max = this_dfs[1].max().values
+                                    y_max1 = y_mean + (y_mean - y_min) * 1.1
+                                    y_max2 = y_mean + (y_max - y_mean) * 1.1
+                                    y_max = y_max1 if y_max1 > y_max2 else y_max2
+                                    y_min = y_mean - (y_mean - y_min) * 1.1
+                                    y_min = y_min if parsed_chart_style['y1'][k][1] == 'nlim' else parsed_chart_style['y1'][k][1]
+                                    y_max = y_max if parsed_chart_style['y2'][k][1] == 'nlim' else parsed_chart_style['y2'][k][1]
+                                    ax2.set_ylim(y_min, y_max)
+
+
+                            # if there are more than 1 lines on this ax:
+                            if len(lines_on_first_ax)>1:
+                                y_min_final = 9999999999
+                                y_max_final = -9999999999
+                                for l_n in lines_on_first_ax:
+                                    y_mean = this_dfs[l_n].loc['2013-01-01':].mean().values if len(
+                                        this_dfs[l_n].loc['2013-01-01':].index) > 10 else this_dfs[l_n].loc[
+                                                                                        '2000-01-01':].mean().values
+                                    y_min = this_dfs[l_n].min().values
+                                    y_max = this_dfs[l_n].max().values
+                                    y_max1 = y_mean + (y_mean - y_min) * 1.1
+                                    y_max2 = y_mean + (y_max - y_mean) * 1.1
+                                    y_max = y_max1 if y_max1 > y_max2 else y_max2
+                                    y_min = y_mean - (y_mean - y_min) * 1.1
+                                    # update the y_min_final
+                                    y_min_final = y_min if y_min<y_min_final else y_min_final
+                                    y_max_final = y_max if y_max > y_max_final else y_max_final
+                                ax.set_ylim(y_min_final,y_max_final)
+
+
+                            ax.set_xlabel('')
+                            if int(current_n) >= 2:
+                               if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    ax2.set_xlabel('')
+
+                            # set the Unit
+                            unit = parsed_chart_style['AxisUnit'][k][0] if parsed_chart_style['AxisUnit'][k][0]!='invalid_name' else ''
+                            ax.set_ylabel(unit,rotation=0,color='b',fontsize=8)
+                            ax.yaxis.set_label_coords(1.018,1.01)
+
+                            if int(current_n) == 2:
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    unit2 = parsed_chart_style['AxisUnit'][k][1] if parsed_chart_style['AxisUnit'][k][1] != 'invalid_name' else ''
+                                    ax2.set_ylabel(unit2, rotation=0, color='b', fontsize=8)
+                                    ax2.yaxis.set_label_coords(0, 1.04)
+                                else:
+                                    unit1 = parsed_chart_style['AxisUnit'][k][0] if parsed_chart_style['AxisUnit'][k][0] != 'invalid_name' else ''
+                                    unit2 = parsed_chart_style['AxisUnit'][k][1] if parsed_chart_style['AxisUnit'][k][1] != 'invalid_name' else ''
+                                    if (unit1 == '') or (unit2 == ''):
+                                        unit = unit1 + unit2
+                                    else:
+                                        if unit1 != unit2:
+                                            unit = unit1 + ',' + unit2
+                                        else:
+                                            unit = unit1
+                                    ax.set_ylabel(unit, rotation=0, color='b', fontsize=8)
+                                    ax.yaxis.set_label_coords(1.018,1.01)
+
+
+                            last_value = this_ys[0].dropna().values[-1] if parsed_chart_style['Title_last_value'][k][0] == 1 else ''
+                            last_value = "{0:.1f}".format(last_value) if last_value<=100 else "{0:.0f}".format(last_value)
+                            last_date = this_ys[0].dropna().index[-1].strftime('%Y-%m-%d') if parsed_chart_style['Title_last_date'][k][0] == 1 else ''
+                            transName = '(' + str(parsed_chart_style['TransformationName'][k][0]) +')' if parsed_chart_style['TransformationName'][k][0] !='invalid_name' else ''
+
+                            title = parsed_chart_style['iso'][k][0] + ' : ' + parsed_chart_style['Title'][k][0] + ' : '+last_date + ' : ' +  last_value + ' '+transName
+                            ax.set_title(title, y=1.01, fontsize=8, fontweight=600)
+                            ax.tick_params(labelsize=7, width=0.02,pad=10)
+                            # change the y tick label to blue
+                            ax.tick_params(axis='y', labelcolor='b')
+                            if int(current_n) >= 2:
+                                line_color = 'r' if (parsed_chart_style['lineColor'][k][1] == 'invalid_name' or parsed_chart_style['lineColor'][k][1] == 'r') else parsed_chart_style['lineColor'][k][1]
+
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    ax2.tick_params(labelsize=7, width=0.02, pad=10)
+                                    ax2.tick_params(axis='y', labelcolor=line_color)
+
+                            # add a zero line
+                            ax.axhline(linewidth=0.5, color='k')
+
+                            # add average lines
+                            if (parsed_chart_style['chartLine'][k][0] != 'invalid_name') and (parsed_chart_style['chartLine'][k][0] != 'nl'):
+                                y_ave = this_ys[0].mean() if parsed_chart_style['chartLine'][k][0] == 'ave' else parsed_chart_style['chartLine'][k][0]
+                                ax.axhline(y=y_ave,ls='dashed',dashes=(5, 6),color = 'k',linewidth=0.8)
+                            if int(current_n) == 2:
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    if (parsed_chart_style['chartLine'][k][1] != 'invalid_name') and (parsed_chart_style['chartLine'][k][1] != 'nl'):
+                                        y_ave = this_ys[1].mean() if parsed_chart_style['chartLine'][k][1] == 'ave' else \
+                                        parsed_chart_style['chartLine'][k][1]
+                                        ax2.axhline(y=y_ave, ls='dashed', dashes=(5, 6), color='k', linewidth=0.8)
+                                else:
+                                    if (parsed_chart_style['chartLine'][k][1] != 'invalid_name') and (parsed_chart_style['chartLine'][k][1] != 'nl'):
+                                        y_ave = this_ys[1].mean() if parsed_chart_style['chartLine'][k][1] == 'ave' else \
+                                        parsed_chart_style['chartLine'][k][1]
+                                        ax.axhline(y=y_ave, ls='dashed', dashes=(5, 6), color='k', linewidth=0.8)
+
+                            # Adding correlation text:
+                            corr = correlation[k]
+
+                            # define the position
+                            if len([x_ for x_ in corr if x_ != 'invalid_name']) > 0:
+                                corr_annotate = 'Corr w. RGDP : '
+                                for i_, v_ in enumerate(corr):
+                                    if v_ == 'invalid_name':
+                                        continue
+                                    else:
+                                        if i_ > 0:
+                                            corr_annotate = corr_annotate + ' , '
+                                        corr_annotate = corr_annotate + parsed_chart_style['Legend'][k][
+                                            i_] + ' : ' + "{0:.2f}".format(v_)
+                                ann_x = this_xs[0][0]
+                                ann_y = ax.get_ylim()[0] + (ax.get_ylim()[1]-ax.get_ylim()[0])*0.01
+                                ax.annotate(corr_annotate, (ann_x, ann_y),fontsize='x-small')
+
+                            # set border color and width
+                            for spine in ax.spines.values():
+                                spine.set_edgecolor('grey')
+                                spine.set_linewidth(0.5)
+
+                            # add year tickers as minor tick
+                            years = mdates.YearLocator()
+                            yearsFmt = mdates.DateFormatter('%Y')
+                            ax.xaxis.set_major_formatter(yearsFmt)
+                            ax.xaxis.set_minor_locator(years)
+                            # set the width of minor tick
+                           ax.tick_params(which='minor', width=0.008)
+                            # set y-label to the right hand side
+                            ax.yaxis.tick_right()
+                            if int(current_n) >= 2:
+                                if parsed_chart_style['twin_axis2'][k][0] == 1 or parsed_chart_style['twin_axis2'][k][0] == 1.0:
+                                    ax2.yaxis.tick_left()
+
+                            # set date max
+                            datemax = np.datetime64(this_xs[0][-1], 'Y')
+                            datemin = np.datetime64(this_xs[0][0], 'Y') - np.timedelta64(1, 'Y')
+                            # set the ticker to 2005, 2010, 2015 ...
+                            first_date_ticker = np.datetime64(chart_start_dt, 'Y')
+
+                            while int(str(np.datetime64(first_date_ticker, 'Y'))) % 5 != 0:
+                                first_date_ticker = first_date_ticker + np.timedelta64(1, 'Y')
+                            x_tick_overrive = [first_date_ticker, datemax]
+
+                            date_cursor = first_date_ticker
+                            while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                                date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                               x_tick_overrive.append(date_cursor)
+
+                            ax.xaxis.set_ticks(x_tick_overrive)
+                            if this_xs[0][-1].month > 10:
+                                ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                            else:
+                                ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        else:
+                            set_ax_invisible(axarr[ii, jj])
+
+
+                plt.subplots_adjust(wspace=0.2,hspace=0.33)
+                #adding page number
+                fig.text(4.5 / 8.5, 0.5 / 11., str(page_counter), ha='center', fontsize=12)
+                report.savefig(fig,bbox_inches='tight') # the current page is saved
+        report.close()
+        plt.close('all')
+
+    def run_reporting(self,**kwargs):
+        self.add_sig_info()
+        self.add_dir_info(**kwargs)
+        data_dict = self.get_data_dict(**kwargs)['result_dict']
+        correlation = self.get_data_dict(**kwargs)['correlation']
+        parsed_trans_dict = self.import_parse_trans(self.chart_control_file,self.chart_sheet_name)
+        parsed_chart_style = self.import_parse_chart_style(self.chart_control_file,self.chart_sheet_name)
+        self.create_econ_stats_2_page(data_dict=data_dict,parsed_trans_dict=parsed_trans_dict,parsed_chart_style=parsed_chart_style,RPTDIR=self.RPTDIR,Short_Name=self.Short_Name,correlation=correlation)
+
+if __name__ == "__main__":
+    # clear_cache('ECON_Stats_2','disk_8h')
+    signal3().run_reporting(dummy=4)
+
+ 

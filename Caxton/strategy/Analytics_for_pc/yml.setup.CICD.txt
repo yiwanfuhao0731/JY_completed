@@ -1,0 +1,355 @@
+# automatic full bless test suite
+
+import pandas as pd
+
+import datetime
+
+import pickle
+
+import os
+
+import pathlib
+
+from unittest import (TestCase,skip)
+
+import importlib
+
+from backtesting_utils.clear_all_cache import clear_all_cache
+
+ 
+
+class TestBacktestFns(TestCase):
+
+    def test_get_params(self):
+
+        # test if parameters are the same
+
+        def __check_default_param(folder,signal_file):
+
+            # import strategy obj
+
+            mod_dir = '.'.join(['basket',folder,signal_file])
+
+            sig_mod = importlib.import_module(mod_dir)
+
+            sig_instance = sig_mod.signal3()
+
+            sig_instance.add_strat_info()
+
+            sig_instance.add_dir_info(get_or_set_market_data='set')
+
+            params = sig_instance.import_parse_param(sig_instance.MASTER_INPUT_DIR,sig_instance.Short_Name)
+
+ 
+
+            baseline_pickle = os.path.join(sig_instance.PROJ_DIR, 'offline_data', 'baseline_pickle',
+
+                                           sig_instance.Short_Name + '_param.pickle')
+
+ 
+
+            overwrite_baseline = False  # do this once, this will reset the baseline
+
+            if overwrite_baseline:
+
+                with open(baseline_pickle, "wb") as f:
+
+                    pickle.dump(params, f, pickle.HIGHEST_PROTOCOL)
+
+ 
+
+            # compare with a pickle
+
+            with open(baseline_pickle, "rb") as f:
+
+                params_baseline = pickle.load(f)
+
+ 
+
+            for a,b in zip(list(params.values()),list(params_baseline.values())):
+
+                assert (a.equals(b))
+
+ 
+
+        __check_default_param('AUS_Rates1','run_basket_baseline')
+
+        __check_default_param('CAN_Rates1', 'run_basket_baseline')
+
+        __check_default_param('GBR_Rates1', 'run_basket_baseline')
+
+        __check_default_param('USA_Rates1', 'run_basket_baseline')
+
+        __check_default_param('RATES_portfolio_G4', 'run_basket_b_baseline')
+
+        print('Passed: Default parameters unchanged vs. baseline.')
+
+ 
+
+    def test_default_backtest_full_bless(self):
+
+        """Run full backtest history and check that each datapoint is unchanged"""
+
+        def __backtest_full_bless(folder,signal_file):
+
+            cut_off_start = '2000-01-01'
+
+            cut_off_end = '2020-01-20'
+
+            # import strategy obj
+
+            mod_dir = '.'.join(['basket', folder, signal_file])
+
+            print (mod_dir)
+
+            sig_mod = importlib.import_module(mod_dir)
+
+            sig_instance = sig_mod.signal3()
+
+            backtest_data = sig_instance.get_data_dict(running_mode = 'production',get_or_set_market_data='set',assume_today = '2020-01-21')
+
+            #backtest_data = sig_instance.get_data_dict(running_mode='production', get_or_set_market_data='set',
+
+                                                       #assume_today='2020-02-25')
+
+            sig_instance.add_strat_info()
+
+            sig_instance.add_dir_info(running_mode='production', get_or_set_market_data='set',
+
+                                        assume_today='2020-01-21')
+
+ 
+
+            baseline_pickle = os.path.join(sig_instance.PROJ_DIR, 'offline_data', 'baseline_pickle',
+
+                                           sig_instance.Short_Name + '_strat.pickle')
+
+ 
+
+            overwrite_baseline = False  # do this once, this will reset the baseline
+
+            if overwrite_baseline:
+
+                with open(baseline_pickle, "wb") as f:
+
+                    pickle.dump(backtest_data, f, pickle.HIGHEST_PROTOCOL)
+
+ 
+
+            with open(baseline_pickle, "rb") as f:
+
+                backtest_data_baseline = pickle.load(f)
+
+ 
+
+            pd.testing.assert_frame_equal(backtest_data['result_dict']['strategy_data'][['cumprof']].dropna().loc[cut_off_start:cut_off_end,:], backtest_data_baseline['result_dict']['strategy_data'][['cumprof']].dropna().loc[cut_off_start:cut_off_end,:],
+
+                                         check_less_precise=6)
+
+ 
+
+        __backtest_full_bless('AUS_Rates1','run_basket_baseline')
+
+        __backtest_full_bless('CAN_Rates1', 'run_basket_baseline')
+
+        __backtest_full_bless('GBR_Rates1', 'run_basket_baseline')
+
+        __backtest_full_bless('USA_Rates1', 'run_basket_baseline')
+
+ 
+
+        print('Passed: Backtester passed full bless compare unchanged vs. baseline.')
+
+ 
+
+if __name__=='__main__':
+
+    clear_all_cache()
+
+    print ('start')
+
+    t = TestBacktestFns()
+
+    # t.test_get_params()
+
+    t.test_default_backtest_full_bless()
+
+ 
+
+ 
+
+####UNIT TEST
+
+ 
+
+import unittest
+
+from backtesting_utils.clear_all_cache import clear_all_cache
+
+ 
+
+def test_suite():
+
+    clear_all_cache()
+
+    test_loader = unittest.TestLoader()
+
+    test_suite = test_loader.discover('code_tests/', pattern='test*.py', top_level_dir='.')
+
+    return test_suite
+
+ 
+
+ 
+
+.yml
+
+stages:
+
+  - build
+
+  - test
+
+ 
+
+variables:
+
+  GIT_SSL_NO_VERIFY: "true"                         # SSL cert is broken on git.caxton.com
+
+  GIT_STRATEGY: clone
+
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+ 
+
+cache:
+
+  paths:
+
+    - .cache/pip
+
+    - venv/
+
+ 
+
+before_script:
+
+  - Set-ExecutionPolicy Bypass -scope Process -Force
+
+  - if( (Test-Path venv -PathType Container)  ){Write-Host "venv exists"} else {Write-Host "venv does not exist"}
+
+  - if( !(Test-Path venv -PathType Container)  ){ python -m venv venv }  
+
+  - .\venv\scripts\activate.ps1
+
+  - python -m pip install --upgrade pip
+
+  - pip install -r requirements.txt
+
+ 
+
+build_code:
+
+  stage: build
+
+  script:
+
+    - python setup.py bdist_wheel
+
+  artifacts:
+
+    paths:
+
+      - dist/*.whl
+
+    expire_in: 3 days
+
+  tags:
+
+    - powershell
+
+ 
+
+test_code:
+
+  stage: test
+
+  script:
+
+    - python setup.py test
+
+  retry: 2
+
+  tags:
+
+    - powershell
+
+ 
+
+#### SETUP
+
+from setuptools import setup, find_packages
+
+import os
+
+ 
+
+__version__ = "1.0"
+
+ 
+
+if 'CI_JOB_ID' in os.environ:
+
+    job_id = os.getenv('CI_JOB_ID')
+
+    __version__ = __version__ + '.' + job_id
+
+   
+
+print ("__version__>>> " + __version__)
+
+ 
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+with open(os.path.join(dir_path,"requirements.txt"),"r") as rq:
+
+    req_list = rq.read().split('\n')
+
+pkg_dependencies = [req for req in req_list if req.strip()]
+
+ 
+
+setup(
+
+    name='ldn_macro_quant_jycompleted',
+
+    version=__version__,
+
+    packages=find_packages(),
+
+    url='https://git.fo.caxton.com/qm/justin_subgroup/ldn_macro_quant_jycompleted',
+
+    license='',
+
+    author='jyang',
+
+    author_email='jyang@caxton.com',
+
+    description='Justins research package',
+
+    install_requires= pkg_dependencies,
+
+    test_suite='find_tests.test_suite',
+
+)
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 

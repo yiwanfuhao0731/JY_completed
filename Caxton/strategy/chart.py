@@ -1,7 +1,10 @@
 import math
+
 from matplotlib.backends.backend_pdf import PdfPages
 from datetime import datetime,timedelta
 import matplotlib.pyplot as plt
+import seaborn as sns #sns.reset_orig()#sns.set()
+#plt.style.use('classic')
 import pandas as pd
 import numpy as np
 from textwrap import wrap
@@ -9,9 +12,6 @@ import matplotlib.dates as mdates
 import shutil
 import collections
 import os
-WKDIR = os.path.dirname(os.path.realpath(__file__))
-
-
 WKDIR = os.path.dirname(os.path.realpath(__file__))
 PROJ_DIR = os.path.join(WKDIR,"..")
 
@@ -271,7 +271,7 @@ def temp_charts(_component_name_list,_comp_chart,_comp_chart_title,_comp_chart_n
                     if double_line:
                         # allow the possibility of shaded_with_line
                         if current_twox == 'enable':
-                            two_ax = True
+                           two_ax = True
                             ax2 = ax.twinx()
                             if current_style[1] == 'shaded_with_line':
                                 line2 = ax2.plot(x2, y2, color=current_color[1], ls='solid', lw=0.4,
@@ -448,7 +448,7 @@ def temp_charts(_component_name_list,_comp_chart,_comp_chart_title,_comp_chart_n
                             ax2.yaxis.tick_left()
                     if tri_line:
                         if current_twox == 'disable-enable':
-                           ax2.yaxis.tick_left()
+                            ax2.yaxis.tick_left()
 
                     # set date max
                     x_longer = x1
@@ -467,7 +467,10 @@ def temp_charts(_component_name_list,_comp_chart,_comp_chart_title,_comp_chart_n
                         x_tick_overrive.append(date_cursor)
 
                     ax.xaxis.set_ticks(x_tick_overrive)
-                    ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                    if x_longer[-1].month > 10:
+                        ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                    else:
+                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
 
                     # add rates rising falling vertical lines
                     if current_rate_cycle=='enable':
@@ -483,6 +486,7 @@ def temp_charts(_component_name_list,_comp_chart,_comp_chart_title,_comp_chart_n
             fig.subplots_adjust(top=0.88)
         report.savefig(fig, bbox_inches='tight')  # the current page is saved
     report.close()
+    plt.close('all')
 
     # make a copy to bt_backup_dir
     if bt_backup_dir:
@@ -490,6 +494,14 @@ def temp_charts(_component_name_list,_comp_chart,_comp_chart_title,_comp_chart_n
 
 def set_ax_invisible(ax):
     ax.axis('off')
+
+def genr_empty_df():
+    '''
+    :return: empty Dataframe
+    '''
+    date_rng = pd.date_range(start='1940-1-1', end='2050-1-1', freq='M')
+    empty_df = pd.DataFrame(index=date_rng, columns=['e'])
+    return empty_df
 
 def add_rates_rise_fall(ax,type = 'type1',rise_dates_path = os.path.join(PROJ_DIR,r"basket\USA_Rates1\usaratesfalling_rising_period.xlsx")):
 
@@ -515,6 +527,11 @@ def add_vertical_line_on_date(ax,sample_end = datetime.today()+timedelta(days=2)
     end_point = sample_end
     ax.axvline(x=end_point, color='green', linestyle='--',dashes=(5,10),linewidth=0.2)
 
+def add_dot_at_the_end(ax,y_series,sample_end = datetime.today()+timedelta(days=2),color='red'):
+    x = sample_end
+    y = y_series.dropna().iloc[-1]
+    ax.plot(x,y,marker='o',markersize=1,color=color)
+
 def if_contains_zero(rng): return True if (rng[0]<0) and (rng[1]>0) else False
 
 def firm_presentation_equity_curve(cumprof,dd,title,dir,sample_start,sample_end):
@@ -535,7 +552,7 @@ def firm_presentation_equity_curve(cumprof,dd,title,dir,sample_start,sample_end)
     line2 = ax1.plot(x2,y2,color='r', linewidth=2, alpha=0.6)
     lims = plt.ylim()
     ax1.set_ylim([lims[0], 0])
-   vals1 = ax1.get_yticks()
+    vals1 = ax1.get_yticks()
     print (vals1)
     ax1.set_yticklabels(['{:3.1f}%'.format(x * 100) for x in vals1])
     ax1.margins(x=0)
@@ -649,7 +666,10 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x1[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
                     if current_style in ['raw_only','z_score']:
                         df1= current_dfs.dropna()
@@ -666,12 +686,16 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         ax.legend(lns, labs, loc=9, frameon=False, ncol=1, fontsize=8)
 
                         # set the max and min
-                        l1_max = df1.loc[chart_start_dt:].max().values
-                        l1_min = df1.loc[chart_start_dt:].min().values
-                        l1_diff = l1_max - l1_min
+                        if current_style in ['raw_only']:
+                            l1_max = df1.loc[chart_start_dt:].max().values
+                            l1_min = df1.loc[chart_start_dt:].min().values
+                            l1_diff = l1_max - l1_min
 
-                        ymax = (l1_max + l1_diff * .2)
-                        ymin = (l1_min - l1_diff * .2)
+                            ymax = (l1_max + l1_diff * .2)
+                            ymin = (l1_min - l1_diff * .2)
+                        elif current_style in ['z_score']:
+                            ymax=4.5
+                            ymin=get_ymin(y1)
                         ax.set_ylim(ymin, ymax)
 
                         ax.set_xlabel('')
@@ -714,9 +738,12 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        #add_vertical_line_on_date(ax)
                     if current_style in ['smooth_z_score']:
                         df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
@@ -735,16 +762,7 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
 
                         # set the max and min
-                        l1_max = df1.loc[chart_start_dt:].max().values
-                        l1_min = df1.loc[chart_start_dt:].min().values
-                        l1_diff = l1_max - l1_min
-
-                       l2_max = df2.loc[chart_start_dt:].max().values
-                        l2_min = df2.loc[chart_start_dt:].min().values
-                        l2_diff = l2_max - l2_min
-
-                        ymax = (l1_max + l1_diff * .2) if l1_max > l2_max else (l2_max + l2_diff * .2)
-                        ymin = (l1_min - l1_diff * .2) if l1_min < l2_min else (l2_min - l2_diff * .2)
+                        ymax,ymin=4.5,get_ymin([y1,y2])
                         ax.set_ylim(ymin, ymax)
 
                         ax.set_xlabel('')
@@ -787,10 +805,13 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
-                    if current_style in ['gauge_vs_yield']:
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['gauge_vs_yield','cumprof_vs_yield','cumprof_vs_signal','drawdown_vs_yield','risk_breakdown_vs_yield']:
                         df1,df2 = current_dfs[0].dropna(),current_dfs[1].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
                         df1 = df1.loc[mask, :]
@@ -808,11 +829,14 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
 
                         # set the axis limit
-                        l1_max = df1.loc[chart_start_dt:].max().values
-                        l1_min = df1.loc[chart_start_dt:].min().values
-                        l1_diff = l1_max - l1_min
-                        ymax = l1_max + l1_diff * .2
-                        ymin = l1_min - l1_diff * .2
+                        if current_style not in ['gauge_vs_yield']:
+                            l1_max = df1.loc[chart_start_dt:].max().values
+                            l1_min = df1.loc[chart_start_dt:].min().values
+                            l1_diff = l1_max - l1_min
+                            ymax = l1_max + l1_diff * .2
+                            ymin = l1_min - l1_diff * .2
+                        else:
+                            ymax,ymin=4.5,get_ymin(y1)
                         ax.set_ylim(ymin, ymax)
 
                         l2_max = df2.loc[chart_start_dt:].max().values
@@ -873,9 +897,13 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        #add_dot_at_the_end(ax,y1)
+                        #add_vertical_line_on_date(ax)
                     if current_style in ['gauge_vs_parent']:
                         df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
@@ -894,16 +922,7 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
 
                         # set the max and min
-                        l1_max = df1.loc[chart_start_dt:].max().values
-                        l1_min = df1.loc[chart_start_dt:].min().values
-                        l1_diff = l1_max - l1_min
-
-                        l2_max = df2.loc[chart_start_dt:].max().values
-                        l2_min = df2.loc[chart_start_dt:].min().values
-                        l2_diff = l2_max - l2_min
-
-                        ymax = (l1_max + l1_diff * .2) if l1_max > l2_max else (l2_max + l2_diff * .2)
-                        ymin = (l1_min - l1_diff * .2) if l1_min < l2_min else (l2_min - l2_diff * .2)
+                        ymax,ymin=4.5,get_ymin([y1,y2])
                         ax.set_ylim(ymin, ymax)
 
                         ax.set_xlabel('')
@@ -946,9 +965,12 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        #add_vertical_line_on_date(ax)
                     if current_style in ['raw_vs_trend_vs_yield']:
                         df1, df2, df3 = current_dfs[0].dropna(), current_dfs[1].dropna(),current_dfs[2].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
@@ -1007,6 +1029,9 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         # add zero line
                         ax.axhline(linewidth=0.5, color='k')
 
+                        #set ax2 on the left
+                        ax2.yaxis.tick_left()
+
                         # set border color and width
                         for spine in ax.spines.values():
                             spine.set_edgecolor('grey')
@@ -1033,9 +1058,12 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        #add_vertical_line_on_date(ax)
                     if current_style in ['raw_only_vs_yield']:
                         df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
@@ -1119,9 +1147,842 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
                         add_rates_rise_fall(ax, rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['signal_flip_vs_yield']:
+                        df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1, x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1, y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='deepskyblue', ls='solid', lw=0.4,
+                                        label=df1.columns[0])
+                        line_shade1 = ax.fill_between(x1, 0, y1, facecolors='aqua', alpha=0.3, label='_nolabel_')
+                        ax2 = ax.twinx()
+                        line2 = ax2.plot(x2, y2, color='black', ls='solid', lw=0.4,
+                                         label=df2.columns[0])
+
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+                        ymax = l1_max + l1_diff * .2
+                        ymin = l1_min - l1_diff * .2
+                        ax.set_ylim(ymin, ymax)
+
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l2_diff = l2_max - l2_min
+                        ymax = l2_max + l2_diff * .2
+                        ymin = l2_min - l2_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='deepskyblue')
+                        ax2.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(axis='y', labelcolor='black')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        if if_contains_zero(ax2.get_ylim()):
+                            ax2.axhline(linewidth=0.5, color='k')
+                        else:
+                            ax.axhline(linewidth=0.5, color='k')
+                        if if_contains_zero(ax.get_ylim()):
+                           ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        ax2.yaxis.tick_left()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x2[-1] else x2
+
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        add_rates_rise_fall(ax,'type2',rise_dates_path=current_rate_rise_path)
+                        #add_vertical_line_on_date(ax)
+                        add_dot_at_the_end(ax,y1)
+                    if current_style in ['risk_protect_trigger']:
+                        df1,df2,df3,df4 = current_dfs[0].dropna(), current_dfs[1].dropna(),current_dfs[2].dropna(),current_dfs[3].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1,x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1,y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+                        if len(df3.index) > 0.9:
+                            x3 = pd.to_datetime(df3.index).date
+                            y3 = df3.iloc[:, 0]
+                        if len(df4.index) > 0.9:
+                            x4 = pd.to_datetime(df4.index).date
+                            y4 = df4.iloc[:, 0]
+                        line1 = ax.plot(x1, y1, color='deepskyblue', ls='solid', lw=0.4,
+                                        label=df1.columns[0])
+                        line_shade1 = ax.fill_between(x1, 0, y1, facecolors='aqua', alpha=0.3, label='_nolabel_')
+                        try:
+                            marker_line1 = ax.plot(x3, y3, color='k',
+                                            marker='v',
+                                            markerfacecolor='k',
+                                            markeredgecolor='k',
+                                            markersize = 2,
+                                            linestyle='None',
+                                            label='_nolabel_')
+                        except:
+                            pass
+                        try:
+                            marker_line2 = ax.plot(x4, y4, color='r',
+                                            marker='^',
+                                            markerfacecolor='r',
+                                            markeredgecolor='r',
+                                            markersize=2,
+                                            linestyle='None',
+                                            label='_nolabel_')
+                        except:
+                            pass
+                        ax2 = ax.twinx()
+                        line2 = ax2.plot(x2, y2, color='black', ls='solid', lw=0.4,
+                                         label=df2.columns[0])
+
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+                        ymax = l1_max + l1_diff * .2
+                        ymin = l1_min - l1_diff * .2
+                        ax.set_ylim(ymin, ymax)
+
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l2_diff = l2_max - l2_min
+                        ymax = l2_max + l2_diff * .2
+                        ymin = l2_min - l2_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='deepskyblue')
+                        ax2.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(axis='y', labelcolor='black')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        if if_contains_zero(ax2.get_ylim()):
+                            ax2.axhline(linewidth=0.5, color='k')
+                        else:
+                            ax.axhline(linewidth=0.5, color='k')
+                        if if_contains_zero(ax.get_ylim()):
+                            ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        ax2.yaxis.tick_left()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x2[-1] else x2
+
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                        add_rates_rise_fall(ax, 'type2', rise_dates_path=current_rate_rise_path)
+                        # add_vertical_line_on_date(ax)
+                        add_dot_at_the_end(ax, y1)
+                else:
+                    set_ax_invisible(axarr[i, j])
+        plt.tight_layout()
+        if page_name != '':
+            fig.tight_layout()
+            fig.subplots_adjust(top=0.88)
+        report.savefig(fig, bbox_inches='tight')  # the current page is saved
+    report.close()
+    plt.close('all')
+
+    # make a copy to bt_backup_dir
+    if bt_backup_dir:
+        try:
+            shutil.copy(pdfpath,bt_backup_dir)
+
+        except:
+            pass
+
+def generic_plot(plot_dict,chart_start_dt = '1940-1-1',chart_end_dt='2050-01-01',pdfpath='',page_name = '',bt_backup_dir = None,override_chart_params = {}):
+    '''
+    :param plot_dict: dictionary which defines df pairs, titles,
+    :param chart_start_dt:
+    :return:
+    '''
+    default_params = {'chart_each_page':12,
+                      'chart_rows':4,
+                      'chart_cols':3,
+                      'figsize' : (18.27, 12.69)
+                      }
+    default_params.update(override_chart_params)
+
+    chart_each_page = default_params['chart_each_page']
+    chart_rows = default_params['chart_rows']
+    chart_cols = default_params['chart_cols']
+
+    df_pair,title_list,chart_style = plot_dict['df_res'],plot_dict['title_res'],plot_dict['chart_type']
+    if 'other_param' in plot_dict.keys():
+        other_param = zip_dict_of_list(plot_dict['other_param'])
+    assert len(df_pair)==len(title_list),' series and title list are not the same length'
+    assert len(df_pair)==len(chart_style),' series and chart style list are not the same length'
+    pages_number = math.ceil(len(plot_dict['title_res'])/chart_each_page)
+    chart_in_page = [chart_each_page] * (pages_number - 1) + [
+        len(plot_dict['title_res']) - chart_each_page * (pages_number - 1)]
+
+    report = PdfPages(pdfpath)
+
+    print('chart_in_each_page=', chart_in_page)
+    print("CREATING RETURNS PAGE")
+
+    # split into ech page!
+    for i,n in enumerate(chart_in_page):
+        chart_rows, chart_cols = chart_rows, chart_cols
+        fig, axarr = plt.subplots(chart_rows, chart_cols, figsize=default_params['figsize'], dpi=100)
+        # add the main title
+        if page_name != '':
+            fig.suptitle(page_name, fontsize=16)
+        start_idx = sum(chart_in_page[:i])
+        end_idx = start_idx + n
+        dfs_in_this_page,title_itp,chart_style_itp = df_pair[start_idx:end_idx],title_list[start_idx:end_idx],chart_style[start_idx:end_idx]
+        if 'other_param' in plot_dict.keys():
+            other_param_itp = other_param[start_idx:end_idx]
+
+        for i in range(chart_rows):
+            for j in range(chart_cols):
+                if i * chart_cols + j < len(title_itp):
+                    if chart_each_page<1.1:
+                        ax=axarr
+                    else:
+                        ax = axarr[i, j]
+                    current_dfs,current_title,current_style= dfs_in_this_page[i * chart_cols + j],title_itp[i * chart_cols + j],chart_style_itp[i * chart_cols + j]
+                    if 'other_param' in plot_dict.keys():
+                        current_other_param = other_param_itp[i * chart_cols + j]
+
+                    if current_style in ['raw_vs_trend','pred_vs_orig','raw_vs_trend_red']:
+                        df1,df2 = current_dfs[0].dropna(),current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1 , x2 = pd.to_datetime(df1.index).date,pd.to_datetime(df2.index).date
+                        y1 , y2 = df1.iloc[:,0],df2.iloc[:,0]
+
+                        line1 = ax.plot(x1,y1,color='blue',ls = 'solid',lw=0.9,label=df1.columns[0])
+                        if current_style in ['raw_vs_trend_red']:
+                            line2 = ax.plot(x2, y2, color='red', ls='solid', lw=0.9,
+                                        label=df2.columns[0])
+                        else:
+                            line2 = ax.plot(x2, y2, color='black', ls='dashed', lw=0.9,
+                                            label=df2.columns[0])
+                        lns = line1+line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l2_diff = l2_max - l2_min
+
+                        ymax = (l1_max + l1_diff * .2) if l1_max > l2_max else (l2_max + l2_diff * .2)
+                        ymin = (l1_min - l1_diff * .2) if l1_min < l2_min else (l2_min - l2_diff * .2)
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        fmt_xdate_ticks(ax, x1, x1)
+                    if current_style in ['raw_only','z_score','price_or_volume','cumprof_only','resid_only','raw_only_red']:
+                        if isinstance(current_dfs,tuple):
+                            df1 = current_dfs[0].dropna()
+                        elif isinstance(current_dfs,pd.DataFrame):
+                            df1= current_dfs.dropna()
+
+                        if len(df1.dropna().index)<1:
+                            df1 = genr_empty_df()
+                        #print (current_dfs)
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+
+                        x1 = pd.to_datetime(df1.index).date
+                        y1 = df1.iloc[:, 0]
+
+                        if current_style in ['raw_only_red']:
+                            line1 = ax.plot(x1, y1, color='red', ls='solid', lw=0.9, label=df1.columns[0])
+                        else:
+                            line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        lns = line1
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=1, fontsize=8)
+
+                        # set the max and min
+                        if current_style in ['raw_only','price_or_volume','cumprof_only','raw_only_red']:
+                            l1_max = df1.loc[chart_start_dt:].max().values
+                            l1_min = df1.loc[chart_start_dt:].min().values
+                            l1_diff = l1_max - l1_min
+
+                           ymax = (l1_max + l1_diff * .2)
+                            ymin = (l1_min - l1_diff * .2)
+                        elif current_style in ['z_score']:
+                            ymax=4.5
+                            ymin=get_ymin(y1)
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        fmt_xdate_ticks(ax, x1, x1)
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['smooth_z_score']:
+                        df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1, x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1, y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='red', ls='dashed', lw=0.9,
+                                        label=df2.columns[0])
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        ymax,ymin=4.5,get_ymin([y1,y2])
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                           spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        x_longer = x1
+
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['gauge_vs_yield','cumprof_vs_yield','cumprof_vs_signal','drawdown_vs_yield','risk_breakdown_vs_yield','price_n_volume','ca_vs_hf_estimate','raw_y_vs_raw_x','raw_y_vs_raw_x(black)']:
+                        df1,df2 = current_dfs[0].dropna(),current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                       df2 = df2.loc[mask, :]
+
+                        x1, x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1, y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='red', ls='solid', lw=0.9, label=df1.columns[0])
+                        ax2 = ax.twinx()
+                        if current_style in ['raw_y_vs_raw_x(black)']:
+                            line2 = ax2.plot(x2, y2, color='black', ls='solid', lw=0.9, label=df2.columns[0])
+                        else:
+                            line2 = ax2.plot(x2, y2, color='blue', ls='solid', lw=0.9, label=df2.columns[0])
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the axis limit
+                        if current_style not in ['gauge_vs_yield']:
+                            l1_max = df1.loc[chart_start_dt:].max().values
+                            l1_min = df1.loc[chart_start_dt:].min().values
+                            l1_diff = l1_max - l1_min
+                            ymax = l1_max + l1_diff * .2
+                            ymin = l1_min - l1_diff * .2
+                        else:
+                            ymax,ymin=4.5,get_ymin(y1)
+                        ax.set_ylim(ymin, ymax)
+
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l2_diff = l2_max - l2_min
+                        ymax = l2_max + l2_diff * .2
+                        ymin = l2_min - l2_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(labelsize=12, width=0.1)
+
+                       ax.tick_params(axis='y', labelcolor='red')
+                        if current_style in ['raw_y_vs_raw_x(black)']:
+                            ax2.tick_params(axis='y', labelcolor='black')
+                        else:
+                            ax2.tick_params(axis='y', labelcolor='blue')
+
+                        if not current_style in ['raw_y_vs_raw_x','raw_y_vs_raw_x(black)']:
+                            ax2.axhline(linewidth=0.5, color='k')
+                        if not current_style in ['ca_vs_hf_estimate']:
+                            if if_contains_zero(ax.get_ylim()):
+                                ax.axhline(linewidth=0.5, color='k')
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # ax2.tick_params(axis='y', labelcolor='deepskyblue')
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        ax2.yaxis.tick_left()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x2[-1] else x2
+
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        #add_dot_at_the_end(ax,y1)
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['gauge_vs_parent']:
+                        df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1, x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1, y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='red', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='blue', ls='solid', lw=0.9,
+                                        label=df2.columns[0])
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        ymax,ymin=4.5,get_ymin([y1,y2])
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                       # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        fmt_xdate_ticks(ax, x1, x1)
+
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['raw_vs_trend_vs_yield','pred_vs_orig_vs_resid']:
+                        df1, df2, df3 = current_dfs[0].dropna(), current_dfs[1].dropna(),current_dfs[2].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                       df2 = df2.loc[mask, :]
+                        mask = (df3.index >= chart_start_dt) & (df3.index <= chart_end_dt)
+                        df3 = df3.loc[mask, :]
+
+                        x1, x2, x3 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date,pd.to_datetime(df3.index).date
+                        y1, y2, y3 = df1.iloc[:, 0], df2.iloc[:, 0],df3.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='black', ls='dashed', lw=0.9,
+                                        label=df2.columns[0])
+                        ax2 = ax.twinx()
+                        if current_style in ['raw_vs_trend_vs_yield']:
+                            line3 = ax2.plot(x3, y3, color='lightgrey', ls='solid', lw=0.9,
+                                             label=df3.columns[0])
+                        if current_style in ['pred_vs_orig_vs_resid']:
+                            line3 = ax2.plot(x3, y3, color='red', ls='solid', lw=0.9,
+                                             label=df3.columns[0])
+                        lns = line1 + line2+line3
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l1_max = l1_max if l1_max>l2_max else l2_max
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l1_min = l1_min if l1_min < l2_min else l2_min
+                        l1_diff = l1_max - l1_min
+                        ymax = l1_max + l1_diff * .2
+                        ymin = l1_min - l1_diff * .2
+                        ax.set_ylim(ymin, ymax)
+
+                        l3_max = df3.loc[chart_start_dt:].max().values
+                        l3_min = df3.loc[chart_start_dt:].min().values
+                        l3_diff = l3_max - l3_min
+                        ymax = l3_max + l3_diff * .2
+                        ymin = l3_min - l3_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+                        ax2.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(axis='y', labelcolor='grey')
+                        ax2.tick_params(labelsize=12, width=0.1)
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        #set ax2 on the left
+                       ax2.yaxis.tick_left()
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x3[-1] else x3
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['raw_only_vs_yield']:
+                        df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+
+                        x1, x2 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date
+                        y1, y2 = df1.iloc[:, 0], df2.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        ax2 = ax.twinx()
+                        line2 = ax2.plot(x2, y2, color='lightgrey', ls='solid', lw=0.9, label=df2.columns[0])
+                        lns = line1 + line2
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the axis limit
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+                        ymax = l1_max + l1_diff * .2
+                        ymin = l1_min - l1_diff * .2
+                        ax.set_ylim(ymin, ymax)
+
+                        l2_max = df2.loc[chart_start_dt:].max().values
+                        l2_min = df2.loc[chart_start_dt:].min().values
+                        l2_diff = l2_max - l2_min
+                        ymax = l2_max + l2_diff * .2
+                        ymin = l2_min - l2_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(labelsize=12, width=0.1)
+
+                        ax.tick_params(axis='y', labelcolor='red')
+                        ax2.tick_params(axis='y', labelcolor='blue')
+
+                        ax2.axhline(linewidth=0.5, color='k')
+                        if if_contains_zero(ax.get_ylim()):
+                            ax.axhline(linewidth=0.5, color='k')
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # ax2.tick_params(axis='y', labelcolor='deepskyblue')
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+                        ax2.yaxis.tick_left()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x2[-1] else x2
+
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        #add_vertical_line_on_date(ax)
                     if current_style in ['signal_flip_vs_yield']:
                         df1, df2 = current_dfs[0].dropna(), current_dfs[1].dropna()
                         mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
@@ -1207,28 +2068,458 @@ def rates_tree_component_plot(plot_dict,chart_start_dt = '2010-01-01',chart_end_
                         datemax = np.datetime64(x_longer[-1], 'Y')
                         datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
                         x_tick_overrive = [datemin, datemax]
-                       date_cursor = datemin
+                        date_cursor = datemin
                         while date_cursor + np.timedelta64(5, 'Y') < datemax:
                             date_cursor = date_cursor + np.timedelta64(5, 'Y')
                             x_tick_overrive.append(date_cursor)
 
                         ax.xaxis.set_ticks(x_tick_overrive)
-                        ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
-                        add_rates_rise_fall(ax,'type2',rise_dates_path=current_rate_rise_path)
-                        add_vertical_line_on_date(ax)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
 
+                        #add_vertical_line_on_date(ax)
+                        add_dot_at_the_end(ax,y1)
+                    if current_style in ['outlier_confident_band','coeff_vs_band']:
+                        # the outlier chart, with 2 sigma confidence interval as the second and third input
+                        df1, df2,df3 = current_dfs[0].dropna(), current_dfs[1].dropna(),current_dfs[2].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+                        mask = (df3.index >= chart_start_dt) & (df3.index <= chart_end_dt)
+                        df3 = df3.loc[mask, :]
+
+                        x1, x2,x3 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date,pd.to_datetime(df3.index).date
+                        y1, y2,y3 = df1.iloc[:, 0], df2.iloc[:, 0],df3.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='black', ls='dashed', lw=0.9)
+                        line3 = ax.plot(x3, y3, color='black', ls='dashed', lw=0.9)
+                        lns = line1 + line2+line3
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+
+                        ymax = (l1_max + l1_diff * .2)
+                        ymin = (l1_min - l1_diff * .2)
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        x_longer = x1
+
+                        try:
+                            datemax = np.datetime64(x_longer[-1], 'Y')
+                        except:
+                            print (df1,df2,df3)
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x1[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                    if current_style in ['pred_vs_fitted_with_band']:
+                        # the outlier chart, with 2 sigma confidence interval as the second and third input
+                        df1, df2, df3, df4 = current_dfs[0].dropna(), current_dfs[1].dropna(), current_dfs[2].dropna(),current_dfs[3].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+                        mask = (df3.index >= chart_start_dt) & (df3.index <= chart_end_dt)
+                        df3 = df3.loc[mask, :]
+                        mask = (df4.index >= chart_start_dt) & (df4.index <= chart_end_dt)
+                        df3 = df3.loc[mask, :]
+
+                       x1, x2, x3, x4 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date, pd.to_datetime(df3.index).date,pd.to_datetime(df4.index).date
+                        y1, y2, y3, y4 = df1.iloc[:, 0], df2.iloc[:, 0], df3.iloc[:, 0],df4.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='red', ls='dashed', lw=0.6, label=df2.columns[0])
+                        line3 = ax.plot(x3, y3, color='grey', ls='dashed', lw=0.6)
+                        line4 = ax.plot(x4, y4, color='grey', ls='dashed', lw=0.6)
+                        lns = line1 + line2 + line3+line4
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+
+                        ymax = (l1_max + l1_diff * .2)
+                        ymin = (l1_min - l1_diff * .2)
+                        ax.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='blue')
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        x_longer = x1
+
+                        try:
+                            datemax = np.datetime64(x_longer[-1], 'Y')
+                        except:
+                            print(df1, df2, df3)
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x1[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                    if current_style in ['trade_bal_gdp_with_fx']:
+                        # trade balance as pct of NGDP vs fx
+                        df1, df2, df3 = current_dfs[0].dropna(), current_dfs[1].dropna(),current_dfs[2].dropna()
+                        mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                        df1 = df1.loc[mask, :]
+                        mask = (df2.index >= chart_start_dt) & (df2.index <= chart_end_dt)
+                        df2 = df2.loc[mask, :]
+                        mask = (df3.index >= chart_start_dt) & (df3.index <= chart_end_dt)
+                        df3 = df3.loc[mask, :]
+
+                        x1, x2, x3 = pd.to_datetime(df1.index).date, pd.to_datetime(df2.index).date,pd.to_datetime(df3.index).date
+                        y1, y2, y3 = df1.iloc[:, 0], df2.iloc[:, 0],df3.iloc[:, 0]
+
+                        line1 = ax.plot(x1, y1, color='red', ls='solid', lw=0.9, label=df1.columns[0])
+                        line2 = ax.plot(x2, y2, color='grey', ls='solid', lw=0.9,
+                                        label=df2.columns[0])
+                        ax2 = ax.twinx()
+                        line3 = ax2.plot(x3, y3, color='blue', ls='solid', lw=0.9,
+                                         label=df3.columns[0])
+                        lns = line1 + line2+line3
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=2, fontsize=8)
+
+                        # set the max and min
+                        l1_max = df1.loc[chart_start_dt:].max().values
+                        l1_min = df1.loc[chart_start_dt:].min().values
+                        l1_diff = l1_max - l1_min
+                        ymax = l1_max + l1_diff * .2
+                        ymin = l1_min - l1_diff * .2
+                        ax.set_ylim(ymin, ymax)
+
+                        l3_max = df3.loc[chart_start_dt:].max().values
+                        l3_min = df3.loc[chart_start_dt:].min().values
+                        l3_diff = l3_max - l3_min
+                        ymax = l3_max + l3_diff * .2
+                        ymin = l3_min - l3_diff * .2
+                        ax2.set_ylim(ymin, ymax)
+
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+                        ax2.set_xlabel('')
+                        ax2.set_ylabel('')
+
+                        # wrap up the title since it can be too long
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.tick_params(labelsize=12, width=0.1)
+                        ax.tick_params(axis='y', labelcolor='red')
+                        ax2.tick_params(labelsize=12, width=0.1)
+                        ax2.tick_params(axis='y', labelcolor='blue')
+                        ax2.tick_params(labelsize=12, width=0.1)
+
+                        ax.set_zorder(10)
+                        ax.patch.set_visible(False)
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+
+                        #set ax2 on the left
+                        ax2.yaxis.tick_left()
+
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        x_longer = x1 if x1[-1] > x3[-1] else x3
+                        datemax = np.datetime64(x_longer[-1], 'Y')
+                        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_longer[-1].month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+
+                        #add_vertical_line_on_date(ax)
+                    if current_style in ['2d_heat_map']:
+                        #print (current_dfs)
+                        df1 = current_dfs[0].dropna(how='all',axis=0)
+                        df1 = df1.dropna(how='all',axis=1)
+                        heat_map_v = current_other_param['heat_map_v']
+                        if len(heat_map_v)==2:
+                            vmin,vmax=heat_map_v[0],heat_map_v[1]
+                        else:
+                            vmin,vmax = None,None
+                        df1.sort_index(ascending=False, inplace=True)
+                        df1.columns = ['{:,.1f}'.format(x) for x in df1.columns]
+                        title = "\n".join(wrap(current_title, 25))
+                        try:
+                            sns.heatmap(df1,center=0.5,linewidths=.1,vmin=vmin, vmax=vmax,ax=ax)
+                        except:
+                            print (df1,title)
+                            raise ValueError
+                        ax.set_title(title, y=1, fontsize=30, fontweight=600)
+
+                        # format x,y tick
+
+                        ax.tick_params(labelsize=15, width=0.1)
+                        ax.tick_params(axis='y',labelsize=15)
+                    if current_style in ['cumprof_cluster']:
+                        lns = []
+
+                        x_max = pd.to_datetime(current_dfs[0].index).date[-1]
+                        x_min = pd.to_datetime(current_dfs[0].index).date[0]
+                        for df in current_dfs:
+                            df1 = df.dropna()
+                            mask = (df1.index >= chart_start_dt) & (df1.index <= chart_end_dt)
+                            df1 = df1.loc[mask, :]
+                            x1= pd.to_datetime(df1.index).date
+                            y1 = df1.iloc[:, 0]
+                            if x_max < x1[-1]:
+                                x_max = x1[-1]
+                            if x_min > x1[0]:
+                                x_min = x1[0]
+                            line1 = ax.plot(x1, y1, color='blue', ls='solid', lw=0.6, label=df1.columns[0])
+                            lns+=line1
+                        labs = [l.get_label() for l in lns]
+                        ax.legend(lns, labs, loc=9, frameon=False, ncol=3, fontsize=5)
+                        ax.set_xlabel('')
+                        ax.set_ylabel('')
+
+                        title = "\n".join(wrap(current_title, 60))
+                        ax.set_title(title, y=1, fontsize=11, fontweight=600)
+
+                        ax.patch.set_visible(False)
+
+                        # add zero line
+                        ax.axhline(linewidth=0.5, color='k')
+                        # set border color and width
+                        for spine in ax.spines.values():
+                            spine.set_edgecolor('grey')
+                            spine.set_linewidth(0.5)
+
+                        # add year tickers as minor tick
+                        years = mdates.YearLocator()
+                        yearsFmt = mdates.DateFormatter('%Y')
+                        ax.xaxis.set_major_formatter(yearsFmt)
+                        ax.xaxis.set_minor_locator(years)
+                        # set the width of minor tick
+                        ax.tick_params(which='minor', width=0.1)
+                        # set y-label to the right hand side
+                        ax.yaxis.tick_right()
+
+                        # set date max
+                        datemax = np.datetime64(x_max, 'Y')
+                        datemin = np.datetime64(x_min, 'Y') - np.timedelta64(1, 'Y')
+                        x_tick_overrive = [datemin, datemax]
+                        date_cursor = datemin
+                        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+                            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+                            x_tick_overrive.append(date_cursor)
+
+                        ax.xaxis.set_ticks(x_tick_overrive)
+                        if x_max.month > 10:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+                        else:
+                            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+                    if current_style in ['blank_place_holder']:
+                        set_ax_invisible(axarr[i, j])
                 else:
                     set_ax_invisible(axarr[i, j])
+
         plt.tight_layout()
         if page_name != '':
             fig.tight_layout()
             fig.subplots_adjust(top=0.88)
+            plt.subplots_adjust(wspace=0.2, hspace=0.33)
         report.savefig(fig, bbox_inches='tight')  # the current page is saved
     report.close()
+    plt.close('all')
 
     # make a copy to bt_backup_dir
     if bt_backup_dir:
         try:
             shutil.copy(pdfpath,bt_backup_dir)
+
         except:
             pass
+
+def zip_dict_of_list(d):
+    # zip the dictionary of list
+    '''
+    :param d: dictionary of list
+    :return: list of dictionaries
+    '''
+    k_list = []
+    v_list = []
+    result_list = []
+    for k,v in d.items():
+        k_list.append(k)
+        v_list.append(v)
+    for t in zip(*v_list):
+        this_dict = {}
+        #print(k_list,t)
+        assert len(k_list)==len(t)
+        for k,tt in zip(k_list,t):
+            this_dict[k]=tt
+        result_list.append(this_dict)
+    return result_list
+
+def get_ymin(y,s_date = '2010',thresholds = [-4.5,-7.5]):
+    #return -4.5
+    if isinstance(y,pd.DataFrame):
+        y = y.dropna().iloc[:,0]
+    elif isinstance(y,pd.Series):
+        y = y.dropna()
+    elif isinstance(y,list):
+        y_min_list = [np.min(i.iloc[:,0]) if isinstance(i,pd.DataFrame) else np.min(i) for i in y]
+        y = y[y_min_list.index(min(y_min_list))]
+    else:
+        print (y)
+        raise Exception
+    y.loc['2020-01-01':y.index[-2]] = np.nan
+    y_min = np.min(y.loc[s_date:])
+    for t in thresholds:
+        if y_min>=t:
+            return t
+    return -7.5
+
+def fmt_xdate_ticks(ax,x_longer,x1):
+    # # set date max
+    # x_longer = x1
+    try:
+        _len = (x_longer[-1] - x1[0]) / np.timedelta64(1, 'D')
+    except:
+        _len = (x_longer[-1] - x1[0]).days
+    if _len > 365 * 4:
+        datemax = np.datetime64(x_longer[-1], 'Y')
+        datemin = np.datetime64(x1[0], 'Y') - np.timedelta64(1, 'Y')
+        x_tick_overrive = [datemin]
+        date_cursor = datemin
+        while date_cursor + np.timedelta64(5, 'Y') < datemax:
+            date_cursor = date_cursor + np.timedelta64(5, 'Y')
+            x_tick_overrive.append(date_cursor)
+
+        ax.xaxis.set_ticks(x_tick_overrive)
+        if x_longer[-1].month > 10:
+            ax.set_xlim(datemin, datemax + np.timedelta64(15, 'M'))
+        else:
+            ax.set_xlim(datemin, datemax + np.timedelta64(1, 'Y'))
+    elif _len > 365 * 1:
+        datemax = pd.to_datetime(x_longer[-1])
+        datemin = x1[0] - pd.DateOffset(months=1) - pd.offsets.MonthBegin()
+        x_tick_overrive = [datemin]
+        date_cursor = datemin
+        interval = 12 if _len > 365 * 3 else 6
+        while date_cursor + pd.DateOffset(months=interval) < datemax:
+            date_cursor = date_cursor + pd.DateOffset(months=interval)
+            x_tick_overrive.append(date_cursor)
+        #
+        ax.xaxis.set_ticks(x_tick_overrive)
+        myFmt = mdates.DateFormatter('%Y-%m')
+        ax.xaxis.set_major_formatter(myFmt)
+        ax.set_xlim(datemin, datemax + pd.DateOffset(months=2))
+
+    else:
+        datemax = pd.to_datetime(x_longer[-1])
+        datemin = x1[0] - pd.DateOffset(days=7) - pd.offsets.MonthBegin()
+        x_tick_overrive = [datemin, datemax]
+        date_cursor = datemin
+        interval = 3 if _len > 365 / 2 else 1
+        while date_cursor + pd.DateOffset(months=interval) < datemax:
+            date_cursor = date_cursor + pd.DateOffset(months=interval)
+            x_tick_overrive.append(date_cursor)
+        #
+        ax.xaxis.set_ticks(x_tick_overrive)
+        myFmt = mdates.DateFormatter('%Y-%m')
+        ax.xaxis.set_major_formatter(myFmt)
+        ax.set_xlim(datemin, datemax + pd.DateOffset(days=14))
+
+ 
